@@ -68,7 +68,7 @@
                       {
                           echo'<a class="nav-link" href="./router.php?c=login&a=logout">Logout('.$username.')</a>';
                       }else{
-                          echo'<a class="nav-link" href="./router.php?c=login&a=index">Login</a>';
+                          echo'<a class="nav-link" href="./router.php?c=login&a=index">Auth</a>';
                       }
                   ?>
 
