@@ -12,16 +12,16 @@ class AuthController extends BaseController
 
     public function login()
     {
-        if ((isset($_POST['user'])) && (isset($_POST['pass']))) {
-            $user = $_POST['user'];
+        if ((isset($_POST['username'])) && (isset($_POST['pass']))) {
+            $user = $_POST['username'];
             $pass = $_POST['pass'];
 
-            $l = new Auth();
-            $validacaologin = $l->checklogin($user, $pass);
+             $auth= new Auth();
+            $validacaologin = $auth->checklogin($user, $pass);
 
             if ($validacaologin == true)
 
-                $this->redirectToRoute('plano','index');
+                $this->redirectToRoute('site','index');
             else
                 $this->redirectToRoute('login','index');
         }

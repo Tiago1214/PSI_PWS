@@ -6,9 +6,20 @@ class BaseAuthController extends BaseController
 {
     protected function loginFilter()
     {
-        $login= new Auth();
+        $auth= new Auth();
 
-        if(!$login->IsLogedIn()) {
+        if(!$auth->IsLogedIn()) {
+            header('Location: ./router.php' . INVALID_ACESS_ROUTE);
+        }
+    }
+
+    protected function loginFilterbyRole($roles=[])
+    {
+        
+           $auth = new Auth();
+           $role = $auth->getRole();
+        $validrole= in_array($role, $roles);
+        if(!$validrole) {
             header('Location: ./router.php' . INVALID_ACESS_ROUTE);
         }
     }

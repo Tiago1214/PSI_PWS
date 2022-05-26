@@ -1,10 +1,9 @@
 <?php
-require_once('./controllers/AuthController.php');
-require_once ('./controllers/PlanoController.php');
-require_once ('./controllers/SiteController.php');
-require_once ('./controllers/BookController.php');
-require_once ('./controllers/ChapterController.php');
 require_once ('./startup/boot.php');
+require_once('./controllers/AuthController.php');
+require_once ('./controllers/SiteController.php');
+require_once ('./controllers/EmpresaController.php');
+
 
 // ****** ROTA POR OMISSAO ******
 if(!isset($_GET['c']) && !isset($_GET['a']))
@@ -17,7 +16,8 @@ else{
         $controller=$_GET['c'];
         $action=$_GET['a'];
 
-        switch ($controller) {
+
+       switch ($controller) {
 
             case 'login':
                 $logincontroller=new AuthController();
@@ -32,20 +32,11 @@ else{
                         break;
                     case 'logout':
                         $logincontroller->logout();
+                        break;
                 }
             break;
 
-            case 'plano':
-                $planocontroller= new PlanoController();
-                switch ($action) {
-                    case 'index':
-                        $planocontroller->index();
-                        break;
-                    case 'show':
-                        $planocontroller->show();
-                        break;
-                }
-            break;
+
 
             case 'site':
                 $sitecontroller= new SiteController();
@@ -56,34 +47,36 @@ else{
                 }
                 break;
 
-            case 'book':
-                $bookcontroller = new BookController();
+            case 'empresa':
+                $empresacontroller = new EmpresaController();
                 switch ($action) {
                     case 'index':
-                        $bookcontroller->index();
+                        $empresacontroller->index();
                         break;
                     case 'show':
-                        $bookcontroller->show($_GET['id']);
+                        $empresacontroller->show($_GET['id']);
                         break;
-                    case 'create':
-                        $bookcontroller->create();
+                   /* case 'create':
+                        $empresacontroller->create();
                         break;
                     case'store':
-                        $bookcontroller->store();
-                        break;
+                        $empresacontroller->store();
+                        break;*/
                     case 'edit':
-                        $bookcontroller->edit($_GET['id']);
+                        $empresacontroller->edit($_GET['id']);
                         break;
                     case 'update':
-                        $bookcontroller->update($_GET['id']);
+                        $empresacontroller->update($_GET['id']);
                         break;
-                    case 'delete':
-                        $bookcontroller->delete($_GET['id']);
-                        break;
+                        /* case 'delete':
+                        $empresacontroller->delete($_GET['id']);
+                        break;*/
 
 
                 }
                 break;
+
+
             case 'chapter':
                 $chaptercontroller = new ChapterController();
                 switch ($action)

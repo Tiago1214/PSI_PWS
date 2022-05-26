@@ -79,7 +79,7 @@
                     ?>
                           <li class="nav-item">
                             <a class="nav-link" href="./router.php?c=plano&a=index">Plano Pagamentos</a>
-                              <a class="nav-link" href="./router.php?c=book&a=index">Livros</a>
+                              <a class="nav-link" href="./router.php?c=empresa&a=index">Empresa</a>
 
                             </li>
             <?php

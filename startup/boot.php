@@ -6,11 +6,11 @@ ActiveRecord\Config::initialize(function($cfg)
     $cfg->set_model_directory('./models');
     $cfg->set_connections(
         array(
-            'development' => 'mysql://root@localhost/appdb',
+            'development' => 'mysql://root@localhost/invoicedb',
 
         )
     );
 });
 
-define('APP_NAME','Credit App');
+define('APP_NAME','Invoice App');
 define ('INVALID_ACESS_ROUTE' , '?c=login&a=index');
