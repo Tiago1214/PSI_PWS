@@ -3,6 +3,7 @@ require_once ('./startup/boot.php');
 require_once('./controllers/AuthController.php');
 require_once ('./controllers/SiteController.php');
 require_once ('./controllers/EmpresaController.php');
+require_once ('./controllers/BackOfficeController.php');
 
 
 // ****** ROTA POR OMISSAO ******
@@ -19,19 +20,18 @@ else{
 
        switch ($controller) {
 
-            case 'login':
-                $logincontroller=new AuthController();
-                $sitecontroller=new SiteController();
+            case 'auth':
+                $authcontroller=new AuthController();
 
                 switch ($action) {
                     case 'index':
-                        $logincontroller->index();
+                        $authcontroller->index();
                         break;
-                    case 'login':
-                        $logincontroller->login();
+                    case 'auth':
+                        $authcontroller->login();
                         break;
                     case 'logout':
-                        $logincontroller->logout();
+                        $authcontroller->logout();
                         break;
                 }
             break;
@@ -77,29 +77,13 @@ else{
                 break;
 
 
-            case 'chapter':
-                $chaptercontroller = new ChapterController();
+            case 'backoffice':
+                $backofficecontroller = new BackOfficeController();
                 switch ($action)
                 {
                     case 'index':
-                        $chaptercontroller->index($_GET['id']);
+                        $backofficecontroller->index();
                         break;
-                    case 'create':
-                        $chaptercontroller->create($_GET['id']);
-                        break;
-                    case 'store':
-                        $chaptercontroller->store();
-                        break;
-                    case 'delete':
-                        $chaptercontroller->delete($_GET['id']);
-                        break;
-                    case 'edit':
-                        $chaptercontroller->edit($_GET['id']);
-                        break;
-                    case 'update':
-                        $chaptercontroller->update($_GET['id']);
-                        break;
-
                 }
                 break;
 
