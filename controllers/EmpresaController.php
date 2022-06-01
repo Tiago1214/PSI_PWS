@@ -8,9 +8,9 @@ class EmpresaController extends BaseAuthController
     public function index()
     {
         $this->loginFilterByRole(['admin','funcionario']);
-        $empresa = empresa::All();
+        $empresas = empresa::All();
 
-        $this->makeView('empresa','index',['empresa'=>$empresa]);
+        $this->makeView('empresa','index',['empresas'=>$empresas]);
     }
 
     public function show($id)

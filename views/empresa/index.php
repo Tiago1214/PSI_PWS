@@ -8,9 +8,9 @@
             <tbody>
             <?php foreach ($empresas as $empresa) { ?>
                 <tr>
-                    <td><?=$empresa->id?></td>
-                    <td><?=$empresa->designacaosocial?></td>
-                    <td><?=$empresa->email?></td>
+                    <td><?=$empresa->id ?></td>
+                    <td><?=$empresa->designacaosocial ?></td>
+                    <td><?=$empresa->email ?></td>
                     <td><?= $empresa->telefone ?></td>
                     <td><?= $empresa->nif ?></td>
                     <td><?= $empresa->morada ?></td>
