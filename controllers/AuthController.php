@@ -6,7 +6,7 @@ class AuthController extends BaseController
 {
     public function index()
     {
-        $this->makeView('login','index');
+        $this->makeView('auth','index');
 
     }
 
@@ -21,9 +21,9 @@ class AuthController extends BaseController
 
             if ($validacaologin == true)
 
-                $this->redirectToRoute('site','index');
+                $this->redirectToRoute('backoffice','index');
             else
-                $this->redirectToRoute('login','index');
+                $this->redirectToRoute('auth','index');
         }
     }
 
@@ -31,7 +31,7 @@ class AuthController extends BaseController
     {
         $l=new Auth();
         $l ->logout();
-        $this->redirectToRoute('login','index');
+        $this->redirectToRoute('auth','index');
 
     }
 
