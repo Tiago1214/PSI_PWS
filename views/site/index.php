@@ -1,5 +1,4 @@
      <!-- HERO -->
-     <?php require_once ('./views/LayoutFo/header.php'); ?>
      <section class="hero d-flex flex-column justify-content-center align-items-center" id="home">
 
             <div class="bg-overlay"></div>
@@ -62,5 +61,3 @@
                </div>
           </div>
      </section>
-
-     <?php require_once ('./views/LayoutFo/footer.php');?>

@@ -1,4 +1,4 @@
-<?php include ('./views/LayoutBo/header.php');?>
+
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -520,4 +520,3 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <?php include('./views/LayoutBo/footer.php'); ?>
