@@ -54,7 +54,7 @@ class EmpresaController extends BaseAuthController
     public function edit($id)
     {
         $empresa = empresa::find([$id]);
-        $genres = Genre::All();
+
         if (is_null($empresa)) {
             //TODO redirect to standard error page
         } else {
@@ -76,8 +76,8 @@ class EmpresaController extends BaseAuthController
             $this->redirectToRoute('empresa','index');
             //redirecionar para o index
         } else {
-            $genres= Genre::All();
-            $this->makeView('empresa','edit', ['empresa'=>$empresa],['genres'=>$genres]);
+
+            $this->makeView('empresa','edit', ['empresa'=>$empresa]);
 
             //mostrar vista edit passando o modelo como parâmetro
         }

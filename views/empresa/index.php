@@ -18,9 +18,9 @@
                     <td><?= $empresa->localidade ?></td>
                     <td><?= $empresa->capitalsocial ?></td>
                     <td>
-                        <a href="router.php?c=book&a=show&id=<?=$empresa->id ?>"
+                        <a href="router.php?c=empresa&a=show&id=<?=$empresa->id ?>"
                            class="btn btn-info" role="button">Show</a>
-                        <a href="router.php?c=book&a=edit&id=<?=$empresa->id ?>"
+                        <a href="router.php?c=empresa&a=edit&id=<?=$empresa->id ?>"
                            class="btn btn-info" role="button">Edit</a>
 
                     </td>
