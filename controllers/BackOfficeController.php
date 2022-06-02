@@ -6,5 +6,4 @@ class BackOfficeController extends BaseController
     public function index(){
         $this->makeView('backoffice','index');
     }
-
 }

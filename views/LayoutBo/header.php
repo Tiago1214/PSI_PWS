@@ -114,5 +114,12 @@
                         <span class="pull-right-container"></span>
                     </a>
                 </li>
+                <li>
+                    <a href="router.php?c=fatura&a=show">
+                        <i class="fa fa-th"></i> <span>Fatura</span>
+                        <span class="pull-right-container"></span>
+                    </a>
+                </li>
+            </ul>
         <!-- /.sidebar -->
     </aside>
