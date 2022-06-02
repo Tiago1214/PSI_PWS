@@ -2,7 +2,7 @@
 require_once ('./controllers/BaseController.php');
 require_once ('./controllers/BaseAuthController.php');
 
-class ProductController extends BaseAuthController
+class ProdutoController extends BaseAuthController
 {
     public function  __Construct__()
     {
