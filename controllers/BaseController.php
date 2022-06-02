@@ -6,9 +6,7 @@ class BaseController
     {
         extract($params);
         extract($params2);
-
         $auth= new Auth();
-
         if($auth->isLogedIn())
         {
             $username = $auth->getUsername();

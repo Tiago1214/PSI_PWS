@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <title>Gymso Fitness HTML Template</title>
+    <title>Fatura+</title>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -38,13 +38,8 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-lg-auto">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link smoothScroll">Home</a>
+                    <a href="router.php?c=site&a=index" class="nav-link smoothScroll">Home</a>
                 </li>
-
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link smoothScroll">Contact</a>
-                </li>
-
                 <li class="nav-item">
                     <a href="router.php?c=auth&a=index" class="nav-link smoothScroll">Login</a>
                 </li>
