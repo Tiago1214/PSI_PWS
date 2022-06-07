@@ -115,8 +115,14 @@
                     </a>
                 </li>
                 <li>
-                    <a href="router.php?c=fatura&a=show">
+                    <a href="router.php?c=fatura&a=index">
                         <i class="fa fa-th"></i> <span>Fatura</span>
+                        <span class="pull-right-container"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="router.php?c=produto&a=index">
+                        <i class="fa fa-th"></i> <span>Produtos</span>
                         <span class="pull-right-container"></span>
                     </a>
                 </li>
