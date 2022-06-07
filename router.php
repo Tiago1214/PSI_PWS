@@ -4,6 +4,8 @@ require_once('./controllers/AuthController.php');
 require_once ('./controllers/SiteController.php');
 require_once ('./controllers/EmpresaController.php');
 require_once ('./controllers/BackOfficeController.php');
+require_once ('./controllers/FaturaController.php');
+require_once ('./controllers/ProdutoController.php');
 
 
 // ****** ROTA POR OMISSAO ******
@@ -86,6 +88,52 @@ else{
                         break;
                 }
                 break;
+           case 'fatura':
+               $faturacontroller = new FaturaController();
+               switch ($action)
+               {
+                   case 'index':
+                       $faturacontroller->index();
+                       break;
+
+                   case 'create':
+                       $faturacontroller->create();
+                       break;
+                   case 'store':
+                       $faturacontroller->store($_GET['id']);
+
+               }
+               break;
+
+           case 'produto':
+               $produtocontroller = new ProdutoController();
+               switch ($action) {
+                   case 'index':
+                       $produtocontroller->index();
+                       break;
+                   case 'show':
+                       $produtocontroller->show($_GET['id']);
+                       break;
+                   case 'create':
+                       $produtocontroller->create();
+                       break;
+                   case'store':
+                       $produtocontroller->store();
+                       break;
+                   case 'edit':
+                       $produtocontroller->edit($_GET['id']);
+                       break;
+                   case 'update':
+                       $produtocontroller->update($_GET['id']);
+                       break;
+                   case 'delete':
+                       $produtocontroller->delete($_GET['id']);
+                       break;
+
+
+               }
+               break;
+
 
 
         }

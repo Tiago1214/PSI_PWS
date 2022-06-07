@@ -1,4 +1,5 @@
 <?php
+use Carbon\Carbon;
 
 class FaturaController
 {
@@ -22,6 +23,23 @@ class FaturaController
     {
         //criar fatura
         // redirect-> linhafatura/create+idfatura
+        $this->loginFilterByRole(['admin','funcionario']);
+        $auth = new Auth();
+        $fatura = new Fatura();
+        $fatura->data = Carbon::now();
+        $fatura->valortotal =00.00;
+        $fatura->estado ='em lancamento';
+        $fatura->cliente_id =$idclient;
+        $fatura->funcionario_id = $auth->getUserId();
+
+        if($fatura->is_valid()){
+            $fatura->save();
+            $this->redirectToRoute('linhafatura','create',['fatura'=>$fatura]);
+        } else {
+
+            $this->makeView('fatura','create',['fatura'=>$fatura]);
+
+        }
 
     }
 
