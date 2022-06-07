@@ -126,6 +126,12 @@
                         <span class="pull-right-container"></span>
                     </a>
                 </li>
+                <li>
+                    <a href="router.php?c=iva&a=index">
+                        <i class="fa fa-th"></i> <span>Ivas</span>
+                        <span class="pull-right-container"></span>
+                    </a>
+                </li>
             </ul>
         <!-- /.sidebar -->
     </aside>
