@@ -4,6 +4,7 @@ require_once('./controllers/AuthController.php');
 require_once ('./controllers/SiteController.php');
 require_once ('./controllers/EmpresaController.php');
 require_once ('./controllers/BackOfficeController.php');
+require_once ('./controllers/FaturaController.php');
 
 
 // ****** ROTA POR OMISSAO ******
@@ -86,6 +87,14 @@ else{
                         break;
                 }
                 break;
+
+           case 'fatura':
+               $faturacontroller=new FaturaController();
+               switch($action){
+                   case 'show':
+                       $faturacontroller->show();
+                       break;
+               }
 
 
         }

@@ -15,9 +15,8 @@ class BaseAuthController extends BaseController
 
     protected function loginFilterbyRole($roles=[])
     {
-        
-           $auth = new Auth();
-           $role = $auth->getRole();
+        $auth = new Auth();
+        $role = $auth->getRole();
         $validrole= in_array($role, $roles);
         if(!$validrole) {
             header('Location: ./router.php' . INVALID_ACESS_ROUTE);

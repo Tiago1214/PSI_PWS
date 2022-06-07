@@ -1,6 +1,6 @@
 <?php
 
-class FaturaController
+class FaturaController  extends BaseAuthController
 {
     public function index()
     {
@@ -16,6 +16,10 @@ class FaturaController
         $this->loginFilterByRole(['admin','funcionario']);
         $this->makeView('fatura','create');
 
+    }
+
+    public function show(){
+        $this->makeView('fatura','show');
     }
 
     public function store($idclient)

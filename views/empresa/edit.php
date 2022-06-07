@@ -57,19 +57,5 @@
 <h3>Editar Empresa</h3>
 </br>
 </div>
-<!--<div class="mb-3">
-    <label for="genres">Genre:</label><br>
-    <select name="genre_id">
-        <?php /*foreach($genres as $genre){?>
-            <?php if($genre->id == $book->genre_id) { ?>
-                <option value="<?= $genre->id?>" selected><?= $genre->name;
-                    ?> </option>
-            <?php }else { ?>
-                <option value="<?= $genre->id?>"> <?= $genre->name;
-                    ?></option>
-            <?php }
-        } */?>
-    </select>
-    </div> -->
 
 
