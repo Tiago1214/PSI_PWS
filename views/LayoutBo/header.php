@@ -127,8 +127,13 @@
                     </a>
                 </li>
                 <li>
+<<<<<<< HEAD
                     <a href="router.php?c=user&a=index">
                         <i class="fa fa-th"></i> <span>Users</span>
+=======
+                    <a href="router.php?c=iva&a=index">
+                        <i class="fa fa-th"></i> <span>Ivas</span>
+>>>>>>> 2fdecc442d67575f9c0a5ba0db78dffc34ae74ac
                         <span class="pull-right-container"></span>
                     </a>
                 </li>

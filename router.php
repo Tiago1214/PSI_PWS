@@ -6,7 +6,13 @@ require_once ('./controllers/EmpresaController.php');
 require_once ('./controllers/BackOfficeController.php');
 require_once ('./controllers/FaturaController.php');
 require_once ('./controllers/ProdutoController.php');
+<<<<<<< HEAD
 require_once ('./controllers/UserController.php');
+=======
+require_once ('./controllers/IvaController.php');
+
+
+>>>>>>> 2fdecc442d67575f9c0a5ba0db78dffc34ae74ac
 // ****** ROTA POR OMISSAO ******
 if(!isset($_GET['c']) && !isset($_GET['a']))
     {
@@ -127,6 +133,35 @@ else{
                        break;
                    case 'delete':
                        $produtocontroller->delete($_GET['id']);
+                       break;
+
+
+               }
+               break;
+
+           case 'iva':
+               $ivacontroller = new IvaController();
+               switch ($action) {
+                   case 'index':
+                       $ivacontroller->index();
+                       break;
+                   case 'show':
+                       $ivacontroller->show($_GET['id']);
+                       break;
+                   case 'create':
+                       $ivacontroller->create();
+                       break;
+                   case'store':
+                       $ivacontroller->store();
+                       break;
+                   case 'edit':
+                       $ivacontroller->edit($_GET['id']);
+                       break;
+                   case 'update':
+                       $ivacontroller->update($_GET['id']);
+                       break;
+                   case 'delete':
+                       $ivacontroller->delete($_GET['id']);
                        break;
 
 
