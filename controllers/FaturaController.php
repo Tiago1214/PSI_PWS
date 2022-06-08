@@ -1,12 +1,14 @@
 <?php
 use Carbon\Carbon;
+require_once ('./controllers/BaseController.php');
+require_once ('./controllers/BaseAuthController.php');
 
 class FaturaController  extends BaseAuthController
 {
     public function index()
     {
         $this->loginFilterByRole(['admin','funcionario']);
-        $faturas = faturas::All();
+        $faturas = Fatura::All();
 
         $this->makeView('fatura','index',['faturas'=>$faturas]);
 
@@ -19,8 +21,15 @@ class FaturaController  extends BaseAuthController
 
     }
 
-    public function show(){
-        $this->makeView('fatura','show');
+    public function show($id){
+        $fatura = Fatura::find([$id]);
+        if (is_null($fatura)) {
+
+        } else {
+            //mostrar a vista show passando os dados por parâmetro
+            $this->makeView('fatura','show',['fatura'=>$fatura]);
+        }
+
     }
 
     public function store($idclient)

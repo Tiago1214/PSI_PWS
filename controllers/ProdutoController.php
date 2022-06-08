@@ -97,5 +97,10 @@ class ProdutoController extends BaseAuthController
 
     }
 
+    public function select($callbacktoroute)
+    {
+
+    }
+
 
 }

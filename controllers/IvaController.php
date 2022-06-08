@@ -8,8 +8,8 @@ class IvaController extends BaseAuthController
     {
         $this->loginFilterbyRole(['funcionario','admin']);
     }
-<<<<<<< HEAD
-=======
+
+
 
     public function index()
     {
@@ -100,5 +100,5 @@ class IvaController extends BaseAuthController
     }
 
 
->>>>>>> 2fdecc442d67575f9c0a5ba0db78dffc34ae74ac
+
 }
