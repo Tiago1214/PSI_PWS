@@ -5,12 +5,8 @@ require_once ('./controllers/SiteController.php');
 require_once ('./controllers/EmpresaController.php');
 require_once ('./controllers/BackOfficeController.php');
 require_once ('./controllers/FaturaController.php');
-<<<<<<< HEAD
-=======
 require_once ('./controllers/ProdutoController.php');
->>>>>>> 482e5556cbd68eac6d0f027e44ebc9c3b109da69
-
-
+require_once ('./controllers/UserController.php');
 // ****** ROTA POR OMISSAO ******
 if(!isset($_GET['c']) && !isset($_GET['a']))
     {
@@ -144,6 +140,19 @@ else{
                    case 'show':
                        $faturacontroller->show();
                        break;
+               }
+
+           case 'user':
+               $usercontroller=new UserController();
+               switch($action){
+                   case 'index':
+                       $usercontroller->index();
+                       break;
+                   case 'show':
+                       $usercontroller->show($_GET['id']);
+                       break;
+                   case 'edit':
+                       $usercontroller->edit($_GET['id']);
                }
 
 

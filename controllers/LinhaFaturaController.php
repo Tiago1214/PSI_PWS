@@ -2,6 +2,10 @@
 
 class LinhaFaturaController
 {
+    public function  __Construct__()
+    {
+        $this->loginFilterbyRole(['funcionario','admin']);
+    }
     public function index()
     {
 
