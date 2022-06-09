@@ -6,13 +6,8 @@ require_once ('./controllers/EmpresaController.php');
 require_once ('./controllers/BackOfficeController.php');
 require_once ('./controllers/FaturaController.php');
 require_once ('./controllers/ProdutoController.php');
-<<<<<<< HEAD
 require_once ('./controllers/UserController.php');
-=======
 require_once ('./controllers/IvaController.php');
-
-
->>>>>>> 2fdecc442d67575f9c0a5ba0db78dffc34ae74ac
 // ****** ROTA POR OMISSAO ******
 if(!isset($_GET['c']) && !isset($_GET['a']))
     {
@@ -106,6 +101,9 @@ else{
                        break;
                    case 'store':
                        $faturacontroller->store($_GET['id']);
+                   case 'show':
+                       $faturacontroller->show();
+                       break;
 
                }
                break;
@@ -160,22 +158,12 @@ else{
                    case 'update':
                        $ivacontroller->update($_GET['id']);
                        break;
-                   case 'delete':
-                       $ivacontroller->delete($_GET['id']);
+                   case 'posicao':
+                       $ivacontroller->posicao($_GET['id']);
                        break;
-
 
                }
                break;
-
-
-           case 'fatura':
-               $faturacontroller=new FaturaController();
-               switch($action){
-                   case 'show':
-                       $faturacontroller->show();
-                       break;
-               }
 
            case 'user':
                $usercontroller=new UserController();
@@ -188,6 +176,14 @@ else{
                        break;
                    case 'edit':
                        $usercontroller->edit($_GET['id']);
+                   case 'update':
+                       $usercontroller->update($_GET['id']);
+                   case 'create':
+                       $usercontroller->create();
+                   case 'store':
+                       $usercontroller->store();
+                   case 'posicao':
+                       $usercontroller->posicao($_GET['id']);
                }
 
 

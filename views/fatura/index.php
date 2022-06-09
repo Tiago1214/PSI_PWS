@@ -1,1 +1,1 @@
-<?php
+<div class="content-wrapper"></div>

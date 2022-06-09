@@ -3,10 +3,13 @@ use Carbon\Carbon;
 
 class FaturaController  extends BaseAuthController
 {
+    public function  __Construct__()
+    {
+        $this->loginFilterbyRole(['funcionario','admin']);
+    }
     public function index()
     {
-        $this->loginFilterByRole(['admin','funcionario']);
-        $faturas = faturas::All();
+        $faturas = Fatura::All();
 
         $this->makeView('fatura','index',['faturas'=>$faturas]);
 

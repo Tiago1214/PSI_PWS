@@ -16,52 +16,21 @@
                         <form action="router.php?c=iva&a=store" method="post">
                             <div class="mb-3">
                                 <label for="percentagem" class="form-label">Percentagem</label>
-                                <input type="text" class="form-control" name="percentagem" value="<?php  if(isset($iva)) { echo
+                                <input type="number" max="30" class="form-control" name="percentagem" value="<?php  if(isset($iva)) { echo
                                 $iva->percentagem; }?>" > </br> <?php if(isset($iva->percentagem)){ echo '<div class="alert alert-danger">'.$iva->errors->on('percentagem') .'</div>';}  ?>
                             </div>
                             <div class="mb-3">
                                 <label for="descricao" class="form-label">Descrição</label>
-                                <input type="text" class="form-control" name="descricao" value="<?php if(isset($iva)) { echo
+                                <input type="text" class="form-control" aria-multiline="true" name="descricao" value="<?php if(isset($iva)) { echo
                                 $iva->descricao; }?>">
                                 </br>
                             </div>
-
-                                <?php
-                                /*
-                                if(isset($book->errors)){
-
-                                    if(is_array($book->errors->on('isbn'))) {
-                                        $errors= $book->errors->on('isbn');
-                                        foreach($errors as $error)
-                                        {
-
-                                            echo '<div class="alert alert-danger">'.$error.'</div>';
-                                        }
-                                    }else
-                                    {
-                                        echo $book->errors->on('isbn');
-                                    }
-
-                                }
-                                */
-                                ?>
-
-                            <div class="mb-3">
-                                <label for="emvigor">Em vigor:</label><br>
-                                <select name="emvigor">
-
-                                    <option value="1"> Ativo</option>
-                                    <option value="0"> Desativo</option>
-
-                                </select>
-                            </div>
-                        </br>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                            <a href="router.php?c=iva&a=index"  class="btn btn-info" role="button">Cancelar</a>
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                            <a href="router.php?c=iva&a=index"  class="btn btn-danger" role="button">Cancelar</a>
                         </form>
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-
-</div>
-</div>
 </div>

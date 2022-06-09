@@ -8,8 +8,6 @@ class IvaController extends BaseAuthController
     {
         $this->loginFilterbyRole(['funcionario','admin']);
     }
-<<<<<<< HEAD
-=======
 
     public function index()
     {
@@ -89,16 +87,28 @@ class IvaController extends BaseAuthController
         }
     }
 
-    public function delete($id)
-    {
-        $iva = Iva::find([$id]);
-
-
-        $iva->delete();
-        $this->redirectToRoute('iva','index');
-
+    public function posicao($id){
+        $iva=Iva::find([$id]);
+        if($iva->emvigor==1){
+            $iva->update_attribute(emvigor,0);
+            if($iva->is_valid()){
+                $iva->save();
+                $this->redirectToRoute('iva','index');
+            }
+            else{
+                $this->makeView('iva','index');
+            }
+        }
+        else if($iva->emvigor==0){
+            $iva->update_attribute(emvigor,1);
+            if($iva->is_valid()){
+                $iva->save();
+                $this->redirectToRoute('iva','index');
+            }
+            else{
+                $this->makeView('iva','index');
+            }
+        }
     }
 
-
->>>>>>> 2fdecc442d67575f9c0a5ba0db78dffc34ae74ac
 }
