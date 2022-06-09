@@ -6,13 +6,13 @@ require_once ('./controllers/EmpresaController.php');
 require_once ('./controllers/BackOfficeController.php');
 require_once ('./controllers/FaturaController.php');
 require_once ('./controllers/ProdutoController.php');
-<<<<<<< HEAD
+
 require_once ('./controllers/UserController.php');
-=======
+
 require_once ('./controllers/IvaController.php');
 
 
->>>>>>> 2fdecc442d67575f9c0a5ba0db78dffc34ae74ac
+
 // ****** ROTA POR OMISSAO ******
 if(!isset($_GET['c']) && !isset($_GET['a']))
     {
