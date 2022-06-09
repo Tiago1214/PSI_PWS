@@ -109,6 +109,12 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MENU</li>
                 <li>
+                    <a href="router.php?c=fatura&a=create">
+                        <i class="fa fa-th"></i> <span>Emitir Fatura</span>
+                        <span class="pull-right-container"></span>
+                    </a>
+                </li>
+                <li>
                     <a href="router.php?c=empresa&a=index">
                         <i class="fa fa-th"></i> <span>Empresa</span>
                         <span class="pull-right-container"></span>

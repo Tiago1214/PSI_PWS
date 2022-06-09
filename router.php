@@ -134,6 +134,9 @@ else{
                    case 'delete':
                        $produtocontroller->delete($_GET['id']);
                        break;
+                   case 'selectproduto':
+                       $produtocontroller->select();
+                       break;
 
 
                }
@@ -178,7 +181,17 @@ else{
                    case 'show':
                        $faturacontroller->show($_GET['id']);
                        break;
+                   case 'create':
+                       $faturacontroller->create();
+                       break;
+                   case 'selectclient':
+                       $faturacontroller->selectClient();
+                       break;
+                   case 'store':
+                       $faturacontroller->store($_GET['id']);
+                       break;
                }
+               break;
 
            case 'user':
                $usercontroller=new UserController();
@@ -191,7 +204,19 @@ else{
                        break;
                    case 'edit':
                        $usercontroller->edit($_GET['id']);
+                       break;
                }
+               break;
+
+           case 'linhafatura':
+               $linhafaturacontroller=new LinhaFaturaController();
+               switch ($action)
+               {
+                   case 'create':
+                       $linhafaturacontroller->create($_GET['idf'],$_GET['idp']);
+                       break;
+               }
+
 
 
         }
