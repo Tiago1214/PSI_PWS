@@ -3,6 +3,6 @@
 class LinhaFatura extends ActiveRecord\Model
 {
     static $belongs_to = array(
-        array('faturas')
+        array('fatura')
     );
 }

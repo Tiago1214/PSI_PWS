@@ -54,6 +54,10 @@
                 <!-- /.box -->
             </div>
 =======
+
+
+
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
@@ -121,7 +125,8 @@
                 <?php } ?>
                 </tbody>
             </table>
->>>>>>> 2fdecc442d67575f9c0a5ba0db78dffc34ae74ac
+
+>>>>>>> 5c0a66c80cba28f1982a22424214c97f26836c6a
         </div>
     </section>
 </div>

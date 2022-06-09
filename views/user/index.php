@@ -18,7 +18,7 @@
                         <div class="col-sm-6">
                             <h3>Criar um Utilizador</h3>
                             <p>
-                                <a href="router.php?c=produto&a=create" class="btn btn-info"
+                                <a href="router.php?c=user&a=create" class="btn btn-success"
                                    role="button">Novo</a>
                             </p>
                         </div>
@@ -27,9 +27,6 @@
                         <div class="col-sm-12">
                             <table class="table tablestriped">
                                 <thead>
-                                <th>
-                                    <h3>Id</h3>
-                                </th>
                                 <th>
                                     <h3>Utilizador</h3>
                                 </th>
@@ -58,31 +55,68 @@
                                     <h3>Role</h3>
                                 </th>
                                 <th>
+                                    <h3>Estado</h3>
+                                </th>
+                                <th>
                                     <h3>User Actions</h3>
                                 </th>
                                 </thead>
                                 <tbody>
                                 <?php foreach ($users as $user) { ?>
                                     <tr>
-                                        <td><?=$user->id ?></td>
-                                        <td><?=$user->username ?></td>
-                                        <td><?=$user->password ?></td>
-                                        <td><?= $user->email ?></td>
-                                        <td><?= $user->telefone ?></td>
-                                        <td><?= $user->nif ?></td>
-                                        <td><?= $user->morada ?></td>
-                                        <td><?= $user->codpostal ?></td>
-                                        <td><?= $user->localidade ?></td>
-                                        <td><?= $user->role ?></td>
-                                        <td>
-                                            <a href="router.php?c=user&a=show&id=<?=$user->id ?>"
-                                               class="btn btn-info" role="button">Show</a>
-                                            <a href="router.php?c=user&a=edit&id=<?=$user->id ?>"
-                                               class="btn btn-info" role="button">Edit</a>
-                                            <a href="router.php?c=user&a=delete&id=<?=$user->id ?>"
-                                               class="btn btn-warning" role="button">Delete</a>
-
-                                        </td>
+                                        <?php if($role=='administrador'){?>
+                                            <td><?=$user->username ?></td>
+                                            <td><?=$user->password ?></td>
+                                            <td><?= $user->email ?></td>
+                                            <td><?= $user->telefone ?></td>
+                                            <td><?= $user->nif ?></td>
+                                            <td><?= $user->morada ?></td>
+                                            <td><?= $user->codpostal ?></td>
+                                            <td><?= $user->localidade ?></td>
+                                            <td><?= $user->role ?></td>
+                                            <td><?php if($user->estado==1){
+                                                    echo 'Ativo';
+                                                }else{
+                                                    echo 'Desativo';
+                                                } ?>
+                                            </td>
+                                            <td>
+                                                <a href="router.php?c=user&a=show&id=<?=$user->id ?>"
+                                                   class="btn btn-info" role="button">Show</a>
+                                                <a href="router.php?c=user&a=edit&id=<?=$user->id ?>"
+                                                   class="btn btn-warning" role="button">Edit</a>
+                                                <?php if($user->estado==1){?>
+                                                    <a href="router.php?c=user&a=posicao&id=<?=$user->id ?>"
+                                                   class="btn btn-danger" role="button">Desativar</a>
+                                                <?php
+                                                }else if($user->estado==0){?>
+                                                    <a href="router.php?c=user&a=posicao&id=<?=$user->id ?>"
+                                                   class="btn btn-success" role="button">Ativar</a>
+                                                <?php
+                                                }?>
+                                            </td>
+                                        <?php }else if($role=='funcionario'&&$user->role=='cliente'){ ?>
+                                            <td><?=$user->username ?></td>
+                                            <td><?=$user->password ?></td>
+                                            <td><?= $user->email ?></td>
+                                            <td><?= $user->telefone ?></td>
+                                            <td><?= $user->nif ?></td>
+                                            <td><?= $user->morada ?></td>
+                                            <td><?= $user->codpostal ?></td>
+                                            <td><?= $user->localidade ?></td>
+                                            <td><?= $user->role ?></td>
+                                            <td><?php if($user->estado==1){
+                                                    echo 'Ativo';
+                                                }else{
+                                                    echo 'Desativo';
+                                                } ?></td></td>
+                                            <td>
+                                                <a href="router.php?c=user&a=show&id=<?=$user->id ?>"
+                                                   class="btn btn-info" role="button">Show</a>
+                                                <a href="router.php?c=user&a=edit&id=<?=$user->id ?>"
+                                                   class="btn btn-warning" role="button">Edit</a>
+                                            </td>
+                                        <?php }?>
                                     </tr>
                                 <?php } ?>
                                 </tbody>

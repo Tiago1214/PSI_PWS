@@ -1,26 +1,37 @@
 <?php
 use Carbon\Carbon;
+require_once ('./controllers/BaseController.php');
+require_once ('./controllers/BaseAuthController.php');
 
 class FaturaController  extends BaseAuthController
 {
+    public function  __Construct__()
+    {
+        $this->loginFilterbyRole(['funcionario','admin']);
+    }
     public function index()
     {
-        $this->loginFilterByRole(['admin','funcionario']);
-        $faturas = faturas::All();
-
+        $faturas = Fatura::All();
         $this->makeView('fatura','index',['faturas'=>$faturas]);
 
     }
 
     public function create()
     {
-        $this->loginFilterByRole(['admin','funcionario']);
-        $this->makeView('fatura','create');
+        $empresas=Empresa::All();
+        $this->makeView('fatura','create',['empresas'=>$empresas]);
 
     }
 
-    public function show(){
-        $this->makeView('fatura','show');
+    public function show($id){
+        $fatura = Fatura::find([$id]);
+        if (is_null($fatura)) {
+
+        } else {
+            //mostrar a vista show passando os dados por parâmetro
+            $this->makeView('fatura','show',['fatura'=>$fatura]);
+        }
+
     }
 
     public function store($idclient)
@@ -49,7 +60,8 @@ class FaturaController  extends BaseAuthController
 
     public function selectClient($searchFilter)
     {
-
+        $users = User::All();
+        $this->makeView('fatura','selectclient',['users'=>$users]);
     }
 
     public function delete($idfatura)

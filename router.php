@@ -9,10 +9,16 @@ require_once ('./controllers/ProdutoController.php');
 
 require_once ('./controllers/UserController.php');
 
+
+require_once ('./controllers/UserController.php');
 require_once ('./controllers/IvaController.php');
+require_once ('./controllers/UserController.php');
 
 
 
+
+
+require_once ('./controllers/IvaController.php');
 // ****** ROTA POR OMISSAO ******
 if(!isset($_GET['c']) && !isset($_GET['a']))
     {
@@ -63,12 +69,12 @@ else{
                     case 'show':
                         $empresacontroller->show($_GET['id']);
                         break;
-                   /* case 'create':
+                    case 'create':
                         $empresacontroller->create();
                         break;
                     case'store':
                         $empresacontroller->store();
-                        break;*/
+                        break;
                     case 'edit':
                         $empresacontroller->edit($_GET['id']);
                         break;
@@ -93,6 +99,7 @@ else{
                         break;
                 }
                 break;
+
            case 'fatura':
                $faturacontroller = new FaturaController();
                switch ($action)
@@ -106,6 +113,9 @@ else{
                        break;
                    case 'store':
                        $faturacontroller->store($_GET['id']);
+                   case 'show':
+                       $faturacontroller->show();
+                       break;
 
                }
                break;
@@ -134,6 +144,9 @@ else{
                    case 'delete':
                        $produtocontroller->delete($_GET['id']);
                        break;
+                   case 'selectproduto':
+                       $produtocontroller->select();
+                       break;
 
 
                }
@@ -160,22 +173,35 @@ else{
                    case 'update':
                        $ivacontroller->update($_GET['id']);
                        break;
-                   case 'delete':
-                       $ivacontroller->delete($_GET['id']);
+                   case 'posicao':
+                       $ivacontroller->posicao($_GET['id']);
                        break;
-
 
                }
                break;
 
 
+
            case 'fatura':
                $faturacontroller=new FaturaController();
                switch($action){
+                   case 'index':
+                       $faturacontroller->index();
+                       break;
                    case 'show':
-                       $faturacontroller->show();
+                       $faturacontroller->show($_GET['id']);
+                       break;
+                   case 'create':
+                       $faturacontroller->create();
+                       break;
+                   case 'selectclient':
+                       $faturacontroller->selectClient();
+                       break;
+                   case 'store':
+                       $faturacontroller->store($_GET['id']);
                        break;
                }
+               break;
 
            case 'user':
                $usercontroller=new UserController();
@@ -188,7 +214,32 @@ else{
                        break;
                    case 'edit':
                        $usercontroller->edit($_GET['id']);
+                       break;
+                   case 'update':
+                       $usercontroller->update($_GET['id']);
+                       break;
+                   case 'create':
+                       $usercontroller->create();
+                       break;
+                   case 'store':
+                       $usercontroller->store();
+                       break;
+                   case 'posicao':
+                       $usercontroller->posicao($_GET['id']);
+                       break;
+
                }
+               break;
+
+           case 'linhafatura':
+               $linhafaturacontroller=new LinhaFaturaController();
+               switch ($action)
+               {
+                   case 'create':
+                       $linhafaturacontroller->create($_GET['idf'],$_GET['idp']);
+                       break;
+               }
+
 
 
         }

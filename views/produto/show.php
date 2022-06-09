@@ -14,7 +14,7 @@
                 <div class="box">
                     <div class="box-header">
                         <a href="router.php?c=produto&a=edit&id=<?=$produto->id ?>"
-                           class="btn btn-info" role="button">Edit</a>
+                           class="btn btn-warning" role="button">Edit</a>
 
                             <h3>ID</h3><td><?=$produto->id ?></td>
                             <h3>Referência</h3><td><?=$produto->referencia ?></td>

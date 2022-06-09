@@ -18,7 +18,7 @@
                         <div class="col-sm-6">
                             <h3>Criar um Produto</h3>
                             <p>
-                                <a href="router.php?c=produto&a=create" class="btn btn-info"
+                                <a href="router.php?c=produto&a=create" class="btn btn-success"
                                    role="button">Novo</a>
                             </p>
                         </div>
@@ -67,9 +67,9 @@
                             <a href="router.php?c=produto&a=show&id=<?=$produto->id ?>"
                                class="btn btn-info" role="button">Show</a>
                             <a href="router.php?c=produto&a=edit&id=<?=$produto->id ?>"
-                               class="btn btn-info" role="button">Edit</a>
+                               class="btn btn-warning" role="button">Edit</a>
                             <a href="router.php?c=produto&a=delete&id=<?=$produto->id ?>"
-                               class="btn btn-warning" role="button">Delete</a>
+                               class="btn btn-danger" role="button">Delete</a>
 
                         </td>
                     </tr>

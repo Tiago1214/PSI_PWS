@@ -14,7 +14,7 @@
                 <div class="box">
                     <div class="box-header">
                         <a href="router.php?c=user&a=edit&id=<?=$user->id ?>"
-                           class="btn btn-info" role="button">Edit</a>
+                           class="btn btn-warning" role="button">Edit</a>
 
                         <h3>ID</h3><td><?=$user->id ?></td>
                         <h3>Utilizador</h3><td><?=$user->username ?></td>
@@ -25,7 +25,12 @@
                         <h3>Morada</h3><td><?=$user->morada ?></td>
                         <h3>Código Postal</h3><td><?=$user->codpostal ?></td>
                         <h3>Localidade</h3><td><?=$user->localidade ?></td>
-                        <h3>Role</h3><td><?=$user->role ?></td>
+                        <h3>Role</h3><td><?= $user->role ?></td>
+                        <h3>Estado</h3><td><?php if($user->estado==1){
+                            echo 'Ativo';
+                            }else{
+                            echo 'Desativo';
+                            } ?></td>
                     </div>
                 </div>
             </div>
