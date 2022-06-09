@@ -110,5 +110,4 @@ class IvaController extends BaseAuthController
             }
         }
     }
-
 }

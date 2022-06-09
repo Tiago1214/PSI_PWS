@@ -26,13 +26,13 @@
                             Código Postal:<?php  echo $empresa->codpostal;?> <?php echo $empresa->localidade?><br>
                             Telefone: <?php echo $empresa->telefone; ?><br>
                             Email: <?php echo $empresa ->email?><br>
-                        <?php
+                            <?php
                         } ?>
                     </address>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
-                    <a href="router.php?c=fatura&a=selectcliente"  class="btn btn-info" role="button">Selecionar Cliente</a>
+
                 </div>
             </div>
             <!-- /.row -->
@@ -53,7 +53,14 @@
                         </thead>
                         <tbody>
                         <tr>
+                            <?php foreach($linhafatura in $linha){
 
+                            }?>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="router.php?c=fatura&a=selectproduto"  class="btn btn-info" role="button">Selecionar Produto</a>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -103,3 +110,4 @@
         </section>
     </div>
 </div>
+

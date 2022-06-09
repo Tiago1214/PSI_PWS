@@ -127,8 +127,9 @@
                     </a>
                 </li>
                 <li>
+
                     <a href="router.php?c=user&a=index">
-                        <i class="fa fa-th"></i> <span>Users</span>
+                        <i class="fa fa-th"></i> <span>Utilizadores</span>
                     </a>
                 </li>
                 <li>

@@ -8,6 +8,9 @@ require_once ('./controllers/FaturaController.php');
 require_once ('./controllers/ProdutoController.php');
 require_once ('./controllers/UserController.php');
 require_once ('./controllers/IvaController.php');
+require_once ('./controllers/UserController.php');
+
+require_once ('./controllers/IvaController.php');
 // ****** ROTA POR OMISSAO ******
 if(!isset($_GET['c']) && !isset($_GET['a']))
     {
@@ -58,12 +61,12 @@ else{
                     case 'show':
                         $empresacontroller->show($_GET['id']);
                         break;
-                   /* case 'create':
+                    case 'create':
                         $empresacontroller->create();
                         break;
                     case'store':
                         $empresacontroller->store();
-                        break;*/
+                        break;
                     case 'edit':
                         $empresacontroller->edit($_GET['id']);
                         break;
@@ -164,6 +167,19 @@ else{
 
                }
                break;
+
+
+
+           case 'fatura':
+               $faturacontroller=new FaturaController();
+               switch($action){
+                   case 'index':
+                       $faturacontroller->index();
+                       break;
+                   case 'show':
+                       $faturacontroller->show($_GET['id']);
+                       break;
+               }
 
            case 'user':
                $usercontroller=new UserController();
