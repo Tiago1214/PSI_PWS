@@ -18,7 +18,7 @@
                         <div class="col-sm-6">
                             <h3>Criar um Iva</h3>
                             <p>
-                                <a href="router.php?c=iva&a=create" class="btn btn-info"
+                                <a href="router.php?c=iva&a=create" class="btn btn-success"
                                    role="button">Novo</a>
                             </p>
                         </div>
@@ -31,9 +31,6 @@
         <div class="col-sm-12">
             <table class="table tablestriped">
                 <thead>
-                    <th>
-                        <h3>Id</h3>
-                    </th>
                     <th>
                         <h3>Percentagem</h3>
                     </th>
@@ -50,8 +47,7 @@
                 <tbody>
                 <?php foreach ($ivas as $iva) { ?>
                     <tr>
-                        <td><?=$iva->id ?></td>
-                        <td><?=$iva->percentagem ?></td>
+                        <td><?=$iva->percentagem ?>%</td>
                         <td><?=$iva->descricao ?></td>
                         <td><?php if($iva->emvigor == '1') echo 'Ativo'; else echo 'Desativo';?></td>
 
@@ -59,16 +55,20 @@
                             <a href="router.php?c=iva&a=show&id=<?=$iva->id ?>"
                                class="btn btn-info" role="button">Show</a>
                             <a href="router.php?c=iva&a=edit&id=<?=$iva->id ?>"
-                               class="btn btn-info" role="button">Edit</a>
-                            <a href="router.php?c=iva&a=delete&id=<?=$iva->id ?>"
-                               class="btn btn-warning" role="button">Delete</a>
-
+                               class="btn btn-warning" role="button">Edit</a>
+                            <?php if($iva->emvigor==1){?>
+                                <a href="router.php?c=iva&a=posicao&id=<?=$iva->id ?>"
+                                   class="btn btn-danger" role="button">Desativar</a>
+                                <?php
+                            }else if($iva->emvigor==0){?>
+                                <a href="router.php?c=iva&a=posicao&id=<?=$iva->id ?>"
+                                   class="btn btn-success" role="button">Ativar</a>
+                                <?php
+                            }?>
                         </td>
                     </tr>
                 <?php } ?>
                 </tbody>
             </table>
     </section>
-        </div>
-    </div>
 </div>

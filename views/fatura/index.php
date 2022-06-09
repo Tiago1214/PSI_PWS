@@ -18,7 +18,7 @@
                         <div class="col-sm-6">
                             <h3>Emitir uma fatura</h3>
                             <p>
-                                <a href="router.php?c=produto&a=create" class="btn btn-info"
+                                <a href="router.php?c=fatura&a=create" class="btn btn-info"
                                    role="button">Nova</a>
                             </p>
                         </div>
@@ -83,8 +83,11 @@
                                     <?php } ?>
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </div>
-</div>
-</div>
-

@@ -5,19 +5,21 @@ require_once ('./controllers/BaseAuthController.php');
 
 class FaturaController  extends BaseAuthController
 {
+    public function  __Construct__()
+    {
+        $this->loginFilterbyRole(['funcionario','admin']);
+    }
     public function index()
     {
-        $this->loginFilterByRole(['admin','funcionario']);
         $faturas = Fatura::All();
-
         $this->makeView('fatura','index',['faturas'=>$faturas]);
 
     }
 
     public function create()
     {
-        $this->loginFilterByRole(['admin','funcionario']);
-        $this->makeView('fatura','create');
+        $empresas=Empresa::All();
+        $this->makeView('fatura','create',['empresas'=>$empresas]);
 
     }
 

@@ -1,52 +1,47 @@
 <div class="content-wrapper">
     <form  action="router.php?c=user&a=update&id=<?= $user->id ?>" method="post">
         <div class="mb-3">
-            <label for="referencia" class="form-label">Utilizador</label>
-            <input type="text" readonly name="referencia" value="<?= $user->username ?>"></br> <?php /* if(isset($book->errors)){ echo $book->errors->on('nome') ;} */ ?>
+            <label for="username" class="form-label">Utilizador</label>
+            <input type="text" readonly name="username" value="<?= $user->username ?>"></br>
         </div>
         <div class="mb-3">
-            <label for="descricao" class="form-label">Password</label>
-            <input type="text" name="descricao" value="<?= $user->password ?>"></br>
+            <label for="password" class="form-label">Password</label>
+            <input type="text" name="password" value="<?= $user->password ?>"></br>
         </div>
         <div class="mb-3">
-            <label for="preco" class="form-label">Email</label>
-            <input type="text" name="preco" value="<?= $user->email ?>"></br>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" value="<?= $user->email ?>"></br>
         </div>
         <div class="mb-3">
-            <label for="stock" class="form-label">Telefone</label>
-            <input type="text" name="stock" value="<?= $user->telefone ?>"></br>
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="text" name="telefone" value="<?= $user->telefone ?>"></br>
         </div>
         <div class="mb-3">
-            <label for="stock" class="form-label">NIF</label>
-            <input type="text" name="stock" value="<?= $user->nif ?>"></br>
+            <label for="nif" class="form-label">NIF</label>
+            <input type="text" name="nif" value="<?= $user->nif ?>"></br>
         </div>
         <div class="mb-3">
-            <label for="stock" class="form-label">Morada</label>
-            <input type="text" name="stock" value="<?= $user->morada ?>"></br>
+            <label for="morada" class="form-label">Morada</label>
+            <input type="text" name="morada" value="<?= $user->morada ?>"></br>
         </div>
         <div class="mb-3">
-            <label for="stock" class="form-label">Código Postal</label>
-            <input type="text" name="stock" value="<?= $user->codpostal ?>"></br>
+            <label for="codpostal" class="form-label">Código Postal</label>
+            <input type="text" name="codpostal" value="<?= $user->codpostal ?>"></br>
         </div>
         <div class="mb-3">
-            <label for="stock" class="form-label">Localidade</label>
-            <input type="text" name="stock" value="<?= $user->localidade ?>"></br>
+            <label for="localidade" class="form-label">Localidade</label>
+            <input type="text" name="localidade" value="<?= $user->localidade ?>"></br>
         </div>
         <?php
         if($role=='administrador'){
             ?>
             <div class="mb-3">
                 <label for="role" class="form-label">Role</label>
-                <input type="text" name="stock" value="<?= $user->role ?>"></br>
+                <input type="text" name="role" value="<?= $user->role ?>"></br>
             </div>
-        <?php }
-        else if($role=='funcionario'){
-            ?>
-
-        <?php }
-        ?>
+        <?php } ?>
         <button type="submit" class="btn btn-primary">Enviar</button>
-        <a href="router.php?c=empresa&a=index"  class="btn btn-info" role="button">Cancelar</a>
+        <a href="router.php?c=user&a=index"  class="btn btn-info" role="button">Cancelar</a>
     </form>
 </div>
 
