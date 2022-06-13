@@ -1,5 +1,4 @@
 <div class="content-wrapper">
-<<<<<<< HEAD
     <!-- Main content -->
     <section class="content">
         <div class="row">
@@ -53,7 +52,6 @@
                 </div>
                 <!-- /.box -->
             </div>
-=======
 
 
 
@@ -126,7 +124,6 @@
                 </tbody>
             </table>
 
->>>>>>> 5c0a66c80cba28f1982a22424214c97f26836c6a
         </div>
     </section>
 </div>
