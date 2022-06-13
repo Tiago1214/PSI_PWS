@@ -108,6 +108,9 @@ else{
                    case 'show':
                        $faturacontroller->show();
                        break;
+                   case 'selectclient':
+                       $faturacontroller->selectClient();
+                       break;
 
                }
                break;
