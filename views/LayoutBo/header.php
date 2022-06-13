@@ -51,7 +51,7 @@
         <nav class="navbar navbar-static-top">
             <!-- Sidebar toggle button-->
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">Barra de Navegação</span>
             </a>
             <!-- User Menu -->
             <div class="navbar-custom-menu">
@@ -82,7 +82,7 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="#" class="btn btn-default btn-flat">Perfil</a>
                                 </div>
                                 <div class="pull-right">
                                     <?php

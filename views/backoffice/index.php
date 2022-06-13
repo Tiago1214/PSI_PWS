@@ -5,12 +5,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Dashboard
-                <small>Control panel</small>
+                Painel de Controlo
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li><a href="#"><i class="fa fa-dashboard"></i> Menu</a></li>
+                <li class="active">Painel de Controlo</li>
             </ol>
         </section>
 
@@ -24,12 +23,12 @@
                         <div class="inner">
                             <h3>150</h3>
 
-                            <p>New Orders</p>
+                            <p>Novas Encomendas</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="#" class="small-box-footer">Mais Informação <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -39,12 +38,12 @@
                         <div class="inner">
                             <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                            <p>Bounce Rate</p>
+                            <p>Taxa de Rejeição</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="#" class="small-box-footer">Mais Informação <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -54,12 +53,12 @@
                         <div class="inner">
                             <h3>44</h3>
 
-                            <p>User Registrations</p>
+                            <p>Registos</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="#" class="small-box-footer">Mais Informação <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -69,12 +68,12 @@
                         <div class="inner">
                             <h3>65</h3>
 
-                            <p>Unique Visitors</p>
+                            <p>Consultas</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="#" class="small-box-footer">Mais Informação <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -88,9 +87,9 @@
                     <div class="nav-tabs-custom">
                         <!-- Tabs within a box -->
                         <ul class="nav nav-tabs pull-right">
-                            <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-                            <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-                            <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+                            <li class="active"><a href="#revenue-chart" data-toggle="tab">Mapa</a></li>
+                            <li><a href="#sales-chart" data-toggle="tab">Gráfico Circular</a></li>
+                            <li class="pull-left header"><i class="fa fa-inbox"></i> Saldo</li>
                         </ul>
                         <div class="tab-content no-padding">
                             <!-- Morris chart - Sales -->
@@ -192,7 +191,7 @@
                         <div class="box-header">
                             <i class="ion ion-clipboard"></i>
 
-                            <h3 class="box-title">To Do List</h3>
+                            <h3 class="box-title">Lista de Tarefas</h3>
 
                             <div class="box-tools pull-right">
                                 <ul class="pagination pagination-sm inline">
@@ -217,9 +216,9 @@
                                     <!-- checkbox -->
                                     <input type="checkbox" value="">
                                     <!-- todo text -->
-                                    <span class="text">Design a nice theme</span>
+                                    <span class="text">Alterar o Website</span>
                                     <!-- Emphasis label -->
-                                    <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+                                    <small class="label label-danger"><i class="fa fa-clock-o"></i> 5 hour</small>
                                     <!-- General tools such as edit or delete-->
                                     <div class="tools">
                                         <i class="fa fa-edit"></i>
@@ -232,8 +231,8 @@
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                                     <input type="checkbox" value="">
-                                    <span class="text">Make the theme responsive</span>
-                                    <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+                                    <span class="text">Tronar o Website responsivo</span>
+                                    <small class="label label-info"><i class="fa fa-clock-o"></i> 8 hours</small>
                                     <div class="tools">
                                         <i class="fa fa-edit"></i>
                                         <i class="fa fa-trash-o"></i>
@@ -245,7 +244,7 @@
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                                     <input type="checkbox" value="">
-                                    <span class="text">Let theme shine like a star</span>
+                                    <span class="text">Gerir novos pedidos da empresa</span>
                                     <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
                                     <div class="tools">
                                         <i class="fa fa-edit"></i>
@@ -258,8 +257,8 @@
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                                     <input type="checkbox" value="">
-                                    <span class="text">Let theme shine like a star</span>
-                                    <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
+                                    <span class="text">Criar planos de publicidade</span>
+                                    <small class="label label-success"><i class="fa fa-clock-o"></i> 2 week</small>
                                     <div class="tools">
                                         <i class="fa fa-edit"></i>
                                         <i class="fa fa-trash-o"></i>
@@ -271,8 +270,8 @@
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                                     <input type="checkbox" value="">
-                                    <span class="text">Check your messages and notifications</span>
-                                    <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
+                                    <span class="text">Consultar todas as mensagens e notificações</span>
+                                    <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 hour</small>
                                     <div class="tools">
                                         <i class="fa fa-edit"></i>
                                         <i class="fa fa-trash-o"></i>
@@ -284,7 +283,7 @@
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                                     <input type="checkbox" value="">
-                                    <span class="text">Let theme shine like a star</span>
+                                    <span class="text">Aumentar as Vendas</span>
                                     <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
                                     <div class="tools">
                                         <i class="fa fa-edit"></i>
@@ -295,7 +294,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer clearfix no-border">
-                            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+                            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Adicionar item</button>
                         </div>
                     </div>
                     <!-- /.box -->
@@ -305,7 +304,7 @@
                         <div class="box-header">
                             <i class="fa fa-envelope"></i>
 
-                            <h3 class="box-title">Quick Email</h3>
+                            <h3 class="box-title">Enviar Email</h3>
                             <!-- tools box -->
                             <div class="pull-right box-tools">
                                 <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip"
@@ -317,19 +316,19 @@
                         <div class="box-body">
                             <form action="#" method="post">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" name="emailto" placeholder="Email to:">
+                                    <input type="email" class="form-control" name="emailto" placeholder="Email para:">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" name="subject" placeholder="Assunto">
                                 </div>
                                 <div>
-                  <textarea class="textarea" placeholder="Message"
+                  <textarea class="textarea" placeholder="Mensagem"
                             style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                 </div>
                             </form>
                         </div>
                         <div class="box-footer clearfix">
-                            <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
+                            <button type="button" class="pull-right btn btn-default" id="sendEmail">Enviar
                                 <i class="fa fa-arrow-circle-right"></i></button>
                         </div>
                     </div>
@@ -356,7 +355,7 @@
                             <i class="fa fa-map-marker"></i>
 
                             <h3 class="box-title">
-                                Visitors
+                                Consultas
                             </h3>
                         </div>
                         <div class="box-body">
@@ -367,7 +366,7 @@
                             <div class="row">
                                 <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                                     <div id="sparkline-1"></div>
-                                    <div class="knob-label">Visitors</div>
+                                    <div class="knob-label">Consultas</div>
                                 </div>
                                 <!-- ./col -->
                                 <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
@@ -377,7 +376,7 @@
                                 <!-- ./col -->
                                 <div class="col-xs-4 text-center">
                                     <div id="sparkline-3"></div>
-                                    <div class="knob-label">Exists</div>
+                                    <div class="knob-label">Presenciais</div>
                                 </div>
                                 <!-- ./col -->
                             </div>
@@ -391,7 +390,7 @@
                         <div class="box-header">
                             <i class="fa fa-th"></i>
 
-                            <h3 class="box-title">Sales Graph</h3>
+                            <h3 class="box-title">Gráfico de Vendas</h3>
 
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -410,7 +409,7 @@
                                     <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
                                            data-fgColor="#39CCCC">
 
-                                    <div class="knob-label">Mail-Orders</div>
+                                    <div class="knob-label">Encomendas por Email</div>
                                 </div>
                                 <!-- ./col -->
                                 <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
@@ -424,7 +423,7 @@
                                     <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
                                            data-fgColor="#39CCCC">
 
-                                    <div class="knob-label">In-Store</div>
+                                    <div class="knob-label">Em loja</div>
                                 </div>
                                 <!-- ./col -->
                             </div>
@@ -439,7 +438,7 @@
                         <div class="box-header">
                             <i class="fa fa-calendar"></i>
 
-                            <h3 class="box-title">Calendar</h3>
+                            <h3 class="box-title">Calendário</h3>
                             <!-- tools box -->
                             <div class="pull-right box-tools">
                                 <!-- button with a dropdown -->
@@ -447,10 +446,10 @@
                                     <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
                                         <i class="fa fa-bars"></i></button>
                                     <ul class="dropdown-menu pull-right" role="menu">
-                                        <li><a href="#">Add new event</a></li>
-                                        <li><a href="#">Clear events</a></li>
+                                        <li><a href="#">Adicionar um novo evento</a></li>
+                                        <li><a href="#">Limpar eventos</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="#">View calendar</a></li>
+                                        <li><a href="#">Ver calendário</a></li>
                                     </ul>
                                 </div>
                                 <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -471,7 +470,7 @@
                                 <div class="col-sm-6">
                                     <!-- Progress bars -->
                                     <div class="clearfix">
-                                        <span class="pull-left">Task #1</span>
+                                        <span class="pull-left">Tarefa #1</span>
                                         <small class="pull-right">90%</small>
                                     </div>
                                     <div class="progress xs">
@@ -479,7 +478,7 @@
                                     </div>
 
                                     <div class="clearfix">
-                                        <span class="pull-left">Task #2</span>
+                                        <span class="pull-left">Tarefa #2</span>
                                         <small class="pull-right">70%</small>
                                     </div>
                                     <div class="progress xs">
@@ -489,7 +488,7 @@
                                 <!-- /.col -->
                                 <div class="col-sm-6">
                                     <div class="clearfix">
-                                        <span class="pull-left">Task #3</span>
+                                        <span class="pull-left">Tarefa #3</span>
                                         <small class="pull-right">60%</small>
                                     </div>
                                     <div class="progress xs">
@@ -497,7 +496,7 @@
                                     </div>
 
                                     <div class="clearfix">
-                                        <span class="pull-left">Task #4</span>
+                                        <span class="pull-left">Tarefa #4</span>
                                         <small class="pull-right">40%</small>
                                     </div>
                                     <div class="progress xs">
