@@ -87,7 +87,7 @@
                                 if($tipouser->getRole()=='funcionario'||$tipouser->getRole()=='administrador'){
                                     ?>
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat"></a>
+                                        <a href="./router.php?c=user&a=changedados&id=<?= $tipouser->getUserId(); ?>" class="btn btn-default btn-flat">Mudar Dados</a>
                                     </div>
                                     <?php
                                 } ?>

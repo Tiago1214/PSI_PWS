@@ -31,9 +31,6 @@
                                     <h3>Utilizador</h3>
                                 </th>
                                 <th>
-                                    <h3>Palavra-Passe</h3>
-                                </th>
-                                <th>
                                     <h3>Email</h3>
                                 </th>
                                 <th>
@@ -66,7 +63,6 @@
                                     <tr>
                                         <?php if($role=='administrador'){?>
                                             <td><?=$user->username ?></td>
-                                            <td><?=$user->password ?></td>
                                             <td><?= $user->email ?></td>
                                             <td><?= $user->telefone ?></td>
                                             <td><?= $user->nif ?></td>

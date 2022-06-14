@@ -6,7 +6,7 @@ class IvaController extends BaseAuthController
 {
     public function  __Construct__()
     {
-        $this->loginFilterbyRole(['funcionario','admin']);
+        $this->loginFilterbyRole(['funcionario','administrador']);
     }
 
 
