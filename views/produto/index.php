@@ -32,9 +32,6 @@
             <table class="table tablestriped">
                 <thead>
                     <th>
-                        <h3>Id</h3>
-                    </th>
-                    <th>
                         <h3>Referência</h3>
                     </th>
                     <th>
@@ -56,7 +53,6 @@
                 <tbody>
                 <?php foreach ($produtos as $produto) { ?>
                     <tr>
-                        <td><?=$produto->id ?></td>
                         <td><?=$produto->referencia ?></td>
                         <td><?=$produto->descricao ?></td>
                         <td><?= $produto->preco ?></td>

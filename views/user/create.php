@@ -31,25 +31,25 @@
                             </div>
                             <div class="mb-3">
                                 <label for="telefone" class="form-label">Telefone</label>
-                                <input type="tel" class="form-control" required name="telefone" value="<?php if(isset($user)) { echo
+                                <input type="tel" maxlength="9" class="form-control" required name="telefone" value="<?php if(isset($user)) { echo
                                 $produto->telefone; }?>">
                                 </br>
                             </div>
                             <div class="mb-3">
                                 <label for="nif" class="form-label">NIF</label>
-                                <input type="tel" class="form-control" required name="nif" value="<?php if(isset($user)) { echo
+                                <input type="tel" maxlength="9" class="form-control" required name="nif" value="<?php if(isset($user)) { echo
                                 $produto->nif; }?>">
                                 </br>
                             </div>
                             <div class="mb-3">
                                 <label for="morada" class="form-label">Morada</label>
-                                <input type="text" class="form-control" required name="morada" value="<?php if(isset($user)) { echo
+                                <input type="tel"  class="form-control" required name="morada" value="<?php if(isset($user)) { echo
                                 $produto->morada; }?>">
                                 </br>
                             </div>
                             <div class="mb-3">
                                 <label for="codpostal" class="form-label">Código Postal</label>
-                                <input type="text" class="form-control" required name="codpostal" id="codpostal" minlength="8" maxlength="8" placeholder="____-___" value="<?php if(isset($user)) { echo
+                                <input type="tel" maxlength="8" class="form-control" required name="codpostal" id="codpostal" minlength="8" maxlength="8" placeholder="____-___" value="<?php if(isset($user)) { echo
                                 $produto->codpostal; }?>">
                                 </br>
                             </div>
@@ -59,7 +59,7 @@
                                 $produto->localidade; }?>">
                                 </br>
                             </div>
-                            <?php if($role=='administrador'){?>
+                            <?php if($tipouser=='administrador'){?>
                                 <div class="mb-3">
                                     <label for="role" class="form-label">Role</label>
                                     <select name="role">
@@ -69,7 +69,7 @@
                                     </select>
                                     </br>
                                 </div>
-                            <?php } else if($role=='funcionario'){?>
+                            <?php } else if($tipouser=='funcionario'){?>
                                 <div class="mb-3">
                                     <label for="role" class="form-label">Role</label>
                                     <select name="role">

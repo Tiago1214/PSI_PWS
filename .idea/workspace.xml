@@ -1,40 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0be32fb1-b4c0-42a3-9223-2f9696515b4c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/linhafatura/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PSI_PWS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PSI_PWS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/creditapp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/FaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FaturaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/IvaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/IvaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ProdutoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProdutoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Fatura.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Fatura.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Iva.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Iva.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/LinhaFatura.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/LinhaFatura.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/BO/bower_components/ckeditor/.npm/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/BO/bower_components/ckeditor/.npm/assets/ckeditor4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayoutBo/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayoutBo/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/empresa/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/empresa/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fatura/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fatura/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fatura/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/show.php" afterDir="false" />
-    </list>
+    <list default="true" id="0be32fb1-b4c0-42a3-9223-2f9696515b4c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -49,6 +30,11 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2AI4SGi21PK8yI4PtDsDBY8gP2U" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -56,10 +42,10 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
-      <method v="2" />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\PSI_PWS\public\FO\css" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -70,8 +56,19 @@
       <option name="presentableId" value="Default" />
       <updated>1654683764580</updated>
       <workItem from="1654683765751" duration="11000" />
+      <workItem from="1654683778221" duration="5971000" />
+      <workItem from="1654769857759" duration="5417000" />
+      <workItem from="1655223792137" duration="23000" />
+      <workItem from="1655223827694" duration="5000" />
+      <workItem from="1655223834523" duration="632000" />
+      <workItem from="1655224531564" duration="25000" />
+      <workItem from="1655224886804" duration="5000" />
+      <workItem from="1655224893277" duration="3772000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

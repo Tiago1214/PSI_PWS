@@ -6,27 +6,27 @@
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="text" name="password" value="<?= $user->password ?>"></br>
+            <input type="password" name="password" required value="<?= $user->password ?>"></br>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" value="<?= $user->email ?>"></br>
+            <input type="email" required name="email" value="<?= $user->email ?>"></br>
         </div>
         <div class="mb-3">
             <label for="telefone" class="form-label">Telefone</label>
-            <input type="text" name="telefone" value="<?= $user->telefone ?>"></br>
+            <input type="tel" maxlength="9" required name="telefone" value="<?= $user->telefone ?>"></br>
         </div>
         <div class="mb-3">
             <label for="nif" class="form-label">NIF</label>
-            <input type="text" name="nif" value="<?= $user->nif ?>"></br>
+            <input type="tel" maxlength="9" required name="nif" value="<?= $user->nif ?>"></br>
         </div>
         <div class="mb-3">
             <label for="morada" class="form-label">Morada</label>
-            <input type="text" name="morada" value="<?= $user->morada ?>"></br>
+            <input type="text" name="morada" required value="<?= $user->morada ?>"></br>
         </div>
         <div class="mb-3">
             <label for="codpostal" class="form-label">Código Postal</label>
-            <input type="text" name="codpostal" value="<?= $user->codpostal ?>"></br>
+            <input type="tel" maxlength="9" required name="codpostal" value="<?= $user->codpostal ?>"></br>
         </div>
         <div class="mb-3">
             <label for="localidade" class="form-label">Localidade</label>
@@ -40,8 +40,8 @@
                 <input type="text" name="role" value="<?= $user->role ?>"></br>
             </div>
         <?php } ?>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-        <a href="router.php?c=user&a=index"  class="btn btn-info" role="button">Cancelar</a>
+        <button type="submit" class="btn btn-success">Enviar</button>
+        <a href="router.php?c=user&a=index"  class="btn btn-warning" role="button">Cancelar</a>
     </form>
 </div>
 
