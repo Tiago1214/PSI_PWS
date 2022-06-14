@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="0be32fb1-b4c0-42a3-9223-2f9696515b4c" name="Changes" comment="" />
+=======
+    <list default="true" id="0be32fb1-b4c0-42a3-9223-2f9696515b4c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/FO/css/tooplate-gymso-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/FO/css/tooplate-gymso-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/LayoutBo/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayoutBo/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/LayoutBo/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayoutBo/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/backoffice/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/backoffice/index.php" afterDir="false" />
+    </list>
+>>>>>>> 159514bcb727626ae1751e2c99039eee46120192
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +40,10 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2AI4SGi21PK8yI4PtDsDBY8gP2U" />
+<<<<<<< HEAD
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+=======
+>>>>>>> 159514bcb727626ae1751e2c99039eee46120192
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/FO/css" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -57,6 +70,7 @@
       <updated>1654683764580</updated>
       <workItem from="1654683765751" duration="11000" />
       <workItem from="1654683778221" duration="5971000" />
+<<<<<<< HEAD
       <workItem from="1654769857759" duration="5417000" />
       <workItem from="1655223792137" duration="23000" />
       <workItem from="1655223827694" duration="5000" />
@@ -64,6 +78,11 @@
       <workItem from="1655224531564" duration="25000" />
       <workItem from="1655224886804" duration="5000" />
       <workItem from="1655224893277" duration="3772000" />
+=======
+      <workItem from="1654769857759" duration="5587000" />
+      <workItem from="1654775505946" duration="390000" />
+      <workItem from="1655109952247" duration="3771000" />
+>>>>>>> 159514bcb727626ae1751e2c99039eee46120192
     </task>
     <servers />
   </component>

@@ -58,7 +58,7 @@ class FaturaController  extends BaseAuthController
 
     }
 
-    public function selectClient($searchFilter)
+    public function selectClient()
     {
         $users = User::All();
         $this->makeView('fatura','selectclient',['users'=>$users]);
