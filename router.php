@@ -230,6 +230,8 @@ else{
                    case 'posicao':
                        $usercontroller->posicao($_GET['id']);
                        break;
+                   case 'changedados':
+                       $usercontroller->changedados($_GET['id']);
 
                }
                break;

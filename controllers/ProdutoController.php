@@ -6,7 +6,7 @@ class ProdutoController extends BaseAuthController
 {
     public function  __Construct__()
     {
-        $this->loginFilterbyRole(['funcionario','admin']);
+        $this->loginFilterbyRole(['funcionario','administrador']);
     }
 
     public function index()

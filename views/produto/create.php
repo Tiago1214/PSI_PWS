@@ -16,7 +16,7 @@
                         <form action="router.php?c=produto&a=store" method="post">
                             <div class="mb-3">
                                 <label for="referencia" class="form-label">Referência</label>
-                                <input type="text" class="form-control" name="referencia" value="<?php  if(isset($produto)) { echo
+                                <input type="text"  class="form-control" name="referencia" value="<?php  if(isset($produto)) { echo
                                 $produto->referencia; }?>" > </br> <?php if(isset($produto->referencia)){ echo '<div class="alert alert-danger">'.$produto->errors->on('referencia') .'</div>';}  ?>
                             </div>
                             <div class="mb-3">

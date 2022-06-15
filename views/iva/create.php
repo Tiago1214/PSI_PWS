@@ -16,12 +16,12 @@
                         <form action="router.php?c=iva&a=store" method="post">
                             <div class="mb-3">
                                 <label for="percentagem" class="form-label">Percentagem</label>
-                                <input type="number" max="30" class="form-control" name="percentagem" value="<?php  if(isset($iva)) { echo
+                                <input type="tel" maxlength="2" class="form-control" name="percentagem" value="<?php  if(isset($iva)) { echo
                                 $iva->percentagem; }?>" > </br> <?php if(isset($iva->percentagem)){ echo '<div class="alert alert-danger">'.$iva->errors->on('percentagem') .'</div>';}  ?>
                             </div>
                             <div class="mb-3">
                                 <label for="descricao" class="form-label">Descrição</label>
-                                <input type="text" class="form-control" aria-multiline="true" name="descricao" value="<?php if(isset($iva)) { echo
+                                <input type="text" class="form-control" required name="descricao" value="<?php if(isset($iva)) { echo
                                 $iva->descricao; }?>">
                                 </br>
                             </div>

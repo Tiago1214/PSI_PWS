@@ -7,7 +7,7 @@ class EmpresaController extends BaseAuthController
 {
     public function  __Construct__()
     {
-        $this->loginFilterbyRole(['funcionario','admin']);
+        $this->loginFilterbyRole(['funcionario','administrador']);
     }
     public function index()
     {
@@ -28,32 +28,6 @@ class EmpresaController extends BaseAuthController
 
 
     }
-
-    /*public function create()
-    {
-        $this->loginFilter();
-        $genres = Genre::All();
-        $this->makeView('empresa','create',['genres'=>$genres]);
-    }
-
-    public function store()
-    {
-        $this->loginFilter();
-
-        $empresa = new empresa($_POST);
-
-
-        if($empresa->is_valid()){
-            $empresa->save();
-            $this->redirectToRoute('empresa','index');
-        } else {
-            $genres= Genre::All();
-            $this->makeView('empresa','create',['empresa'=>$empresa],['genres'=>$genres]);
-
-        }
-
-    }*/
-
     public function edit($id)
     {
         $empresa = empresa::find([$id]);
@@ -85,20 +59,4 @@ class EmpresaController extends BaseAuthController
             //mostrar vista edit passando o modelo como parâmetro
         }
     }
-
-   /* public function delete($id)
-    {
-        $empresa = empresa::find([$id]);
-
-        foreach ($empresa->chapters as $chapter)
-        {
-            $chapter->delete();
-        }
-        $empresa->delete();
-        $this->redirectToRoute('empresa','index');
-
-    }*/
-
-
-
 }

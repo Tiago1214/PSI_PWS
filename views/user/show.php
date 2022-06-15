@@ -15,8 +15,6 @@
                     <div class="box-header">
                         <a href="router.php?c=user&a=edit&id=<?=$user->id ?>"
                            class="btn btn-warning" role="button">Edit</a>
-
-                        <h3>ID</h3><td><?=$user->id ?></td>
                         <h3>Utilizador</h3><td><?=$user->username ?></td>
                         <h3>Password</h3><td><?=$user->password ?></td>
                         <h3>Email</h3><td><?=$user->email ?></td>

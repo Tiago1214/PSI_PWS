@@ -12,8 +12,7 @@ class Auth
     }
     public function checkLogin($username,$pass){
         $user = User::find_by_username_and_password($username,$pass);
-
-        if(!is_null($user)) {
+        if(!is_null($user)&&$user->estado==1) {
             $_SESSION['username']=$username;
             $_SESSION['role']=$user->role;
             $_SESSION['id']=$user->id;

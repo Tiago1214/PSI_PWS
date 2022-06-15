@@ -81,9 +81,16 @@
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                                </div>
+
+                                <?php
+                                $tipouser=new Auth();
+                                if($tipouser->getRole()=='funcionario'||$tipouser->getRole()=='administrador'){
+                                    ?>
+                                    <div class="pull-left">
+                                        <a href="./router.php?c=user&a=changedados&id=<?= $tipouser->getUserId(); ?>" class="btn btn-default btn-flat">Mudar Dados</a>
+                                    </div>
+                                    <?php
+                                } ?>
                                 <div class="pull-right">
                                     <?php
                                     if(isset($username))
@@ -108,42 +115,88 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MENU</li>
-                <li>
-                    <a href="router.php?c=fatura&a=create">
-                        <i class="fa fa-th"></i> <span>Emitir Fatura</span>
-                        <span class="pull-right-container"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="router.php?c=empresa&a=index">
-                        <i class="fa fa-th"></i> <span>Empresa</span>
-                        <span class="pull-right-container"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="router.php?c=fatura&a=index">
-                        <i class="fa fa-th"></i> <span>Fatura</span>
-                        <span class="pull-right-container"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="router.php?c=produto&a=index">
-                        <i class="fa fa-th"></i> <span>Produtos</span>
-                        <span class="pull-right-container"></span>
-                    </a>
-                </li>
-                <li>
+                <?php
+                if($tipouser->getRole()=='cliente'){
+                    ?>
+                    <li>
+                        <a href="router.php?c=fatura&a=index">
+                            <i class="fa fa-th"></i> <span>Minhas Faturas</span>
+                            <span class="pull-right-container"></span>
+                        </a>
+                    </li>
+                    <?php
+                }else if($tipouser->getRole()=='administrador'){?>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-th"></i> <span>Faturas</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                             </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="./router.php?c=fatura&a=create"><i class="fa fa-circle-o"></i> Criar Fatura</a></li>
+                            <li><a href="./router.php?c=fatura&a=index"><i class="fa fa-circle-o"></i>Visualizar faturas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="router.php?c=produto&a=index">
+                            <i class="fa fa-th"></i> <span>Produtos</span>
+                            <span class="pull-right-container"></span>
+                        </a>
+                    </li>
+                    <li>
 
-                    <a href="router.php?c=user&a=index">
-                        <i class="fa fa-th"></i> <span>Utilizadores</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="router.php?c=iva&a=index">
-                        <i class="fa fa-th"></i> <span>Ivas</span>
-                        <span class="pull-right-container"></span>
-                    </a>
-                </li>
+                        <a href="router.php?c=user&a=index">
+                            <i class="fa fa-th"></i> <span>Utilizadores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="router.php?c=iva&a=index">
+                            <i class="fa fa-th"></i> <span>Ivas</span>
+                            <span class="pull-right-container"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="router.php?c=empresa&a=index">
+                            <i class="fa fa-th"></i> <span>Empresa</span>
+                            <span class="pull-right-container"></span>
+                        </a>
+                    </li>
+                <?php }else if($tipouser->getRole()=='funcionario'){
+                    ?>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-th"></i> <span>Faturas</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                             </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="./router.php?c=fatura&a=create"><i class="fa fa-circle-o"></i> Criar Fatura</a></li>
+                            <li><a href="./router.php?c=fatura&a=index"><i class="fa fa-circle-o"></i>Visualizar faturas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="router.php?c=produto&a=index">
+                            <i class="fa fa-th"></i> <span>Produtos</span>
+                            <span class="pull-right-container"></span>
+                        </a>
+                    </li>
+                    <li>
+
+                        <a href="router.php?c=user&a=index">
+                            <i class="fa fa-th"></i> <span>Utilizadores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="router.php?c=iva&a=index">
+                            <i class="fa fa-th"></i> <span>Ivas</span>
+                            <span class="pull-right-container"></span>
+                        </a>
+                    </li>
+                    ?>
+                <?php } ?>
+
             </ul>
-        <!-- /.sidebar -->
+            <!-- /.sidebar -->
     </aside>

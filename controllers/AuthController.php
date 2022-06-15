@@ -4,6 +4,7 @@ require_once ('./controllers/BaseController.php');
 
 class AuthController extends BaseController
 {
+    //Função para criar a view de login
     public function index()
     {
         $this->makeView('auth','index');
@@ -19,11 +20,14 @@ class AuthController extends BaseController
              $auth= new Auth();
             $validacaologin = $auth->checklogin($user, $pass);
 
-            if ($validacaologin == true)
-
+            if ($validacaologin == true){
                 $this->redirectToRoute('backoffice','index');
-            else
+            }
+            else{
+
                 $this->redirectToRoute('auth','index');
+
+            }
         }
     }
 
