@@ -101,7 +101,8 @@ class ProdutoController extends BaseAuthController
 
     public function select($callbacktoroute)
     {
-
+        $produtos = Produto::All();
+        $this->makeView('produto','selectproduto',['produtos'=>$produtos]);
     }
 
 

@@ -1,6 +1,6 @@
 <?php
 
-class LinhaFaturaController
+class LinhaFaturaController extends BaseAuthController
 {
     public function  __Construct__()
     {
@@ -14,17 +14,19 @@ class LinhaFaturaController
 
     public function create($idFatura)
     {
-        $this->loginFilterByRole(['admin','funcionario']);
-        $fatura = Fatura::find($idFatura);
-        $this->makeView('linhafatura','create',['fatura'=>$fatura]);
+        //$this->loginFilterByRole(['admin','funcionario']);
+        $fatura = Fatura::find([$idFatura]);
+        $empresa = Empresa::find([2]);
+
+        $this->makeView('linhafatura','create',['fatura'=>$fatura],['empresa'=>$empresa]);
 
     }
 
     public function store($idFatura,$idProduct)
     {
-            //gravar LinhaFatura
-            //redirect->LinhaFatura/create(idFatura)
-        $linhafatura=new LinhaFatura();
+            //gravar Linhafatura
+            //redirect->Linhafatura/create(idFatura)
+        $linhafatura=new Linhafatura();
         $produto= Produto::find($idProduct);
         $fatura =Fatura::find($idFatura);
 

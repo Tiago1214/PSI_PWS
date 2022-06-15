@@ -20,20 +20,31 @@
 
                     <h4>Fatura nº<?php $fatura->id  ?></h4>
                     <address>
-                        <?php foreach($empresas as $empresa){
-                            ?>
+
                             <br>
+                            <?php echo $empresa->designacaosocial; ?><br>
+                            NIF: <?php echo $empresa->nif; ?><br>
                             Morada:<?php  echo $empresa->morada; ?><br>
                             Código Postal:<?php  echo $empresa->codpostal;?> <?php echo $empresa->localidade?><br>
                             Telefone: <?php echo $empresa->telefone; ?><br>
-                            Email: <?php echo $empresa ->email?><br>
-                            <?php
-                        } ?>
+                            Capital Social: <?php echo $empresa ->capitalsocial?><br>
+
                     </address>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
+                    <address>
 
+                            <br>
+                            Nome:<?php  echo $fatura->cliente->username; ?><br>
+                            NIF: <?php echo $fatura->cliente->nif; ?><br>
+                            Morada:<?php  echo $fatura->cliente->morada; ?><br>
+                            Código Postal:<?php  echo $fatura->cliente->codpostal;?> <?php echo $fatura->cliente->localidade?><br>
+
+
+
+
+                    </address>
                 </div>
             </div>
             <!-- /.row -->
@@ -47,23 +58,33 @@
                             <th>REF</th>
                             <th>Descrição</th>
                             <th>QTD #</th>
-                            <th>IVA</th>
-                            <th>TAXA</th>
+                            <th>Valor Un.</th>
+                            <th>Valor IVA</th>
+                            <th>Taxa IVA</th>
                             <th>Subtotal</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <!-- <?php  foreach($linhafatura as $linha){
+                             <?php  foreach($fatura->linhafaturas as $linha){ ?>
+                                 <td> <?=  $linha->produto->referencia  ; ?> </td>
+                                 <td> <?=  $linha->produto->descricao  ; ?></td>
+                                 <td> <?= $linha->quantidade  ; ?></td>
+                                 <td> <?= $linha->valorunitario ; ?></td>
+                                 <td> <?= $linha->valoriva ; ?></td>
+                                 <td> <?= $linha->taxaiva  ; ?></td>
+                                 <td><?php echo $linha->quantidade*$linha->valorunitario ?></td>
 
-                            }
-                            ?> -->
+
+
+                           <?php }
+                            ?>
                         </tr>
-                        <tr>
-                            <td>
-                                <a href="router.php?c=fatura&a=selectproduto"  class="btn btn-info" role="button">Selecionar Produto</a>
-                            </td>
-                        </tr>
+                        <form action="router.php?c=produto&a=selectproduto" method="post">
+                        <td>
+                            <button type="submit" class="btn btn-primary">Inserir Produto</button>
+                        </td>
+                        </form>
                         </tbody>
                     </table>
                 </div>
@@ -112,5 +133,3 @@
         </section>
     </div>
 </div>
-
-
