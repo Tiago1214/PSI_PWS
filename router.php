@@ -239,7 +239,7 @@ else{
                switch ($action)
                {
                    case 'create':
-                       $linhafaturacontroller->create($_GET['idf'],$_GET['idp']);
+                       $linhafaturacontroller->create($_GET['idf']);
                        break;
                }
 

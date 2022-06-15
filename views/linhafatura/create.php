@@ -18,7 +18,7 @@
             <div class="row invoice-info">
                 <div class="col-sm-4 invoice-col">
 
-                    <h4>Fatura nº0001</h4>
+                    <h4>Fatura nº<?php $fatura->id  ?></h4>
                     <address>
                         <?php foreach($empresas as $empresa){
                             ?>
@@ -54,9 +54,10 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <?php foreach($linhafatura in $linha){
+                            <!-- <?php  foreach($linhafatura as $linha){
 
-                            }?>
+                            }
+                            ?> -->
                         </tr>
                         <tr>
                             <td>
