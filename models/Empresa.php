@@ -3,5 +3,4 @@
 class Empresa extends \ActiveRecord\Model
 {
 
-
 }
