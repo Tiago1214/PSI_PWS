@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-
-    <list default="true" id="0be32fb1-b4c0-42a3-9223-2f9696515b4c" name="Changes" comment="" />
-
     <list default="true" id="0be32fb1-b4c0-42a3-9223-2f9696515b4c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/FaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FaturaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ProdutoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProdutoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/LinhaFatura.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Linhafatura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Produto.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Produto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/backoffice/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/backoffice/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/linhafatura/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhafatura/create.php" afterDir="false" />
     </list>
-
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,9 +39,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2AI4SGi21PK8yI4PtDsDBY8gP2U" />
-
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -69,7 +66,6 @@
       <updated>1654683764580</updated>
       <workItem from="1654683765751" duration="11000" />
       <workItem from="1654683778221" duration="5971000" />
-
       <workItem from="1654769857759" duration="5417000" />
       <workItem from="1655223792137" duration="23000" />
       <workItem from="1655223827694" duration="5000" />
@@ -77,13 +73,10 @@
       <workItem from="1655224531564" duration="25000" />
       <workItem from="1655224886804" duration="5000" />
       <workItem from="1655224893277" duration="3772000" />
-
       <workItem from="1654769857759" duration="5587000" />
       <workItem from="1654775505946" duration="390000" />
       <workItem from="1655109952247" duration="3771000" />
-
       <workItem from="1655222027594" duration="2911000" />
-
     </task>
     <servers />
   </component>

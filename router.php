@@ -6,6 +6,7 @@ require_once ('./controllers/EmpresaController.php');
 require_once ('./controllers/BackOfficeController.php');
 require_once ('./controllers/FaturaController.php');
 require_once ('./controllers/ProdutoController.php');
+require_once ('./controllers/LinhaFaturaController.php');
 
 require_once ('./controllers/UserController.php');
 

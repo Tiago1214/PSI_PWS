@@ -36,6 +36,7 @@ class FaturaController  extends BaseAuthController
 
     public function store($idclient)
     {
+
         //criar fatura
         // redirect-> linhafatura/create+idfatura
         //$this->loginFilterByRole(['admin','funcionario']);
@@ -44,16 +45,17 @@ class FaturaController  extends BaseAuthController
         $fatura = new Fatura();
         $fatura->data = Carbon::now();
         $fatura->valortotal =00.00;
+        $fatura->ivatotal = 00.00;
         $fatura->estado ='em lancamento';
         $fatura->cliente_id =$idclient;
         $fatura->user_id = $auth->getUserId();
 
         if($fatura->is_valid()){
             $fatura->save();
-            $this->makeView('linhafatura','create',['empresas'=>$empresas],['fatura'=>$fatura]);
+            $this->redirectToRoute('linhafatura','create',['idf'=>$fatura->id]);
         } else {
 
-            $this->makeView('fatura','create',['fatura'=>$fatura]);
+            $this->redirectToRoute('fatura','create');
 
         }
 
