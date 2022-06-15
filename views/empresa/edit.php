@@ -37,11 +37,11 @@
                                 <input class="form-control" type="text" name="isbn" value="<?= $empresa->localidade ?>"></br>
                             </div>
                             <div class="mb-3">
-                                <label for="isbn" class="form-label">Capital Social</label>
-                                <input class="form-control" type="number" name="isbn" value="<?= $empresa->capitalsocial ?>"></br>
+                                <label for="capitalsocial" class="form-label">Capital Social</label>
+                                <input class="form-control" type="number" name="capitalsocial" value="<?= $empresa->capitalsocial ?>"></br>
                             </div>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                            <a href="router.php?c=empresa&a=index"  class="btn btn-info" role="button">Cancelar</a>
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <a href="router.php?c=empresa&a=index"  class="btn btn-warning" role="button">Cancelar</a>
                         </form>
                     </div>
                 </div>
