@@ -4,10 +4,12 @@ require_once ('./controllers/BaseAuthController.php');
 
 class ProdutoController extends BaseAuthController
 {
+    //Os funcionários e os administradores tem as mesmas funções neste controlador
     public function  __Construct__()
     {
         $this->loginFilterbyRole(['funcionario','administrador']);
     }
+
 
     public function index()
     {
