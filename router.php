@@ -120,6 +120,8 @@ else{
                    case 'selectclient':
                        $faturacontroller->selectClient();
                        break;
+                   case 'indexcliente':
+                       $faturacontroller->showclientinvoice();
 
                }
                break;
@@ -149,7 +151,7 @@ else{
                        $produtocontroller->delete($_GET['id']);
                        break;
                    case 'selectproduto':
-                       $produtocontroller->select();
+                       $produtocontroller->select($_GET['id']);
                        break;
 
 

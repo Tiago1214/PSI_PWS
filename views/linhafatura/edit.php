@@ -21,13 +21,13 @@
                     <h4>Fatura nº<?php $fatura->id  ?></h4>
                     <address>
 
-                            <br>
-                            <?php echo $empresa->designacaosocial; ?><br>
-                            NIF: <?php echo $empresa->nif; ?><br>
-                            Morada:<?php  echo $empresa->morada; ?><br>
-                            Código Postal:<?php  echo $empresa->codpostal;?> <?php echo $empresa->localidade?><br>
-                            Telefone: <?php echo $empresa->telefone; ?><br>
-                            Capital Social: <?php echo $empresa ->capitalsocial?><br>
+                        <br>
+                        <?php echo $empresa->designacaosocial; ?><br>
+                        NIF: <?php echo $empresa->nif; ?><br>
+                        Morada:<?php  echo $empresa->morada; ?><br>
+                        Código Postal:<?php  echo $empresa->codpostal;?> <?php echo $empresa->localidade?><br>
+                        Telefone: <?php echo $empresa->telefone; ?><br>
+                        Capital Social: <?php echo $empresa ->capitalsocial?><br>
 
                     </address>
                 </div>
@@ -35,11 +35,11 @@
                 <div class="col-sm-4 invoice-col">
                     <address>
 
-                            <br>
-                            Nome:<?php  echo $fatura->cliente->username; ?><br>
-                            NIF: <?php echo $fatura->cliente->nif; ?><br>
-                            Morada:<?php  echo $fatura->cliente->morada; ?><br>
-                            Código Postal:<?php  echo $fatura->cliente->codpostal;?> <?php echo $fatura->cliente->localidade?><br>
+                        <br>
+                        Nome:<?php  echo $fatura->cliente->username; ?><br>
+                        NIF: <?php echo $fatura->cliente->nif; ?><br>
+                        Morada:<?php  echo $fatura->cliente->morada; ?><br>
+                        Código Postal:<?php  echo $fatura->cliente->codpostal;?> <?php echo $fatura->cliente->localidade?><br>
 
 
 
@@ -62,28 +62,30 @@
                             <th>Valor IVA</th>
                             <th>Taxa IVA</th>
                             <th>Subtotal</th>
+                            <th>User Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                             <?php  foreach($fatura->linhafaturas as $linha){ ?>
-                                 <td> <?=  $linha->produto->referencia  ; ?> </td>
-                                 <td> <?=  $linha->produto->descricao  ; ?></td>
-                                 <td> <?= $linha->quantidade  ; ?></td>
-                                 <td> <?= $linha->valorunitario ; ?></td>
-                                 <td> <?= $linha->valoriva ; ?></td>
-                                 <td> <?= $linha->taxaiva  ; ?></td>
-                                 <td><?php echo $linha->quantidade*$linha->valorunitario ?></td>
+                            <?php  foreach($fatura->linhafaturas as $linha){ ?>
+                                <td> <?=  $linha->produto->referencia  ; ?> </td>
+                                <td> <?=  $linha->produto->descricao  ; ?></td>
+                                <td> <?= $linha->quantidade  ; ?></td>
+                                <td> <?= $linha->valorunitario ; ?></td>
+                                <td> <?= $linha->valoriva ; ?></td>
+                                <td> <?= $linha->taxaiva  ; ?></td>
+                                <td><?php echo $linha->quantidade*$linha->valorunitario ?></td>
 
 
 
-                           <?php }
+
+                            <?php }
                             ?>
                         </tr>
                         <form action="router.php?c=produto&a=selectproduto&id=<?=$fatura->id;?>" method="post">
-                        <td>
-                            <button type="submit" class="btn btn-primary">Inserir Produto</button>
-                        </td>
+                            <td>
+                                <button type="submit" class="btn btn-primary">Inserir Produto</button>
+                            </td>
                         </form>
                         </tbody>
                     </table>

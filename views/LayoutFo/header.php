@@ -43,6 +43,12 @@
                 <li class="nav-item">
                     <a href="router.php?c=auth&a=index" class="nav-link smoothScroll">Login</a>
                 </li>
+             <?php   if(isset($username))
+                { ?>
+                <li class="nav-item">
+                    <a href="router.php?c=fatura&a=indexcliente" class="nav-link smoothScroll">Ver Faturas</a>
+                </li>
+               <?php } ?>
             </ul>
         </div>
 

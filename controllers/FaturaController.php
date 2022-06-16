@@ -68,4 +68,13 @@ class FaturaController  extends BaseAuthController
         //coluna estado da fatura = anulada
     }
 
+    public function showclientinvoice()
+    {
+        $faturas = Fatura::All();
+        $auth = new Auth();
+        $auth=$auth->getUserId();
+        $this->makeView('fatura','indexcliente',['faturas'=>$faturas],['auth'=>$auth]);
+
+    }
+
 }
