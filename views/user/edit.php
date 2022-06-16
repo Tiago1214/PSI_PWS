@@ -12,6 +12,20 @@
                                 <label for="username" class="form-label">Utilizador</label>
                                 <input class="form-control" type="text" readonly name="username" value="<?= $user->username ?>"></br>
                             </div>
+                            <?php
+                            if($role=='administrador'&&$user->role!='administrador'){
+                            ?><div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input class="form-control" type="password" name="password" value="<?= $user->password ?>"></br>
+                              </div>
+                            <?php } ?>
+                            <?php
+                            if($role=='funcionario'&&$user->role!='administrador'&&$user->role!='funcionario'){
+                                ?><div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input class="form-control" type="password" name="password" value="<?= $user->password ?>"></br>
+                                </div>
+                            <?php } ?>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input class="form-control"  type="email" required name="email" value="<?= $user->email ?>"></br>
@@ -41,16 +55,17 @@
                                 ?>
                                 <div class="mb-3">
                                     <label for="role" class="form-label">Role</label>
-                                    <input class="form-control"  type="text" name="role" value="<?= $user->role ?>"></br>
+                                    <select name="role">
+                                        <option>funcionario</option>
+                                        <option>cliente</option>
+                                    </select>
                                 </div>
                             <?php } ?>
                             <button type="submit" class="btn btn-success">Enviar</button>
                             <a href="router.php?c=user&a=index"  class="btn btn-warning" role="button">Cancelar</a>
                         </form>
                     </div>
-                    <!-- /.box-body -->
                 </div>
-                <!-- /.box -->
             </div>
     </section>
 </div>

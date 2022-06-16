@@ -81,14 +81,21 @@
                                                    class="btn btn-info" role="button">Show</a>
                                                 <a href="router.php?c=user&a=edit&id=<?=$user->id ?>"
                                                    class="btn btn-warning" role="button">Edit</a>
-                                                <?php if($user->estado==1){?>
-                                                    <a href="router.php?c=user&a=posicao&id=<?=$user->id ?>"
-                                                   class="btn btn-danger" role="button">Desativar</a>
+                                                <?php if($user->role=='administrador'){
+                                                    ?>
                                                 <?php
-                                                }else if($user->estado==0){?>
-                                                    <a href="router.php?c=user&a=posicao&id=<?=$user->id ?>"
-                                                   class="btn btn-success" role="button">Ativar</a>
-                                                <?php
+                                                }
+                                                else{?>
+                                                    <?php if($user->estado==1){?>
+                                                        <a href="router.php?c=user&a=posicao&id=<?=$user->id ?>"
+                                                           class="btn btn-danger" role="button">Desativar</a>
+                                                        <?php
+                                                    }else if($user->estado==0){?>
+                                                        <a href="router.php?c=user&a=posicao&id=<?=$user->id ?>"
+                                                           class="btn btn-success" role="button">Ativar</a>
+                                                        <?php
+                                                    }?>
+                                                    <?php
                                                 }?>
                                             </td>
                                         <?php }else if($role=='funcionario'&&$user->role=='cliente'){ ?>

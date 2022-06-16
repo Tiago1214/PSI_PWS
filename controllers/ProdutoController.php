@@ -104,4 +104,30 @@ class ProdutoController extends BaseAuthController
         $produtos = Produto::All();
         $this->makeView('produto','selectproduto',['produtos'=>$produtos]);
     }
+
+    public function posicao($id){
+        //Encontrar o utilizador selecionado
+        $produto=Produto::find([$id]);
+        //Verificar qual é o estado para poder atualizar os valroes
+        if($produto->estado==1){
+            $produto->update_attribute(estado,0);
+            if($produto->is_valid()){
+                $produto->save();
+                $this->redirectToRoute('produto','index');
+            }
+            else{
+                $this->makeView('produto','index');
+            }
+        }
+        else if($produto->estado==0){
+            $produto->update_attribute(estado,1);
+            if($produto->is_valid()){
+                $produto->save();
+                $this->redirectToRoute('produto','index');
+            }
+            else{
+                $this->makeView('produto','index');
+            }
+        }
+    }
 }

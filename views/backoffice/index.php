@@ -16,36 +16,69 @@
     <!-- Main content -->
     <section class="content">
         <!-- Small boxes (Stat box) -->
-        <div class="row">
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-aqua">
-                    <div class="inner">
-                        <h3>150</h3>
-
-                        <p>Novas Encomendas</p>
+        <?php if($role=='administrador'||$role=='funcionario'){
+            ?>
+            <div class="row">
+                <div class="col-lg-6 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <h3>Faturas</h3>
+                            <p>Criar Fatura</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-android-add-circle"></i>
+                        </div>
+                        <a href="router.php?c=fatura&a=create" class="small-box-footer">Criar Fatura <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
+                </div>
+                <div class="col-lg-6 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <h3>Faturas</h3>
+                            <p>Ver Fatura</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-ios-paper"></i>
+                        </div>
+                        <a href="router.php?c=fatura&a=index" class="small-box-footer">Ver Fatura <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
-                    <a href="#" class="small-box-footer">Mais Informação <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-6 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <h3>Produtos</h3>
+                            <p>Ver Produtos</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-android-cart"></i>
+                        </div>
+                        <a href="router.php?c=produto&a=index" class="small-box-footer">Ver Produtos <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-blue">
+                        <div class="inner">
+                            <h3>Utilizadores</h3>
+                            <p>Ver Utilizadores</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person"></i>
+                        </div>
+                        <a href="router.php?c=user&a=index" class="small-box-footer">Ver Utilizadores <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-green">
-                    <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+            <?php
+        }else if($role=='cliente'){
+            ?>
 
-                        <p>Taxa de Rejeição</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">Mais Informação <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-        </div>
+        <?php
+        } ?>
+
     </section>
 </div>

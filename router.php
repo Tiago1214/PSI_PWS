@@ -148,6 +148,9 @@ else{
                    case 'selectproduto':
                        $produtocontroller->selectproduto('./router.php?c=linhafatura&a=create&idf='.$_GET['idf']);
                        break;
+                   case 'posicao':
+                       $produtocontroller->posicao($_GET['id']);
+                       break;
 
 
                }
@@ -230,10 +233,13 @@ else{
                        break;
                    case 'changedados':
                        $usercontroller->changedados($_GET['id']);
+                       break;
                    case 'selectclient':
                        $usercontroller->selectclient();
                        break;
-
+                   case 'changedadosupdate':
+                       $usercontroller->changedadosupdate($_GET['id']);
+                       break;
                }
                break;
 
@@ -246,6 +252,7 @@ else{
                        break;
                    case 'store':
                        $linhafaturacontroller->store($_GET['idf'],$_GET['idp']);
+                       break;
                }
 
 

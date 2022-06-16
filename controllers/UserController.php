@@ -125,6 +125,20 @@ class UserController extends BaseAuthController
         $this->makeView('user','changedados',['user'=>$user]);
     }
 
+    //Esta função é usada para mudar a password e email dos funcionarios e administradores
+    public function changedadosupdate($id){
+        $user = User::find([$id]);
+        $user->update_attributes($_POST);
+        if($user->is_valid()){
+            $user->save();
+            $this->redirectToRoute('backoffice','index');
+            //redirecionar para o index
+        } else {
+            $this->makeView('user','changedados', ['user'=>$user]);
+            //mostrar vista edit passando o modelo como parâmetro
+        }
+    }
+
     //Esta função serve para selecionar um cliente de uma determinada fatura
     public function selectclient()
     {

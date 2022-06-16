@@ -8,7 +8,6 @@
                 <div class="col-xs-12">
                     <h2 class="page-header">
                         <i class="fa fa-globe"></i> Fatura +
-                        <small class="pull-right">F+</small>
                     </h2>
                 </div>
                 <!-- /.col -->
@@ -58,18 +57,25 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <?php $totaliva=0;
+                                $subtotal=0;
+                        ?>
+                        <?php  foreach($fatura->linhafaturas as $linha)
+                        {
+                            $totaliva=$totaliva+$linha->valorunitario*$linha->taxaiva/100;
+                            $subtotal=$subtotal+$linha->valorunitario;
+                            ?>
                         <tr>
-                        <tr>
-                            <?php  foreach($fatura->linhafaturas as $linha){ ?>
+
                                 <td> <?=  $linha->produto->referencia  ; ?> </td>
                                 <td> <?=  $linha->produto->descricao  ; ?></td>
                                 <td> <?= $linha->quantidade  ; ?></td>
                                 <td> <?= $linha->valorunitario ; ?>€</td>
                                 <td> <?= $linha->valorunitario*$linha->taxaiva/100 ; ?>€</td>
                                 <td> <?= $linha->taxaiva  ; ?>%</td>
-                            <?php }
-                            ?>
                         </tr>
+                        <?php }
+                        ?>
                         </tbody>
                     </table>
                 </div>
@@ -87,15 +93,15 @@
                         <table class="table">
                             <tr>
                                 <th>Subtotal:</th>
-                                <td><?php ?>€</td>
+                                <td><?=  $subtotal; ?>€</td>
                             </tr>
                             <tr>
                                 <th>Valor IVA:</th>
-                                <td> <?php ?> €</td>
+                                <td> <?= $totaliva; ?> €</td>
                             </tr>
                             <tr>
                                 <th>Total:</th>
-                                <td><?php ?>€</td>
+                                <td><?php echo $subtotal+$totaliva; ?>€</td>
                             </tr>
                         </table>
                     </div>

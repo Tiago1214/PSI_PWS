@@ -64,8 +64,15 @@
                                        class="btn btn-info" role="button">Show</a>
                                     <a href="router.php?c=produto&a=edit&id=<?=$produto->id ?>"
                                        class="btn btn-warning" role="button">Edit</a>
-                                    <a href="router.php?c=produto&a=delete&id=<?=$produto->id ?>"
-                                       class="btn btn-danger" role="button">Delete</a>
+                                    <?php if($produto->estado==1){?>
+                                        <a href="router.php?c=produto&a=posicao&id=<?=$produto->id ?>"
+                                           class="btn btn-danger" role="button">Desativar</a>
+                                        <?php
+                                    }else if($produto->estado==0){?>
+                                        <a href="router.php?c=produto&a=posicao&id=<?=$produto->id ?>"
+                                           class="btn btn-success" role="button">Ativar</a>
+                                        <?php
+                                    }?>
 
                                 </td>
                             </tr>
