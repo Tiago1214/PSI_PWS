@@ -17,22 +17,28 @@
             <div class="row invoice-info">
                 <div class="col-sm-4 invoice-col">
 
-                    <h4>Fatura nº0001</h4>
+                    <h4>Fatura nº<?php echo $fatura->id  ?></h4>
                     <address>
-                        <?php foreach($empresas as $empresa){
-                            ?>
-                            <br>
-                            Morada:<?php  echo $empresa->morada; ?><br>
-                            Código Postal:<?php  echo $empresa->codpostal;?> <?php echo $empresa->localidade?><br>
-                            Telefone: <?php echo $empresa->telefone; ?><br>
-                            Email: <?php echo $empresa ->email?><br>
-                            <?php
-                        } ?>
+
+                        <br>
+                        <?php echo $empresa->designacaosocial; ?><br>
+                        NIF: <?php echo $empresa->nif; ?><br>
+                        Morada:<?php  echo $empresa->morada; ?><br>
+                        Código Postal:<?php  echo $empresa->codpostal;?> <?php echo $empresa->localidade?><br>
+                        Telefone: <?php echo $empresa->telefone; ?><br>
+                        Capital Social: <?php echo $empresa ->capitalsocial?><br>
+
                     </address>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
-
+                    <address>
+                        <br>
+                        Nome:<?php  echo $fatura->cliente->username; ?><br>
+                        NIF: <?php echo $fatura->cliente->nif; ?><br>
+                        Morada:<?php  echo $fatura->cliente->morada; ?><br>
+                        Código Postal:<?php  echo $fatura->cliente->codpostal;?> <?php echo $fatura->cliente->localidade?><br>
+                    </address>
                 </div>
             </div>
             <!-- /.row -->
@@ -46,14 +52,23 @@
                             <th>REF</th>
                             <th>Descrição</th>
                             <th>QTD #</th>
-                            <th>IVA</th>
-                            <th>TAXA</th>
-                            <th>Subtotal</th>
+                            <th>Valor Un.</th>
+                            <th>Valor IVA</th>
+                            <th>Taxa IVA</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-
+                        <tr>
+                            <?php  foreach($fatura->linhafaturas as $linha){ ?>
+                                <td> <?=  $linha->produto->referencia  ; ?> </td>
+                                <td> <?=  $linha->produto->descricao  ; ?></td>
+                                <td> <?= $linha->quantidade  ; ?></td>
+                                <td> <?= $linha->valorunitario ; ?>€</td>
+                                <td> <?= $linha->valorunitario*$linha->taxaiva/100 ; ?>€</td>
+                                <td> <?= $linha->taxaiva  ; ?>%</td>
+                            <?php }
+                            ?>
                         </tr>
                         </tbody>
                     </table>
@@ -71,16 +86,16 @@
                     <div class="table-responsive">
                         <table class="table">
                             <tr>
-                                <th style="width:50%">Subtotal:</th>
-                                <td></td>
+                                <th>Subtotal:</th>
+                                <td><?php ?>€</td>
                             </tr>
                             <tr>
-                                <th>IVA:</th>
-                                <td></td>
+                                <th>Valor IVA:</th>
+                                <td> <?php ?> €</td>
                             </tr>
                             <tr>
                                 <th>Total:</th>
-                                <td>$265.24</td>
+                                <td><?php ?>€</td>
                             </tr>
                         </table>
                     </div>

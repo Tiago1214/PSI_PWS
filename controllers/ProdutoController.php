@@ -4,7 +4,7 @@ require_once ('./controllers/BaseAuthController.php');
 
 class ProdutoController extends BaseAuthController
 {
-    //Os funcionários e os administradores tem as mesmas funções neste controlador
+    //Os funcionários e os administradores tem as mesmas funções neste controlador enquanto os clientes não podem aceder
     public function  __Construct__()
     {
         $this->loginFilterbyRole(['funcionario','administrador']);
@@ -99,11 +99,9 @@ class ProdutoController extends BaseAuthController
 
     }
 
-    public function select($callbacktoroute)
+    public function selectproduto($callbacktoroute)
     {
         $produtos = Produto::All();
         $this->makeView('produto','selectproduto',['produtos'=>$produtos]);
     }
-
-
 }

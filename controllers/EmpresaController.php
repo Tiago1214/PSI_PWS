@@ -5,6 +5,7 @@ require_once ('./controllers/BaseAuthController.php');
 
 class EmpresaController extends BaseAuthController
 {
+    //Atribui
     public function  __Construct__()
     {
         $this->loginFilterbyRole(['funcionario','administrador']);

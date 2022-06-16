@@ -2,16 +2,13 @@
 
 class LinhaFaturaController extends BaseAuthController
 {
+    //Os funcionários e os administradores tem as mesmas funções neste controlador enquanto os clientes não podem aceder
     public function  __Construct__()
     {
         $this->loginFilterbyRole(['funcionario','administrador']);
     }
-    public function index()
-    {
 
-
-    }
-
+    //Criação de uma linha de fatura
     public function create($idFatura)
     {
         //$this->loginFilterByRole(['admin','funcionario']);
@@ -19,26 +16,31 @@ class LinhaFaturaController extends BaseAuthController
         $empresa = Empresa::find([2]);
 
         $this->makeView('linhafatura','create',['fatura'=>$fatura],['empresa'=>$empresa]);
-
     }
 
+    //Guardar os dados de uma linha de fatura
     public function store($idFatura,$idProduct)
     {
             //gravar Linhafatura
             //redirect->Linhafatura/create(idFatura)
         $linhafatura=new Linhafatura();
-        $produto= Produto::find($idProduct);
-        $fatura =Fatura::find($idFatura);
-
-        $linhafatura->quantidade =($_POST['quantidade']);
-        $linhafatura->valorunitario =($_POST['quantidade'])*$produto->preco;
-        $linhafatura->valoriva =(($_POST['quantidade'])*$produto->preco)*( ($produto->iva->percentagem)/100);
+        $produto= Produto::find([$idProduct]);
+        $fatura =Fatura::find([$idFatura]);
+        if(isset($_POST['quantidade'])){
+            $linhafatura->quantidade =$_POST['quantidade'];
+        }
+        else{
+            $linhafatura->quantidade =1;
+        }
+        $linhafatura->valorunitario =$produto->preco;
+        $linhafatura->valoriva =$produto->preco*($produto->iva->percentagem/100);
+        $linhafatura->taxaiva=$produto->iva->percentagem;
         $linhafatura->fatura_id =$idFatura;
         $linhafatura->produto_id =$idProduct;
 
         if($linhafatura->is_valid()){
             $linhafatura->save();
-            $this->redirectToRoute('linhafatura','create',['fatura'=>$fatura]);
+            $this->redirectToRoute('linhafatura','create&idf='.$idFatura);
         } else {
 
             $this->redirectToRoute('linhafatura','create',['fatura'=>$fatura]);

@@ -13,28 +13,28 @@
                                 <input class="form-control" type="text" required name="designacaosocial" value="<?= $empresa->designacaosocial ?>"></br> <?php /* if(isset($book->errors)){ echo $book->errors->on('nome') ;} */ ?>
                             </div>
                             <div class="mb-3">
-                                <label for="isbn" class="form-label">Email</label>
-                                <input class="form-control" type="email" required name="isbn" value="<?= $empresa->email ?>"></br>
+                                <label for="email" class="form-label">Email</label>
+                                <input class="form-control" type="email" required name="email" value="<?= $empresa->email ?>"></br>
                             </div>
                             <div class="mb-3">
-                                <label for="isbn" class="form-label">Telefone</label>
-                                <input class="form-control" type="tel" maxlength="9" required name="isbn" value="<?= $empresa->telefone ?>"></br>
+                                <label for="telefone" class="form-label">Telefone</label>
+                                <input class="form-control" type="tel" maxlength="9" required name="telefone" value="<?= $empresa->telefone ?>"></br>
                             </div>
                             <div class="mb-3">
-                                <label for="isbn" class="form-label">NIF</label>
-                                <input class="form-control" type="tel" maxlength="9" name="isbn" value="<?= $empresa->nif ?>"></br>
+                                <label for="nif" class="form-label">NIF</label>
+                                <input class="form-control" type="tel" maxlength="9" name="nif" value="<?= $empresa->nif ?>"></br>
                             </div>
                             <div class="mb-3">
-                                <label for="isbn" class="form-label">Morada</label>
-                                <input class="form-control" type="text" required name="isbn" value="<?= $empresa->morada ?>"></br>
+                                <label for="morada" class="form-label">Morada</label>
+                                <input class="form-control" type="text" required name="morada" value="<?= $empresa->morada ?>"></br>
                             </div>
                             <div class="mb-3">
-                                <label for="isbn" class="form-label">Código Postal</label>
-                                <input class="form-control" type="tel" maxlength="8" name="isbn" value="<?= $empresa->codpostal ?>"></br>
+                                <label for="codpostal" class="form-label">Código Postal</label>
+                                <input class="form-control" type="tel" maxlength="8" name="codpostal" value="<?= $empresa->codpostal ?>"></br>
                             </div>
                             <div class="mb-3">
-                                <label for="isbn" class="form-label">Localidade</label>
-                                <input class="form-control" type="text" name="isbn" value="<?= $empresa->localidade ?>"></br>
+                                <label for="localidade" class="form-label">Localidade</label>
+                                <input class="form-control" type="text" name="localidade" value="<?= $empresa->localidade ?>"></br>
                             </div>
                             <div class="mb-3">
                                 <label for="capitalsocial" class="form-label">Capital Social</label>
