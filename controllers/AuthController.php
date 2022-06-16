@@ -26,7 +26,11 @@ class AuthController extends BaseController
             $validacaologin = $auth->checklogin($user, $pass);
 
             if ($validacaologin == true){
-                $this->redirectToRoute('backoffice','index');
+                $auth->getRole();
+                if($auth =='administrador' || $auth =='funcionario') {
+                    $this->redirectToRoute('backoffice', 'index');
+                }else
+                    $this->redirectToRoute('site', 'index');
             }
             else{
                 $this->redirectToRoute('auth','index');
