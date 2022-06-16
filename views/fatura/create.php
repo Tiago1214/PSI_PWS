@@ -32,7 +32,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
-                    <a href="router.php?c=fatura&a=selectclient"  class="btn btn-info" role="button">Selecionar Cliente</a>
+                    <a href="router.php?c=user&a=selectclient"  class="btn btn-info" role="button">Selecionar Cliente</a>
                 </div>
             </div>
             <!-- /.row -->

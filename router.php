@@ -115,10 +115,7 @@ else{
                    case 'store':
                        $faturacontroller->store($_GET['id']);
                    case 'show':
-                       $faturacontroller->show();
-                       break;
-                   case 'selectclient':
-                       $faturacontroller->selectClient();
+                       $faturacontroller->show($_GET['id']);
                        break;
 
                }
@@ -149,7 +146,7 @@ else{
                        $produtocontroller->delete($_GET['id']);
                        break;
                    case 'selectproduto':
-                       $produtocontroller->select();
+                       $produtocontroller->selectproduto('./router.php?c=linhafatura&a=create&idf='.$_GET['idf']);
                        break;
 
 
@@ -233,6 +230,9 @@ else{
                        break;
                    case 'changedados':
                        $usercontroller->changedados($_GET['id']);
+                   case 'selectclient':
+                       $usercontroller->selectclient();
+                       break;
 
                }
                break;
@@ -244,6 +244,8 @@ else{
                    case 'create':
                        $linhafaturacontroller->create($_GET['idf']);
                        break;
+                   case 'store':
+                       $linhafaturacontroller->store($_GET['idf'],$_GET['idp']);
                }
 
 

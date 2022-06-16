@@ -18,7 +18,7 @@
                         <div class="col-sm-6">
                             <h3>Emitir uma fatura</h3>
                             <p>
-                                <a href="router.php?c=fatura&a=create" class="btn btn-info"
+                                <a href="router.php?c=fatura&a=create" class="btn btn-success"
                                    role="button">Nova</a>
                             </p>
                         </div>
@@ -74,9 +74,9 @@
                                                 <?php if($fatura->estado =='em lancamento')
                                                 { ?>
                                                     <a href="router.php?c=fatura&a=edit&id=<?=$fatura->id ?>"
-                                                       class="btn btn-info" role="button">Edit</a>
+                                                       class="btn btn-warning" role="button">Edit</a>
                                                 <a href="router.php?c=fatura&a=delete&id=<?=$fatura->id ?>"
-                                                   class="btn btn-warning" role="button">Delete</a>
+                                                   class="btn btn-danger" role="button">Delete</a>
                                                 <?php } ?>
                                             </td>
                                         </tr>

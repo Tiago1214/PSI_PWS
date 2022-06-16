@@ -18,7 +18,7 @@
             <div class="row invoice-info">
                 <div class="col-sm-4 invoice-col">
 
-                    <h4>Fatura nº<?php $fatura->id  ?></h4>
+                    <h4>Fatura nº<?php echo $fatura->id  ?></h4>
                     <address>
 
                             <br>
@@ -61,29 +61,33 @@
                             <th>Valor Un.</th>
                             <th>Valor IVA</th>
                             <th>Taxa IVA</th>
-                            <th>Subtotal</th>
+                            <th>Atualizar Quant.</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                             <?php  foreach($fatura->linhafaturas as $linha){ ?>
-                                 <td> <?=  $linha->produto->referencia  ; ?> </td>
-                                 <td> <?=  $linha->produto->descricao  ; ?></td>
-                                 <td> <?= $linha->quantidade  ; ?></td>
-                                 <td> <?= $linha->valorunitario ; ?></td>
-                                 <td> <?= $linha->valoriva ; ?></td>
-                                 <td> <?= $linha->taxaiva  ; ?></td>
-                                 <td><?php echo $linha->quantidade*$linha->valorunitario ?></td>
-
-
-
-                           <?php }
+                        <form action="router.php?c=produto&a=selectproduto&idf=<?= $fatura->id ?>" method="post">
+                            <?php  foreach($fatura->linhafaturas as $linha){ ?>
+                            <tr>
+                                <form action="router.php?c=linhafatura&a=store&idf=<?=$fatura->id?>" method="post">
+                                    <td> <?=  $linha->produto->referencia  ; ?> </td>
+                                    <td> <?=  $linha->produto->descricao  ; ?></td>
+                                    <td><select name="quantidade" id="quantidade">
+                                            <?php for($i=1;$i<=$linha->produto->stock;$i++){?>
+                                                <option><?php echo $i ?></option>
+                                            <?php
+                                            }?>
+                                        </select></td>
+                                    <td> <?= $linha->valorunitario ; ?></td>
+                                    <td> <?= $linha->valoriva ; ?></td>
+                                    <td> <?= $linha->taxaiva  ; ?></td>
+                                    <td><button type="submit" class="btn btn-success"></button></td>
+                                </form>
+                            </tr>
+                            <?php }
                             ?>
-                        </tr>
-                        <form action="router.php?c=produto&a=selectproduto" method="post">
-                        <td>
+                            <td>
                             <button type="submit" class="btn btn-primary">Inserir Produto</button>
-                        </td>
+                            </td>
                         </form>
                         </tbody>
                     </table>

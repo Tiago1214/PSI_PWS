@@ -124,4 +124,11 @@ class UserController extends BaseAuthController
         $user=User::find([$id]);
         $this->makeView('user','changedados',['user'=>$user]);
     }
+
+    //Esta função serve para selecionar um cliente de uma determinada fatura
+    public function selectclient()
+    {
+        $users = User::All();
+        $this->makeView('user','selectclient',['users'=>$users]);
+    }
 }

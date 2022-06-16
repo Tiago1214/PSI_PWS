@@ -11,26 +11,30 @@ class AuthController extends BaseController
 
     }
 
+    //Função de login verifica se o utilizador introduziu as credenciais corretamente, se sim inicia sessão e vai para a vista de cliente,
+    //senão volta para a janela de login
     public function login()
     {
+        //veririficar se o utilizador introduziu dados
         if ((isset($_POST['username'])) && (isset($_POST['pass']))) {
             $user = $_POST['username'];
             $pass = $_POST['pass'];
 
-             $auth= new Auth();
+            $auth= new Auth();
+
+            //Verificar se o utilizador introduziu os dados corretamente
             $validacaologin = $auth->checklogin($user, $pass);
 
             if ($validacaologin == true){
                 $this->redirectToRoute('backoffice','index');
             }
             else{
-
                 $this->redirectToRoute('auth','index');
-
             }
         }
     }
 
+    //Função logout termina a sessão de um utilizador
     public function logout()
     {
         $l=new Auth();

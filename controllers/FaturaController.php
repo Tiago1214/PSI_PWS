@@ -25,11 +25,12 @@ class FaturaController  extends BaseAuthController
 
     public function show($id){
         $fatura = Fatura::find([$id]);
+        $empresa=Empresa::find([2]);
         if (is_null($fatura)) {
 
         } else {
             //mostrar a vista show passando os dados por parâmetro
-            $this->makeView('fatura','show',['fatura'=>$fatura]);
+            $this->makeView('fatura','show',['fatura'=>$fatura],['empresa'=>$empresa]);
         }
 
     }
@@ -37,9 +38,7 @@ class FaturaController  extends BaseAuthController
     public function store($idclient)
     {
         $auth = new Auth();
-        $empresas = Empresa::All();
         $fatura = new Fatura();
-        $fatura->data = Carbon::now();
         $fatura->valortotal =00.00;
         $fatura->ivatotal = 00.00;
         $fatura->estado ='em lancamento';
@@ -54,13 +53,6 @@ class FaturaController  extends BaseAuthController
             $this->redirectToRoute('fatura','create');
 
         }
-
-    }
-
-    public function selectClient()
-    {
-        $users = User::All();
-        $this->makeView('fatura','selectclient',['users'=>$users]);
     }
 
     public function delete($idfatura)

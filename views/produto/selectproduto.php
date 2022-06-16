@@ -39,24 +39,26 @@
                                     </thead>
                                     <tbody>
                                     <?php foreach ($produtos as $produto) {
-                                        if($produto->estado == '1'){ ?>
+                                        if($produto->estado == '1' && $produto->stock>1){ ?>
                                             <tr>
                                                 <td><?=$produto->referencia ?></td>
                                                 <td><?=$produto->descricao ?></td>
                                                 <td><?=$produto->preco ?></td>
                                                 <td><?= $produto->stock ?></td>
-
                                                 <td>
-                                                    <a href="router.php?c=linhafatura&a=create&idp=<?=$produto->id ?>&idf=<?=$fatura->id ?>"
-                                                       class="btn btn-info" role="button">Select</a>
+                                                    <a href="router.php?c=linhafatura&a=store&idp=<?=$produto->id ?>&idf=<?= $_GET['idf']; ?>"
+                                                       class="btn btn-info" role="button">Selecionar</a>
                                                 </td>
                                             </tr>
-
                                         <?php } } ?>
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-</div>
-</div>
 </div>
 
