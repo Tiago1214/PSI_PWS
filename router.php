@@ -149,7 +149,7 @@ else{
                        break;
                    case 'selectproduto':
 
-                       $produtocontroller->selectproduto('./router.php?c=linhafatura&a=create&idf='.$_GET['idf']);
+                       $produtocontroller->selectproduto('./router.php?c=linhafatura&a=create&idf='.$_GET['id']);
 
                        break;
 
@@ -205,6 +205,9 @@ else{
                    case 'store':
                        $faturacontroller->store($_GET['id']);
                        break;
+                   case 'finalizar':
+                       $faturacontroller->finalizar($_GET['idf'],$_GET['op']);
+                       break;
                }
                break;
 
@@ -246,10 +249,14 @@ else{
                switch ($action)
                {
                    case 'create':
-                       $linhafaturacontroller->create($_GET['idf']);
+                       $linhafaturacontroller->create($_GET['idf'],$_GET['idp']);
                        break;
                    case 'store':
                        $linhafaturacontroller->store($_GET['idf'],$_GET['idp']);
+                       break;
+                   case 'delete':
+                       $linhafaturacontroller->delete($_GET['idlf'],$_GET['idf']);
+                       break;
                }
 
 

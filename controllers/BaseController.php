@@ -2,10 +2,11 @@
 
 class BaseController
 {
-    protected function makeView($controllerPrefix,$action,array $params=[], array $params2=[])
+    protected function makeView($controllerPrefix,$action,array $params=[], array $params2=[],array $params3=[])
     {
         extract($params);
         extract($params2);
+        extract($params3);
         $auth= new Auth();
         if($auth->isLogedIn())
         {

@@ -9,13 +9,18 @@ class LinhaFaturaController extends BaseAuthController
     }
 
     //Criação de uma linha de fatura
-    public function create($idFatura)
+    public function create($idFatura,$idProduct)
     {
-        //$this->loginFilterByRole(['admin','funcionario']);
         $fatura = Fatura::find([$idFatura]);
         $empresa = Empresa::find([2]);
-
-        $this->makeView('linhafatura','create',['fatura'=>$fatura],['empresa'=>$empresa]);
+        //$this->loginFilterByRole(['admin','funcionario']);
+        if(!is_null($idProduct)) {
+            $produto = Produto::find([$idProduct]);
+            $this->makeView('linhafatura','create',['fatura'=>$fatura],['empresa'=>$empresa],['produto'=>$produto]);
+        }else{
+            $idProduct=null;
+            $this->makeView('linhafatura','create',['fatura'=>$fatura],['empresa'=>$empresa],['produto'=>$idProduct]);
+        }
     }
 
     //Guardar os dados de uma linha de fatura
@@ -40,16 +45,23 @@ class LinhaFaturaController extends BaseAuthController
 
         if($linhafatura->is_valid()){
             $linhafatura->save();
-            $this->redirectToRoute('linhafatura','create&idf='.$idFatura);
+            $this->redirectToRoute('linhafatura','create',['idf'=>$idFatura]);
         } else {
 
-            $this->redirectToRoute('linhafatura','create',['fatura'=>$fatura]);
+            $this->redirectToRoute('linhafatura','create',['idf'=>$idFatura]);
 
         }
     }
 
     public function edit($idLinhaFatura)
     {
+
+    }
+    public function delete($idLinhaFatura,$fatura)
+    {
+        $linhafatura = Linhafatura::find([$idLinhaFatura]);
+        $linhafatura->delete();
+        $this->redirectToRoute('linhafatura','create',['idf'=>$fatura]);
 
     }
 

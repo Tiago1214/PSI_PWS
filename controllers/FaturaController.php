@@ -44,6 +44,7 @@ class FaturaController  extends BaseAuthController
         $fatura->estado ='em lancamento';
         $fatura->cliente_id =$idclient;
         $fatura->user_id = $auth->getUserId();
+        //$idProduct =null;
 
         if($fatura->is_valid()){
             $fatura->save();
@@ -67,6 +68,18 @@ class FaturaController  extends BaseAuthController
         $auth=$auth->getUserId();
         $this->makeView('fatura','indexcliente',['faturas'=>$faturas],['auth'=>$auth]);
 
+    }
+    public function finalizar($idfatura,$opcao)
+    {
+        $fatura = Fatura::find([$idfatura]);
+        if($opcao ='finalizada')
+        {
+            $fatura->estado ='finalizada';
+        }else{
+            $fatura->estado ='cancelada';
+        }
+        $fatura->save();
+        $this->redirectToRoute('fatura','index');
     }
 
 }

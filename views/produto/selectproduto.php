@@ -46,7 +46,7 @@
                                                 <td><?=$produto->preco ?></td>
                                                 <td><?= $produto->stock ?></td>
                                                 <td>
-                                                    <a href="router.php?c=linhafatura&a=store&idp=<?=$produto->id ?>&idf=<?= $_GET['idf']; ?>"
+                                                    <a href="router.php?c=linhafatura&a=create&idp=<?=$produto->id ?>&idf=<?= $_GET['id']; ?>"
                                                        class="btn btn-info" role="button">Selecionar</a>
                                                 </td>
                                             </tr>

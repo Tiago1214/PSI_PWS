@@ -80,7 +80,7 @@
                             </tr>
                             <tr>
                                 <th>Total:</th>
-                                <td>$265.24</td>
+                                <td></td>
                             </tr>
                         </table>
                     </div>
