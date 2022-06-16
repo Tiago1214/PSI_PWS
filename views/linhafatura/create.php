@@ -169,8 +169,8 @@
             <div class="row no-print">
                 <div class="col-xs-12">
                     <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Imprimir</a>
-                    <a href="router.php?c=fatura&a=finalizar&idf=<?= $fatura->id ?>&op=finalizada" class="btn btn-primary pull-right"><i class="fa fa-download"></i>Gerar</a>
-                    <a href="router.php?c=fatura&a=finalizar&idf=<?= $fatura->id ?>&op=cancelada" class="btn btn-primary pull-right"><i class="fa fa-download"></i>Cancelar</a>
+                    <a href="router.php?c=fatura&a=finalizar&idf=<?= $fatura->id ?>&opcao=finalizada" class="btn btn-primary pull-right"><i class="fa fa-download"></i>Gerar</a>
+                    <a href="router.php?c=fatura&a=finalizar&idf=<?= $fatura->id ?>&opcao=cancelada" class="btn btn-primary pull-right"><i class="fa fa-download"></i>Cancelar</a>
                 </div>
             </div>
         </section>

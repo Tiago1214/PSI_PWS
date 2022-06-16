@@ -206,7 +206,7 @@ else{
                        $faturacontroller->store($_GET['id']);
                        break;
                    case 'finalizar':
-                       $faturacontroller->finalizar($_GET['idf'],$_GET['op']);
+                       $faturacontroller->finalizar($_GET['idf'],$_GET['opcao']);
                        break;
                }
                break;
