@@ -47,7 +47,7 @@
                                     </thead>
                                     <tbody>
                                     <?php foreach ($users as $user) {
-                                        if($user->role == 'cliente'&&user->estado==1){ ?>
+                                        if($user->role == 'cliente'){ ?>
                                         <tr>
                                             <td><?=$user->username ?></td>
                                             <td><?=$user->email ?></td>

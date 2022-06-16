@@ -58,31 +58,35 @@
                                     </thead>
                                     <tbody>
                                     <?php foreach ($faturas as $fatura) { ?>
-                                        <tr>
-                                            <td><?=$fatura->id ?></td>
-                                            <td><?=$fatura->data ?></td>
-                                            <td><?=$fatura->valortotal ?></td>
-                                            <td><?= $fatura->ivatotal ?></td>
-                                            <td><?= $fatura->estado ?></td>
-                                            <td><?= $fatura->cliente->username ?></td>
-                                            <td><?= $fatura->user->username ?></td>
+                                        <?php if($fatura->estado!='cancelada'){
+                                            ?>
+                                            <tr>
+                                                <td><?=$fatura->id ?></td>
+                                                <td><?=$fatura->data ?></td>
+                                                <td><?=$fatura->valortotal ?></td>
+                                                <td><?= $fatura->ivatotal ?></td>
+                                                <td><?= $fatura->estado ?></td>
+                                                <td><?= $fatura->cliente->username ?></td>
+                                                <td><?= $fatura->user->username ?></td>
 
-                                            <td>
-                                                <a href="router.php?c=fatura&a=show&id=<?=$fatura->id ?>"
-                                                   class="btn btn-info" role="button">Show</a>
+                                                <td>
+                                                    <a href="router.php?c=fatura&a=show&id=<?=$fatura->id ?>"
+                                                       class="btn btn-info" role="button">Show</a>
 
-                                                <?php if($fatura->estado =='em lancamento')
-                                                { ?>
+                                                    <?php if($fatura->estado =='em lancamento')
+                                                    { ?>
 
-                                                    <a href="router.php?c=fatura&a=edit&id=<?=$fatura->id ?>"
-                                                       class="btn btn-warning" role="button">Edit</a>
+                                                        <a href="router.php?c=fatura&a=edit&idf=<?=$fatura->id ?>"
+                                                           class="btn btn-warning" role="button">Edit</a>
 
-                                                <a href="router.php?c=fatura&a=delete&id=<?=$fatura->id ?>"
-                                                   class="btn btn-danger" role="button">Delete</a>
-                                                <?php } ?>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
+                                                        <a href="router.php?c=fatura&a=cancel&idf=<?=$fatura->id ?>"
+                                                           class="btn btn-danger" role="button">Cancel</a>
+                                                    <?php } ?>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                        <?php }?>
+
                                     </tbody>
                                 </table>
                             </div>

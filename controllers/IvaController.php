@@ -61,7 +61,7 @@ class IvaController extends BaseAuthController
         $iva = Iva::find([$id]);
 
         if (is_null($iva)) {
-            //TODO redirect to standard error page
+            $this->redirectToRoute('iva','index');
         } else {
             //mostrar a vista edit passando os dados por parâmetro
             $this->makeView('iva','edit',['iva'=>$iva]);

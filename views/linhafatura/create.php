@@ -1,4 +1,3 @@
-
 <div class="content-wrapper">
     <div class="container-fluid">
         <!-- Main content -->
@@ -19,6 +18,7 @@
                 <div class="col-sm-4 invoice-col">
 
                     <h4>Fatura nº<?php echo $fatura->id  ?></h4>
+                    <h5>Data: <?= $fatura->data ?></h5>
                     <address>
 
                             <br>
@@ -62,12 +62,20 @@
                             <th>Valor Un.</th>
                             <th>Taxa IVA</th>
                             <th>Valor IVA</th>
-                            <th>SubTotal</th>
+                            <th>Valor Total</th>
                             <th>User Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php  foreach($fatura->linhafaturas as $linha){ ?>
+                        <?php $subtotal=0;
+                               $ivatotal=0;
+                                $total=0;
+
+                        ?>
+                        <?php  foreach($fatura->linhafaturas as $linha){
+                                $subtotal=$subtotal+$linha->produto->preco*$linha->quantidade;
+                                $ivatotal=$ivatotal+($linha->valoriva * $linha->quantidade);
+                            ?>
                         <tr>
                                 <td> <?=  $linha->produto->referencia  ; ?> </td>
                                 <td> <?=  $linha->produto->descricao  ; ?></td>
@@ -75,10 +83,12 @@
                                 <td> <?= $linha->valorunitario."€" ; ?></td>
                                 <td> <?= $linha->produto->iva->percentagem."%" ; ?></td>
                                 <td><?=$linha->valoriva * $linha->quantidade. "€"?></td>
-                                <td> <?=$linha->produto->preco*$linha->quantidade. "€"?></td>
-                                <td><a href="router.php?c=linhafatura&a=edit&idlf=<?= $linha->id ?>&idf=<?= $fatura->id ?>&idp=<?= $linha->produto->id ?>"  class="btn btn-warning" role="button">Edit</a>
+                                <td> <?=$linha->produto->preco*$linha->quantidade+$linha->valoriva * $linha->quantidade. "€"?></td>
+                                <td><a href="router.php?c=linhafatura&a=editquantidade&idf=<?= $fatura->id ?>&idlf=<?= $linha->id ?>"  class="btn btn-warning" role="button">Edit</a>
 
                                 <a href="router.php?c=linhafatura&a=delete&idlf=<?= $linha->id ?>&idf=<?= $fatura->id ?>" class="btn btn-danger">Delete</a>
+
+                                </td>
 
                                 </td>
 
@@ -89,12 +99,6 @@
 
 
                             <tr>
-                                    <td> <?=  $linha->produto->referencia  ; ?> </td>
-                                    <td> <?=  $linha->produto->descricao  ; ?></td>
-                                    <td> <?= $linha->quantidade; ?></td>
-                                    <td> <?= $linha->valorunitario ; ?></td>
-                                    <td> <?= $linha->valoriva ; ?></td>
-                                    <td> <?= $linha->taxaiva  ; ?></td>
                                <td><a href="router.php?c=produto&a=selectproduto&id=<?= $fatura->id?>" class="btn btn-primary" >Escolher Produto</a></td>
                                     <td><input type="number" class="form-control" placeholder="QTD" name="quantidade"  value="1" style="width: 100px"></td>
                             </tr>
@@ -109,7 +113,7 @@
                                 <td>
                                     <?=$produto->descricao?><br>
                                 </td>
-                                <td><input type="number" class="form-control" placeholder="QTD" name="quantidade"  value="1" style="width: 100px"></td>
+                                <td><input type="number" class="form-control" placeholder="QTD" name="quantidade"  value="1" min=1 max="<?= $produto->stock ?>" style="width: 100px"></td>
                                 <td>
                                     <input type="hidden" class="form-control" name="valorunitario" value=" <?=$produto->preco?>">
                                     <?=$produto->preco."€"?><br>
@@ -126,9 +130,10 @@
                                 </td>
                                 <td>
                                     <button type="submit" class="btn btn-primary" style="background-color: green"><img src="./public/img/Accept-icon.png"></button>
-                                    <a href="router.php?c=linhafatura&a=create&id=<?= $fatura->id?>" class="btn btn-danger" style="background-color: red"><img src="./public/img/Actions-file-close-icon.png"></a>
+                                    <a href="router.php?c=linhafatura&a=create&idf=<?= $fatura->id?>" class="btn btn-danger" style="background-color: red"><img src="./public/img/Actions-file-close-icon.png"></a>
 
                                 </td>
+
                             </tr>
                         </form>
                         <?php }?>
@@ -141,43 +146,51 @@
             </div>
             <!-- /.row -->
 
-            <div class="row">
-                <!-- accepted payments column -->
-                <div class="col-xs-9">
-                </div>
-                <!-- /.col -->
-                <div class="col-xs-3">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tr>
-                                <th style="width:50%">Subtotal:</th>
-                                <td><?= $fatura->valortotal."€" ?></td>
-                            </tr>
-                            <tr>
-                                <th>IVA:</th>
-                                <td><?= $fatura->ivatotal."€"?></td>
-                            </tr>
-                            <tr>
-                                <th>Total:</th>
-                                <td>
-                                    <?= $fatura->valortotal . "€"?>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="row">
+                        <!-- accepted payments column -->
+                        <div class="col-xs-9">
+                        </div>
+                        <!-- /.col -->
+                        <form action="router.php?c=fatura&a=update&idf=<?= $fatura->id?>" method="post">
+                            <div class="col-xs-3">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tr>
+                                            <th style="width:50%">Subtotal:</th>
+                                            <td><?= $subtotal."€" ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>IVA:</th>
+                                            <td><?= $ivatotal."€"?></td>
+                                            <input type="hidden" name="ivatotal" value="<?= $ivatotal?>">
+                                        </tr>
+                                        <tr>
+                                            <th>Total:</th>
+                                            <td name="valortotal">
+                                                <?= $total=$total+($subtotal+$ivatotal); ?>€
+                                                <input type="hidden" name="total" value="<?= $total?>">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row no-print">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-2">
+                                    <button type="submit" class="btn btn-success">Gerar</button>
+                                    <a href="router.php?c=fatura&a=cancel&idf=<?= $fatura->id ?>" class="btn btn-warning pull-right">Cancelar</a>
+                                </div>
+                            </div>
+                        </form>
+                        <br>
+                        <p>Fatura emitida por: <?= $_SESSION['username']; ?></p>
+                            <!-- /.col -->
                     </div>
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
 
-            <!-- this row will not appear when printing -->
-            <div class="row no-print">
-                <div class="col-xs-12">
-                    <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Imprimir</a>
-                    <a href="router.php?c=fatura&a=finalizar&idf=<?= $fatura->id ?>&opcao=finalizada" class="btn btn-primary pull-right"><i class="fa fa-download"></i>Criar</a>
-                    <a href="router.php?c=fatura&a=finalizar&idf=<?= $fatura->id ?>&opcao=cancelada" class="btn btn-primary pull-right"><i class="fa fa-download"></i>Cancelar</a>
-                </div>
-            </div>
         </section>
     </div>
 </div>

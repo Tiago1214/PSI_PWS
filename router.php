@@ -10,8 +10,6 @@ require_once ('./controllers/LinhaFaturaController.php');
 
 require_once ('./controllers/UserController.php');
 
-
-require_once ('./controllers/UserController.php');
 require_once ('./controllers/IvaController.php');
 require_once ('./controllers/UserController.php');
 
@@ -25,6 +23,7 @@ if(!isset($_GET['c']) && !isset($_GET['a']))
     {
         $controller = new SiteController();
         $controller ->index();
+
     }
 // ****** ROTA DA APLICACAO ******
 else{
@@ -101,28 +100,6 @@ else{
                 }
                 break;
 
-           case 'fatura':
-               $faturacontroller = new FaturaController();
-               switch ($action)
-               {
-                   case 'index':
-                       $faturacontroller->index();
-                       break;
-
-                   case 'create':
-                       $faturacontroller->create();
-                       break;
-                   case 'store':
-                       $faturacontroller->store($_GET['id']);
-                   case 'show':
-                       $faturacontroller->show($_GET['id']);
-                       break;
-                   case 'indexcliente':
-                       $faturacontroller->showclientinvoice();
-
-               }
-               break;
-
            case 'produto':
                $produtocontroller = new ProdutoController();
                switch ($action) {
@@ -151,9 +128,6 @@ else{
 
                        $produtocontroller->selectproduto('./router.php?c=linhafatura&a=create&idf='.$_GET['id']);
 
-                       break;
-                   case 'posicao':
-                       $produtocontroller->posicao($_GET['id']);
                        break;
 
 
@@ -190,26 +164,7 @@ else{
 
 
 
-           case 'fatura':
-               $faturacontroller=new FaturaController();
-               switch($action){
-                   case 'index':
-                       $faturacontroller->index();
-                       break;
-                   case 'show':
-                       $faturacontroller->show($_GET['id']);
-                       break;
-                   case 'create':
-                       $faturacontroller->create();
-                       break;
-                   case 'store':
-                       $faturacontroller->store($_GET['id']);
-                       break;
-                   case 'finalizar':
-                       $faturacontroller->finalizar($_GET['idf'],$_GET['opcao']);
-                       break;
-               }
-               break;
+
 
            case 'user':
                $usercontroller=new UserController();
@@ -237,31 +192,68 @@ else{
                        break;
                    case 'changedados':
                        $usercontroller->changedados($_GET['id']);
-                       break;
                    case 'selectclient':
                        $usercontroller->selectclient();
                        break;
-                   case 'changedadosupdate':
-                       $usercontroller->changedadosupdate($_GET['id']);
-                       break;
+
                }
                break;
+
+           case 'fatura':
+               $faturacontroller=new FaturaController();
+               switch($action){
+                   case 'index':
+                       $faturacontroller->index();
+                       break;
+                   case 'show':
+                       $faturacontroller->show($_GET['id']);
+                       break;
+                   case 'create':
+                       $faturacontroller->create();
+                       break;
+                   case 'store':
+                       $faturacontroller->store($_GET['id']);
+                       break;
+                   case 'update':
+                       $faturacontroller->update($_GET['idf']);
+                       break;
+                   case 'cancel':
+                       $faturacontroller->cancel($_GET['idf']);
+                       break;
+                   case 'edit':
+                       $faturacontroller->edit($_GET['idf']);
+                       break;
+                   case 'showclientinvoice':
+                       $faturacontroller->showclientinvoice();
+               }
+               break;
+
 
            case 'linhafatura':
                $linhafaturacontroller=new LinhaFaturaController();
                switch ($action)
                {
                    case 'create':
-                       $linhafaturacontroller->create($_GET['idf'],$_GET['idp']);
+                       if(isset($_GET['idp'])){
+                           $linhafaturacontroller->create($_GET['idf'],$_GET['idp']);
+                       }
+                       else
+                           $linhafaturacontroller->create($_GET['idf'],null);
                        break;
                    case 'store':
                        $linhafaturacontroller->store($_GET['idf'],$_GET['idp']);
                        break;
-
                    case 'delete':
                        $linhafaturacontroller->delete($_GET['idlf'],$_GET['idf']);
                        break;
+                   case 'editquantidade':
+                       $linhafaturacontroller->editquantidade($_GET['idf'],$_GET['idlf']);
+                       break;
+                   case 'guardarquantidade':
+                       $linhafaturacontroller->guardarquantidade($_GET['idlf']);
+                       break;
                }
+               break;
 
 
 

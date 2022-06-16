@@ -8,6 +8,7 @@
                 <div class="col-xs-12">
                     <h2 class="page-header">
                         <i class="fa fa-globe"></i> Fatura +
+                        <small class="pull-right">F+</small>
                     </h2>
                 </div>
                 <!-- /.col -->
@@ -17,6 +18,7 @@
                 <div class="col-sm-4 invoice-col">
 
                     <h4>Fatura nº<?php echo $fatura->id  ?></h4>
+                    <h5>Data: <?= $fatura->data ?></h5>
                     <address>
 
                         <br>
@@ -54,28 +56,22 @@
                             <th>Valor Un.</th>
                             <th>Valor IVA</th>
                             <th>Taxa IVA</th>
+                            <th>Subtotal</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php $totaliva=0;
-                                $subtotal=0;
-                        ?>
-                        <?php  foreach($fatura->linhafaturas as $linha)
-                        {
-                            $totaliva=$totaliva+$linha->valorunitario*$linha->taxaiva/100;
-                            $subtotal=$subtotal+$linha->valorunitario;
-                            ?>
                         <tr>
-
+                            <?php  foreach($fatura->linhafaturas as $linha){ ?>
+                        <tr>
                                 <td> <?=  $linha->produto->referencia  ; ?> </td>
                                 <td> <?=  $linha->produto->descricao  ; ?></td>
                                 <td> <?= $linha->quantidade  ; ?></td>
                                 <td> <?= $linha->valorunitario ; ?>€</td>
                                 <td> <?= $linha->valorunitario*$linha->taxaiva/100 ; ?>€</td>
                                 <td> <?= $linha->taxaiva  ; ?>%</td>
+                                <td><?=  $linha->valorunitario*$linha->quantidade+($linha->quantidade*($linha->valorunitario*$linha->taxaiva/100)) ?>€</td>
+                            <?php }?>
                         </tr>
-                        <?php }
-                        ?>
                         </tbody>
                     </table>
                 </div>
@@ -93,15 +89,15 @@
                         <table class="table">
                             <tr>
                                 <th>Subtotal:</th>
-                                <td><?=  $subtotal; ?>€</td>
+                                <td><?= $fatura->valortotal-$fatura->ivatotal ?>€</td>
                             </tr>
                             <tr>
                                 <th>Valor IVA:</th>
-                                <td> <?= $totaliva; ?> €</td>
+                                <td> <?= $fatura->ivatotal ?> €</td>
                             </tr>
                             <tr>
                                 <th>Total:</th>
-                                <td><?php echo $subtotal+$totaliva; ?>€</td>
+                                <td><?= $fatura->valortotal?>€</td>
                             </tr>
                         </table>
                     </div>
@@ -114,11 +110,6 @@
             <div class="row no-print">
                 <div class="col-xs-12">
                     <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Imprimir</a>
-                    <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Cancelar
-                    </button>
-                    <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
-                        <i class="fa fa-download"></i> Gerar
-                    </button>
                 </div>
             </div>
         </section>

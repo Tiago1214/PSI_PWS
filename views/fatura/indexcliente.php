@@ -48,7 +48,9 @@
                                     <tbody>
                                     <?php foreach ($faturas as $fatura) { ?>
                                         <tr>
-                                            <?php if($auth== $fatura->cliente_id)
+                                            <?php $auth=new Auth();
+                                            $cliente=$auth->getUserId();
+                                            if($cliente== $fatura->cliente_id)
                                             { ?>
                                             <td><?=$fatura->id ?></td>
                                             <td><?=$fatura->data ?></td>

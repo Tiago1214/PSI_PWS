@@ -119,7 +119,7 @@
                 if($tipouser->getRole()=='cliente'){
                     ?>
                     <li>
-                        <a href="router.php?c=fatura&a=index">
+                        <a href="router.php?c=fatura&a=showclientinvoice">
                             <i class="fa fa-th"></i> <span>Minhas Faturas</span>
                             <span class="pull-right-container"></span>
                         </a>

@@ -56,30 +56,46 @@ class FaturaController  extends BaseAuthController
         }
     }
 
-    public function delete($idfatura)
-    {
-        //coluna estado da fatura = anulada
-    }
-
     public function showclientinvoice()
     {
         $faturas = Fatura::All();
-        $auth = new Auth();
-        $auth=$auth->getUserId();
-        $this->makeView('fatura','indexcliente',['faturas'=>$faturas],['auth'=>$auth]);
-
+        $this->makeView('fatura','indexcliente',['faturas'=>$faturas]);
     }
-    public function finalizar($idfatura,$opcao)
-    {
+
+    public function update($idfatura){
         $fatura = Fatura::find([$idfatura]);
-        if($opcao ='finalizada')
-        {
-            $fatura->estado ='finalizada';
-        }else{
-            $fatura->estado ='cancelada';
+        foreach($fatura->linhafaturas as $linha){
+            $linha->produto->stock=$linha->produto->stock-$linha->quantidade;
+            if($linha->produto->is_valid()){
+                $linha->produto->save();
+            }
         }
-        $fatura->save();
-        $this->redirectToRoute('fatura','index');
+        $fatura->valortotal=$_POST['total'];
+        $fatura->ivatotal=$_POST['ivatotal'];
+        $fatura->estado='emitida';
+        if($fatura->is_valid()){
+            $fatura->save();
+            $this->redirectToRoute('fatura','index');
+        }
+    }
+    public function cancel($idfatura){
+        $fatura = Fatura::find([$idfatura]);
+        $fatura->estado='cancelada';
+        if($fatura->is_valid()){
+            $fatura->save();
+            $this->redirectToRoute('fatura','index');
+        }
+    }
+
+    public function edit($idfatura){
+        $fatura = Fatura::find([$idfatura]);
+        $empresa=Empresa::find([2]);
+        if(is_null($idfatura)){
+            $this->redirectToRoute('fatura','index');
+        }
+        else{
+            $this->makeView('linhafatura','edit',['fatura'=>$fatura],['empresa'=>$empresa]);
+        }
     }
 
 }

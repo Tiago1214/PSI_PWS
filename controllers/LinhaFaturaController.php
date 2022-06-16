@@ -64,9 +64,23 @@ class LinhaFaturaController extends BaseAuthController
         $this->redirectToRoute('linhafatura','create',['idf'=>$fatura]);
 
     }
-
-    public function selectProduct($idFatura)
-    {
-
+    public function editquantidade($idfatura,$idlinhafatura){
+        $linhafatura = Linhafatura::find([$idlinhafatura]);
+        $empresa=Empresa::find([2]);
+        $fatura=Fatura::find([$idfatura]);
+        if(is_null($linhafatura)){
+            $this->makeView('linhafatura','edit',['fatura'=>$fatura],['empresa'=>$empresa]);
+        }
+        else{
+            $this->makeView('linhafatura','editquantidade',['linhafatura'=>$linhafatura]);
+        }
+    }
+    public function guardarquantidade($idlinhafatura){
+        $linhafatura = Linhafatura::find([$idlinhafatura]);
+        $linhafatura->quantidade=$_POST['quantidade'];
+        if($linhafatura->is_valid()){
+            $linhafatura->save();
+        }
+        $this->redirectToRoute('fatura','edit',['idf'=>$linhafatura->fatura_id]);
     }
 }

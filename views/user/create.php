@@ -59,16 +59,17 @@
                                 $produto->localidade; }?>">
                                 </br>
                             </div>
-                            <?php if($role=='administrador'){?>
+                            <?php if($tipouser=='administrador'){?>
                                 <div class="mb-3">
                                     <label for="role" class="form-label">Role</label>
                                     <select name="role">
+                                        <option>administrador</option>
                                         <option>funcionario</option>
                                         <option>cliente</option>
                                     </select>
                                     </br>
                                 </div>
-                            <?php } else if($role=='funcionario'){?>
+                            <?php } else if($tipouser=='funcionario'){?>
                                 <div class="mb-3">
                                     <label for="role" class="form-label">Role</label>
                                     <select name="role">

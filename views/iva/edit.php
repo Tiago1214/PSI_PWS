@@ -17,8 +17,8 @@
                                 <input class="form-control" type="text" name="descricao" required value="<?= $iva->descricao ?>"></br>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-success">Enviar</button>
-                            <a href="router.php?c=iva&a=index"   class="btn btn-warning" role="button">Cancelar</a>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <a href="router.php?c=iva&a=index"   class="btn btn-info" role="button">Cancelar</a>
                         </form>
                     </div>
                 </div>
