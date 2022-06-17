@@ -10,7 +10,7 @@
                         <form  action="router.php?c=produto&a=update&id=<?= $produto->id ?>" method="post">
                             <div class="mb-3">
                                 <label for="referencia" class="form-label">Referência</label>
-                                <input class="form-control" type="text" readonly name="referencia" value="<?= $produto->referencia ?>">
+                                <input class="form-control" maxlength="15" minlength="4"  type="text" readonly name="referencia" value="<?= $produto->referencia ?>">
                                 </br> <?php  if(isset($produto->errors)){ echo $produto->errors->on('referencia') ;}  ?>
                             </div>
                             <div class="mb-3">
