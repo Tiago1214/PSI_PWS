@@ -4,12 +4,13 @@ require_once ('./controllers/BaseAuthController.php');
 
 class IvaController extends BaseAuthController
 {
+    //atribui
     public function  __Construct__()
     {
         $this->loginFilterbyRole(['funcionario','administrador']);
     }
 
-
+//mostra todas as taxas de iva numa vista
     public function index()
     {
 
@@ -17,7 +18,7 @@ class IvaController extends BaseAuthController
 
         $this->makeView('iva','index',['ivas'=>$ivas]);
     }
-
+    //mostrar dados de iva ao pormenor
     public function show($id)
     {
         $iva = Iva::find([$id]);
@@ -30,14 +31,14 @@ class IvaController extends BaseAuthController
 
 
     }
-
+    //mostra vista para criar ivas
     public function create()
     {
 
 
         $this->makeView('iva','create');
     }
-
+    //guarda dados dos ivas
     public function store()
     {
 
@@ -55,7 +56,7 @@ class IvaController extends BaseAuthController
         }
 
     }
-
+    //mostra vista para editar os dados
     public function edit($id)
     {
         $iva = Iva::find([$id]);
@@ -69,7 +70,7 @@ class IvaController extends BaseAuthController
 
         }
     }
-
+    //atualiza os dados
     public function update($id)
     {
         //find resource (activerecord/model) instance where PK = $id
@@ -87,7 +88,7 @@ class IvaController extends BaseAuthController
             //mostrar vista edit passando o modelo como parâmetro
         }
     }
-
+    //atualizar iva de ativo ou desativo
     public function posicao($id){
         $iva=Iva::find([$id]);
         if($iva->emvigor==1){
