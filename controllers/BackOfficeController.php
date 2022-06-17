@@ -5,6 +5,8 @@ class BackOfficeController extends BaseController
 {
     //Função index abre a vista de backoffice
     public function index(){
-        $this->makeView('backoffice','index');
+        $auth=new Auth();
+        $role=$auth->getRole();
+        $this->makeView('backoffice','index',['role'=>$role]);
     }
 }

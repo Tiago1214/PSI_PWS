@@ -11,10 +11,12 @@
                             <div class="mb-3">
                                 <label for="percentagem" class="form-label">Percentagem</label>
                                 <input class="form-control" type="number" max=99 min=1 maxlength="2" name="percentagem" required value="<?= $iva->percentagem ?>"></br>
+                                <?php  if(isset($iva->errors)){ echo $iva->errors->on('percentagem') ;}  ?>
                             </div>
                             <div class="mb-3">
                                 <label for="descricao" class="form-label">Descrição</label>
                                 <input class="form-control" type="text" name="descricao" required value="<?= $iva->descricao ?>"></br>
+                                <?php  if(isset($iva->errors)){ echo $iva->errors->on('descricao') ;}  ?>
                             </div>
                             <br>
                             <button type="submit" class="btn btn-success">Enviar</button>

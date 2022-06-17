@@ -10,19 +10,23 @@
                         <form  action="router.php?c=produto&a=update&id=<?= $produto->id ?>" method="post">
                             <div class="mb-3">
                                 <label for="referencia" class="form-label">Referência</label>
-                                <input class="form-control" type="text" readonly name="referencia" value="<?= $produto->referencia ?>"></br> <?php /* if(isset($book->errors)){ echo $book->errors->on('nome') ;} */ ?>
+                                <input class="form-control" type="text" readonly name="referencia" value="<?= $produto->referencia ?>">
+                                </br> <?php  if(isset($produto->errors)){ echo $produto->errors->on('referencia') ;}  ?>
                             </div>
                             <div class="mb-3">
                                 <label for="descricao" class="form-label">Descrição</label>
                                 <input class="form-control" type="text" name="descricao" value="<?= $produto->descricao ?>"></br>
+                                 <?php  if(isset($produto->errors)){ echo $produto->errors->on('descricao') ;}  ?>
                             </div>
                             <div class="mb-3">
                                 <label for="preco" class="form-label">Preço</label>
                                 <input class="form-control" type="text" name="preco" value="<?= $produto->preco ?>"></br>
+                                <?php  if(isset($produto->errors)){ echo $produto->errors->on('preco') ;}  ?>
                             </div>
                             <div class="mb-3">
                                 <label for="stock" class="form-label">Stock</label>
                                 <input class="form-control" type="text" name="stock" value="<?= $produto->stock ?>"></br>
+                                <?php  if(isset($produto->errors)){ echo $produto->errors->on('stock') ;}  ?>
                             </div>
                             <div class="mb-3">
                                 <label for="ivas">Iva:</label><br>
@@ -31,7 +35,7 @@
                                         <?php if($iva->id == $produto->iva_id) { ?>
                                             <option value="<?= $iva->id?>" selected><?= $iva->percentagem;
                                                 ?> </option>
-                                        <?php }else { ?>
+                                        <?php }else if($iva->emvigor==1) { ?>
                                             <option value="<?= $iva->id?>"> <?= $iva->percentagem;
                                                 ?></option>
                                         <?php }

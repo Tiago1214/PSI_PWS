@@ -60,8 +60,11 @@
                             <div class="mb-3">
                                 <label for="iva_id">Iva:</label><br>
                                 <select name="iva_id">
-                                    <?php foreach($ivas as $iva){?>
-                                        <option value="<?= $iva->id?>"> <?= $iva->percentagem; ?></option>
+                                    <?php foreach($ivas as $iva){
+                                        if($iva->emvigor==1){?>
+                                            <option value="<?= $iva->id?>"> <?= $iva->percentagem; ?></option>
+                                        <?php }
+                                        ?>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -69,9 +72,9 @@
                         <button type="submit" class="btn btn-success">Enviar</button>
                             <a href="router.php?c=user&a=index"  class="btn btn-warning" role="button">Cancelar</a>
                         </form>
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-
-</div>
-</div>
 </div>

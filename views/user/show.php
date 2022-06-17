@@ -13,8 +13,12 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <a href="router.php?c=user&a=edit&id=<?=$user->id ?>"
+                        <?php if($user->role=='administrador'){?>
+                        <?php
+                        } else{?>
+                            <a href="router.php?c=user&a=edit&id=<?=$user->id ?>"
                            class="btn btn-warning" role="button">Edit</a>
+                        <?php }?>
                         <h3>Utilizador</h3><td><?=$user->username ?></td>
                         <h3>Password</h3><td><?=$user->password ?></td>
                         <h3>Email</h3><td><?=$user->email ?></td>

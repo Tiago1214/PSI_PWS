@@ -88,40 +88,29 @@ class ProdutoController extends BaseAuthController
             //mostrar vista edit passando o modelo como parâmetro
         }
     }
-<<<<<<< HEAD
 
-    public function posicao($id){
-        $produto=Produto::find([$id]);
-        if($produto->estado==1){
-            $produto->update_attribute(estado,0);
-            if($produto->is_valid()){
-                $produto->save();
-                $this->redirectToRoute('produto','index');
-            }
-            else{
-                $this->makeView('produto','index');
-            }
-        }
-        else if($produto->estado==0){
-            $produto->update_attribute(estado,1);
-            if($produto->is_valid()){
-                $produto->save();
-                $this->redirectToRoute('produto','index');
-            }
-            else{
-                $this->makeView('produto','index');
-            }
-        }
-=======
-    //atualizar estado do produto
-    public function delete($id)
+    public function posicao($id)
     {
         $produto = Produto::find([$id]);
-        $produto->delete();
-        $this->redirectToRoute('produto','index');
-
->>>>>>> b5dbfc85d2d75843b2429d316f0a28a263bf8a2a
+        if ($produto->estado == 1) {
+            $produto->update_attribute(estado, 0);
+            if ($produto->is_valid()) {
+                $produto->save();
+                $this->redirectToRoute('produto', 'index');
+            } else {
+                $this->makeView('produto', 'index');
+            }
+        } else if ($produto->estado == 0) {
+            $produto->update_attribute(estado, 1);
+            if ($produto->is_valid()) {
+                $produto->save();
+                $this->redirectToRoute('produto', 'index');
+            } else {
+                $this->makeView('produto', 'index');
+            }
+        }
     }
+    //atualizar estado do produto
     //mostrar vista para selecionar um produto
     public function selectproduto($callbacktoroute)
     {
