@@ -225,6 +225,10 @@ else{
                        break;
                    case 'showclientinvoice':
                        $faturacontroller->showclientinvoice();
+                       break;
+                   case 'pdf':
+                       $faturacontroller->generatepdf($_GET['idf']);
+                       break;
                }
                break;
 

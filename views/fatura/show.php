@@ -108,10 +108,12 @@
 
             <!-- this row will not appear when printing -->
             <div class="row no-print">
-                <div class="col-xs-12">
-                    <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Imprimir</a>
+                <div class="col-12">
+                    <a href="router.php?c=fatura&a=pdf&idf=<?=$fatura->id?>" target="_blank" rel="noopener"  class="btn btn-default"><i class="fas fa-print"></i> PDF</a>
                 </div>
             </div>
+
+            <p>Fatura emitida por: <?= $fatura->user->username; ?></p>
         </section>
     </div>
 </div>

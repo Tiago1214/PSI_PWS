@@ -2,6 +2,7 @@
 use Carbon\Carbon;
 require_once ('./controllers/BaseController.php');
 require_once ('./controllers/BaseAuthController.php');
+require_once './models/Faturapdf.php';
 
 class FaturaController  extends BaseAuthController
 {
@@ -96,6 +97,14 @@ class FaturaController  extends BaseAuthController
         else{
             $this->makeView('linhafatura','edit',['fatura'=>$fatura],['empresa'=>$empresa]);
         }
+    }
+
+    public function generatepdf($idfatura)
+    {
+        $fatura = Fatura::find([$idfatura]);
+        $empresa = Empresa::find([2]);
+        $pdf = new Faturapdf();
+        $pdf->generatePDF($fatura, $empresa);
     }
 
 }
