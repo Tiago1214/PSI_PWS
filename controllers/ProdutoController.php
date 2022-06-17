@@ -89,6 +89,10 @@ class ProdutoController extends BaseAuthController
         }
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8b842c426965427ed6ea99c7b0d1362479eefcc2
     public function posicao($id)
     {
         $produto = Produto::find([$id]);
@@ -109,6 +113,19 @@ class ProdutoController extends BaseAuthController
                 $this->makeView('produto', 'index');
             }
         }
+<<<<<<< HEAD
+=======
+    }
+
+    //atualizar estado do produto
+    public function delete($id)
+    {
+        $produto = Produto::find([$id]);
+        $produto->delete();
+        $this->redirectToRoute('produto','index');
+
+
+>>>>>>> 8b842c426965427ed6ea99c7b0d1362479eefcc2
     }
     //atualizar estado do produto
     //mostrar vista para selecionar um produto
