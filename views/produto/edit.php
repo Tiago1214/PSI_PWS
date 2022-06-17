@@ -39,8 +39,8 @@
                                 </select>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                            <a href="router.php?c=empresa&a=index"  class="btn btn-info" role="button">Cancelar</a>
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <a href="router.php?c=produto&a=index"  class="btn btn-warning" role="button">Cancelar</a>
                         </form>
                     </div>
                 </div>

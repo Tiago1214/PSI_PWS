@@ -22,7 +22,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="nif" class="form-label">NIF</label>
-                                <input class="form-control" type="tel" maxlength="9" name="nif" value="<?= $empresa->nif ?>"></br>
+                                <input class="form-control" type="number" min=200000000 max=899999999 name="nif" value="<?= $empresa->nif ?>"></br>
                             </div>
                             <div class="mb-3">
                                 <label for="morada" class="form-label">Morada</label>

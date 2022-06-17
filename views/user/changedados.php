@@ -6,7 +6,7 @@
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Criar Nova Password</label>
-            <input type="password" name="password" value="<?=$user->password ?>" required></br>
+            <input type="password" minlength="8" maxlength="16" name="password" value="<?=$user->password ?>" required></br>
         </div>
         <button type="submit" class="btn btn-success">Enviar</button>
         <a href="router.php?c=backoffice&a=index"  class="btn btn-warning" role="button">Cancelar</a>
