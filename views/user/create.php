@@ -26,37 +26,37 @@
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" required name="email" value="<?php if(isset($user)) { echo
-                                $produto->email; }?>">
+                                $user->email; }?>"> </br> <?php if(isset($user->email)){ echo '<div class="alert alert-danger">'.$user->errors->on('email') .'</div>';}  ?>
                                 </br>
                             </div>
                             <div class="mb-3">
                                 <label for="telefone" class="form-label">Telefone</label>
                                 <input type="tel" maxlength="9" class="form-control" required name="telefone" value="<?php if(isset($user)) { echo
-                                $produto->telefone; }?>">
+                                $user->telefone; }?>"></br> <?php if(isset($user->telefone)){ echo '<div class="alert alert-danger">'.$user->errors->on('telefone') .'</div>';}  ?>
                                 </br>
                             </div>
                             <div class="mb-3">
                                 <label for="nif" class="form-label">NIF</label>
                                 <input type="tel" maxlength="9" class="form-control" required name="nif" value="<?php if(isset($user)) { echo
-                                $produto->nif; }?>">
+                                $user->nif; }?>"></br> <?php if(isset($user->nif)){ echo '<div class="alert alert-danger">'.$user->errors->on('nif') .'</div>';}  ?>
                                 </br>
                             </div>
                             <div class="mb-3">
                                 <label for="morada" class="form-label">Morada</label>
                                 <input type="tel"  class="form-control" required name="morada" value="<?php if(isset($user)) { echo
-                                $produto->morada; }?>">
+                                $user->morada; }?>">
                                 </br>
                             </div>
                             <div class="mb-3">
                                 <label for="codpostal" class="form-label">Código Postal</label>
                                 <input type="tel" maxlength="8" class="form-control" required name="codpostal" id="codpostal" minlength="8" maxlength="8" placeholder="____-___" value="<?php if(isset($user)) { echo
-                                $produto->codpostal; }?>">
+                                $user->codpostal; }?>">
                                 </br>
                             </div>
                             <div class="mb-3">
                                 <label for="localidade" class="form-label">Localidade</label>
                                 <input type="text" class="form-control" required name="localidade" value="<?php if(isset($user)) { echo
-                                $produto->localidade; }?>">
+                                $user->localidade; }?>">
                                 </br>
                             </div>
                             <?php if($tipouser=='administrador'){?>
