@@ -10,7 +10,7 @@ class ProdutoController extends BaseAuthController
         $this->loginFilterbyRole(['funcionario','administrador']);
     }
 
-
+    //mostar vista de todos os produtos
     public function index()
     {
 
@@ -18,7 +18,7 @@ class ProdutoController extends BaseAuthController
 
         $this->makeView('produto','index',['produtos'=>$produtos]);
     }
-
+    // mostrar vista de um produto ao pormenor
     public function show($id)
     {
         $produto = Produto::find([$id]);
@@ -31,14 +31,14 @@ class ProdutoController extends BaseAuthController
 
 
     }
-
+    //mostrar vista para criar produto
     public function create()
     {
 
         $ivas = Iva::All();
         $this->makeView('produto','create',['ivas'=>$ivas]);
     }
-
+    //guardar dados do produto
     public function store()
     {
 
@@ -56,7 +56,7 @@ class ProdutoController extends BaseAuthController
         }
 
     }
-
+    //mostrar vista para editar produto
     public function edit($id)
     {
         $produto = Produto::find([$id]);
@@ -70,7 +70,7 @@ class ProdutoController extends BaseAuthController
 
         }
     }
-
+    //atualizar dados de um produto
     public function update($id)
     {
         //find resource (activerecord/model) instance where PK = $id
@@ -88,17 +88,15 @@ class ProdutoController extends BaseAuthController
             //mostrar vista edit passando o modelo como parâmetro
         }
     }
-
+    //atualizar estado do produto
     public function delete($id)
     {
         $produto = Produto::find([$id]);
-
-
         $produto->delete();
         $this->redirectToRoute('produto','index');
 
     }
-
+    //mostrar vista para selecionar um produto
     public function selectproduto($callbacktoroute)
     {
         $produtos = Produto::All();

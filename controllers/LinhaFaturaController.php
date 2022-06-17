@@ -53,10 +53,7 @@ class LinhaFaturaController extends BaseAuthController
         }
     }
 
-    public function edit($idLinhaFatura)
-    {
-
-    }
+    //apagar linha de fatura
     public function delete($idLinhaFatura,$fatura)
     {
         $linhafatura = Linhafatura::find([$idLinhaFatura]);
@@ -64,6 +61,7 @@ class LinhaFaturaController extends BaseAuthController
         $this->redirectToRoute('linhafatura','create',['idf'=>$fatura]);
 
     }
+    //mostrar vista para editar quantidade
     public function editquantidade($idfatura,$idlinhafatura){
         $linhafatura = Linhafatura::find([$idlinhafatura]);
         $empresa=Empresa::find([2]);
@@ -75,6 +73,7 @@ class LinhaFaturaController extends BaseAuthController
             $this->makeView('linhafatura','editquantidade',['linhafatura'=>$linhafatura]);
         }
     }
+    //guardar quantidade
     public function guardarquantidade($idlinhafatura){
         $linhafatura = Linhafatura::find([$idlinhafatura]);
         $linhafatura->quantidade=$_POST['quantidade'];
