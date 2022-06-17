@@ -121,16 +121,12 @@ else{
                    case 'update':
                        $produtocontroller->update($_GET['id']);
                        break;
-                   case 'delete':
-                       $produtocontroller->delete($_GET['id']);
+                   case 'posicao':
+                       $produtocontroller->posicao($_GET['id']);
                        break;
                    case 'selectproduto':
-
                        $produtocontroller->selectproduto('./router.php?c=linhafatura&a=create&idf='.$_GET['id']);
-
                        break;
-
-
                }
                break;
 

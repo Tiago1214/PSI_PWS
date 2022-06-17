@@ -14,12 +14,12 @@
                         <form action="router.php?c=user&a=store" method="post">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Nome Utilizador</label>
-                                <input type="text" class="form-control"  required name="username" value="<?php  if(isset($user)) { echo
+                                <input type="text" class="form-control" minlength="3" maxlength="25"  required name="username" value="<?php  if(isset($user)) { echo
                                 $user->username; }?>" > </br> <?php if(isset($user->username)){ echo '<div class="alert alert-danger">'.$user->errors->on('username') .'</div>';}  ?>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" required name="password" value="<?php if(isset($user)) { echo
+                                <input type="password" minlength="8" maxlength="16" class="form-control" required name="password" value="<?php if(isset($user)) { echo
                                 $user->password; }?>">
                                 </br>
                             </div>
@@ -37,13 +37,13 @@
                             </div>
                             <div class="mb-3">
                                 <label for="nif" class="form-label">NIF</label>
-                                <input type="tel" maxlength="9" class="form-control" required name="nif" value="<?php if(isset($user)) { echo
+                                <input type="number" max=899999999 min=200000000 class="form-control" required name="nif" value="<?php if(isset($user)) { echo
                                 $produto->nif; }?>">
                                 </br>
                             </div>
                             <div class="mb-3">
                                 <label for="morada" class="form-label">Morada</label>
-                                <input type="tel"  class="form-control" required name="morada" value="<?php if(isset($user)) { echo
+                                <input type="text"  class="form-control" required name="morada" value="<?php if(isset($user)) { echo
                                 $produto->morada; }?>">
                                 </br>
                             </div>
@@ -59,7 +59,7 @@
                                 $produto->localidade; }?>">
                                 </br>
                             </div>
-                            <?php if($tipouser=='administrador'){?>
+                            <?php if($role=='administrador'){?>
                                 <div class="mb-3">
                                     <label for="role" class="form-label">Role</label>
                                     <select name="role">
@@ -69,7 +69,7 @@
                                     </select>
                                     </br>
                                 </div>
-                            <?php } else if($tipouser=='funcionario'){?>
+                            <?php } else if($role=='funcionario'){?>
                                 <div class="mb-3">
                                     <label for="role" class="form-label">Role</label>
                                     <select name="role">
@@ -79,8 +79,8 @@
                                 </div>
                                <?php
                             }?>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                            <a href="router.php?c=produto&a=index"  class="btn btn-info" role="button">Cancelar</a>
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <a href="router.php?c=produto&a=index"  class="btn btn-warning" role="button">Cancelar</a>
                         </form>
                     </div>
                 </div>

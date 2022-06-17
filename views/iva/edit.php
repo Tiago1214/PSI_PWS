@@ -10,15 +10,15 @@
                         <form  action="router.php?c=iva&a=update&id=<?= $iva->id ?>" method="post">
                             <div class="mb-3">
                                 <label for="percentagem" class="form-label">Percentagem</label>
-                                <input class="form-control" type="tel" maxlength="2" name="descricao" required value="<?= $iva->percentagem ?>"></br>
+                                <input class="form-control" type="number" max=99 min=1 maxlength="2" name="percentagem" required value="<?= $iva->percentagem ?>"></br>
                             </div>
                             <div class="mb-3">
                                 <label for="descricao" class="form-label">Descrição</label>
                                 <input class="form-control" type="text" name="descricao" required value="<?= $iva->descricao ?>"></br>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                            <a href="router.php?c=iva&a=index"   class="btn btn-info" role="button">Cancelar</a>
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <a href="router.php?c=iva&a=index"   class="btn btn-warning" role="button">Cancelar</a>
                         </form>
                     </div>
                 </div>

@@ -16,7 +16,7 @@
                         <form action="router.php?c=iva&a=store" method="post">
                             <div class="mb-3">
                                 <label for="percentagem" class="form-label">Percentagem</label>
-                                <input type="tel" maxlength="2" class="form-control" name="percentagem" value="<?php  if(isset($iva)) { echo
+                                <input type="number" maxlength="2" min=1 max=99 class="form-control" required name="percentagem" value="<?php  if(isset($iva)) { echo
                                 $iva->percentagem; }?>" > </br> <?php if(isset($iva->percentagem)){ echo '<div class="alert alert-danger">'.$iva->errors->on('percentagem') .'</div>';}  ?>
                             </div>
                             <div class="mb-3">

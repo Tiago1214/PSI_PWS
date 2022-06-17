@@ -16,25 +16,25 @@
                         <form action="router.php?c=produto&a=store" method="post">
                             <div class="mb-3">
                                 <label for="referencia" class="form-label">Referência</label>
-                                <input type="text"  class="form-control" name="referencia" value="<?php  if(isset($produto)) { echo
+                                <input type="text"  class="form-control" required name="referencia" value="<?php  if(isset($produto)) { echo
                                 $produto->referencia; }?>" > </br> <?php if(isset($produto->referencia)){ echo '<div class="alert alert-danger">'.$produto->errors->on('referencia') .'</div>';}  ?>
                             </div>
                             <div class="mb-3">
                                 <label for="descricao" class="form-label">Descrição</label>
-                                <input type="text" class="form-control" name="descricao" value="<?php if(isset($produto)) { echo
-                                $produto->descricao; }?>">
+                                <input type="text" class="form-control" required name="descricao" value="<?php if(isset($produto)) { echo
+                                $produto->descricao; }?>"></br> <?php if(isset($produto->referencia)){ echo '<div class="alert alert-danger">'.$produto->errors->on('descricao') .'</div>';}  ?>
                                 </br>
                             </div>
                             <div class="mb-3">
                                 <label for="preco" class="form-label">Preço</label>
-                                <input type="text" class="form-control" name="preco" value="<?php if(isset($produto)) { echo
-                                $produto->preco; }?>">
+                                <input type="text" class="form-control" required name="preco" value="<?php if(isset($produto)) { echo
+                                $produto->preco; }?>"></br> <?php if(isset($produto->referencia)){ echo '<div class="alert alert-danger">'.$produto->errors->on('preco') .'</div>';}  ?>
                                 </br>
                             </div>
                             <div class="mb-3">
                                 <label for="stock" class="form-label">Stock</label>
-                                <input type="text" class="form-control" name="stock" value="<?php if(isset($produto)) { echo
-                                $produto->stock; }?>">
+                                <input type="text" class="form-control" required name="stock" value="<?php if(isset($produto)) { echo
+                                $produto->stock; }?>"></br> <?php if(isset($produto->referencia)){ echo '<div class="alert alert-danger">'.$produto->errors->on('stock') .'</div>';}  ?>
                                 </br>
                             </div>
                                 <?php
@@ -66,8 +66,8 @@
                                 </select>
                             </div>
                         </br>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                            <a href="router.php?c=produto&a=index"  class="btn btn-info" role="button">Cancelar</a>
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                            <a href="router.php?c=user&a=index"  class="btn btn-warning" role="button">Cancelar</a>
                         </form>
 
     </section>
