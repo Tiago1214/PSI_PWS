@@ -21,6 +21,7 @@ class Auth
 
         }
         else {
+            $_SESSION['failed']=true;
             return false;
         }
     }

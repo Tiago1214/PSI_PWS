@@ -25,7 +25,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="stock" class="form-label">Stock</label>
-                                <input class="form-control" type="text" name="stock" value="<?= $produto->stock ?>"></br>
+                                <input class="form-control" type="number" min=0 name="stock" value="<?= $produto->stock ?>"></br>
                                 <?php  if(isset($produto->errors)){ echo $produto->errors->on('stock') ;}  ?>
                             </div>
                             <div class="mb-3">

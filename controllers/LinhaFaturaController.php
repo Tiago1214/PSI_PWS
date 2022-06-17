@@ -23,13 +23,15 @@ class LinhaFaturaController extends BaseAuthController
         }
     }
 
-    //Guardar os dados de uma linha de fatura
+    //Guarda os dados de uma linha de fatura
     public function store($idFatura,$idProduct)
     {
             //gravar Linhafatura
             //redirect->Linhafatura/create(idFatura)
         $linhafatura=new Linhafatura();
+        //procura qual o produto foi selecionado
         $produto= Produto::find([$idProduct]);
+        //procura qual a fatura selecionada
         $fatura =Fatura::find([$idFatura]);
         if(isset($_POST['quantidade'])){
             $linhafatura->quantidade =$_POST['quantidade'];
@@ -53,7 +55,7 @@ class LinhaFaturaController extends BaseAuthController
         }
     }
 
-    //apagar linha de fatura
+    //Função delete apaga uma linha de fatura
     public function delete($idLinhaFatura,$fatura)
     {
         $linhafatura = Linhafatura::find([$idLinhaFatura]);
@@ -61,7 +63,7 @@ class LinhaFaturaController extends BaseAuthController
         $this->redirectToRoute('linhafatura','create',['idf'=>$fatura]);
 
     }
-    //mostrar vista para editar quantidade
+    //mostrar vista para editar a quantidade de um produto numa linha de fatura
     public function editquantidade($idfatura,$idlinhafatura){
         $linhafatura = Linhafatura::find([$idlinhafatura]);
         $empresa=Empresa::find([2]);
@@ -73,7 +75,7 @@ class LinhaFaturaController extends BaseAuthController
             $this->makeView('linhafatura','editquantidade',['linhafatura'=>$linhafatura]);
         }
     }
-    //guardar quantidade
+    //Guarda a quantidade introduzida
     public function guardarquantidade($idlinhafatura){
         $linhafatura = Linhafatura::find([$idlinhafatura]);
         $linhafatura->quantidade=$_POST['quantidade'];

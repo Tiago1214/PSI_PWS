@@ -10,7 +10,7 @@ class IvaController extends BaseAuthController
         $this->loginFilterbyRole(['funcionario','administrador']);
     }
 
-//mostra todas as taxas de iva numa vista
+    //Mostra todas as taxas de iva numa vista
     public function index()
     {
 
@@ -18,7 +18,9 @@ class IvaController extends BaseAuthController
 
         $this->makeView('iva','index',['ivas'=>$ivas]);
     }
-    //mostrar dados de iva ao pormenor
+
+    //Mostra dados de iva ao pormenor do registo selecionado
+    //$id=id do registo de iva
     public function show($id)
     {
         $iva = Iva::find([$id]);
@@ -31,32 +33,48 @@ class IvaController extends BaseAuthController
 
 
     }
-    //mostra vista para criar ivas
+
+    //Mostra vista para criar uma nova taxa de iva
     public function create()
     {
-
-
         $this->makeView('iva','create');
     }
-    //guarda dados dos ivas
+
+    //Guarda os dados do iva
     public function store()
     {
-
-
         $iva= new Iva($_POST);
-
-
-        if($iva->is_valid()){
-            $iva->save();
-            $this->redirectToRoute('iva','index');
-        } else {
-
-            $this->makeView('iva','create',['iva'=>$iva]);
-
+        $auth=new Auth();
+        $listaiva=IVA::all();
+        $a=0;
+        //Corre todos os dados da tabela de ivas
+        foreach ($listaiva as $listaiva){
+            //Vai verificar se a percentagem introduzida já existe na base de dados porque é um campo único, caso isso aconteca
+            //passamos a variável $a para 1
+            if($listaiva->percentagem==$_POST['percentagem']){
+                $a=1;
+            }
         }
+        //caso já exista uma percentagem igual na base de dados, é mandada uma mensagem de erro no create e manda o utilizador
+        //introduzir outra percentagem de iva porque o campo percentagem é unico
+        if($a==1){
+            $valid=$auth->getUserId();
+            $this->makeView('iva','create',['valid'=>$valid]);
+        }
+        else{
+            if($iva->is_valid()){
+                $iva->save();
+                $this->redirectToRoute('iva','index');
+            } else {
 
+                $this->makeView('iva','create',['iva'=>$iva]);
+
+            }
+        }
     }
-    //mostra vista para editar os dados
+
+    //Mostra vista para editar os dados de um registo do iva
+    //$id = iva selecionado
     public function edit($id)
     {
         $iva = Iva::find([$id]);
@@ -70,7 +88,8 @@ class IvaController extends BaseAuthController
 
         }
     }
-    //atualiza os dados
+
+    //Atualiza os dados
     public function update($id)
     {
         //find resource (activerecord/model) instance where PK = $id
@@ -88,9 +107,12 @@ class IvaController extends BaseAuthController
             //mostrar vista edit passando o modelo como parâmetro
         }
     }
-    //atualizar iva de ativo ou desativo
+
+    //Coloca o campo emvigor de produto como ativo ou desativo, caso o iva seja ativo o valor é 1 e caso seja negativo o valor é 0
     public function posicao($id){
+        //vai buscar o $id que é para atualizar o campo emvigor
         $iva=Iva::find([$id]);
+        //verifica qual o valor da varíavel para depois dar update na base de dados no registo de iva selecionado
         if($iva->emvigor==1){
             $iva->update_attribute(emvigor,0);
             if($iva->is_valid()){

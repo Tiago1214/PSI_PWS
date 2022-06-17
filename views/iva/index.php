@@ -53,9 +53,9 @@
 
                         <td>
                             <a href="router.php?c=iva&a=show&id=<?=$iva->id ?>"
-                               class="btn btn-info" role="button">Show</a>
+                               class="btn btn-info" role="button">Detalhes</a>
                             <a href="router.php?c=iva&a=edit&id=<?=$iva->id ?>"
-                               class="btn btn-warning" role="button">Edit</a>
+                               class="btn btn-warning" role="button">Editar</a>
                             <?php if($iva->emvigor==1){?>
                                 <a href="router.php?c=iva&a=posicao&id=<?=$iva->id ?>"
                                    class="btn btn-danger" role="button">Desativar</a>

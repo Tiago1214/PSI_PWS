@@ -12,6 +12,12 @@
                 <div class="box">
                     <div class="box-header">
                         <form action="router.php?c=user&a=store" method="post">
+                            <?php if(isset($valid)){
+                                ?>
+                                <p style="color:red"> Os campos utilizador/email/telefone/nif já se encontram na base de dados porque são únicos!!!
+                                    <br>Por favor insira outras credenciais!</p>
+                                <?php
+                            } ?>
                             <div class="mb-3">
                                 <label for="username" class="form-label">Nome Utilizador</label>
                                 <input type="text" class="form-control" minlength="3" maxlength="25"  required name="username" value="<?php  if(isset($user)) { echo
@@ -31,7 +37,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="telefone" class="form-label">Telefone</label>
-                                <input type="tel" maxlength="9" class="form-control" required name="telefone" value="<?php if(isset($user)) { echo
+                                <input type="number" min=200000000 max=999999999 class="form-control" required name="telefone" value="<?php if(isset($user)) { echo
                                 $user->telefone; }?>"></br> <?php if(isset($user->telefone)){ echo '<div class="alert alert-danger">'.$user->errors->on('telefone') .'</div>';}  ?>
                                 </br>
                             </div>
@@ -53,7 +59,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="codpostal" class="form-label">Código Postal</label>
-                                <input type="tel" maxlength="8" class="form-control" required name="codpostal" id="codpostal" minlength="8" maxlength="8" placeholder="____-___" value="<?php if(isset($user)) { echo
+                                <input type="text" maxlength="8" class="form-control" required name="codpostal" id="codpostal" minlength="8" maxlength="8" placeholder="____-___" value="<?php if(isset($user)) { echo
                                 $user->codpostal; }?>">
                                 </br>
                             </div>
@@ -84,7 +90,7 @@
                                <?php
                             }?>
                             <button type="submit" class="btn btn-success">Enviar</button>
-                            <a href="router.php?c=produto&a=index"  class="btn btn-warning" role="button">Cancelar</a>
+                            <a href="router.php?c=user&a=index"  class="btn btn-warning" role="button">Cancelar</a>
                         </form>
                     </div>
                 </div>

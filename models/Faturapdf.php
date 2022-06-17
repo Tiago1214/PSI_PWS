@@ -67,7 +67,6 @@ class Faturapdf
                             <th>Valor Un.</th>
                             <th>Valor IVA</th>
                             <th>Taxa IVA</th>
-                            <th>Subtotal</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -83,10 +82,6 @@ class Faturapdf
                                 <td> '. $linha->valorunitario .'€</td>
                                 <td> '. $linha->valorunitario*$linha->taxaiva/100 .'€</td>
                                 <td> '. $linha->taxaiva  .'%</td>
-                                <td>');
-                           echo $linha->valorunitario*$linha->quantidade+($linha->quantidade*($linha->valorunitario*$linha->taxaiva/100)) ;
-                            $mpdf->WriteHTML('
-                                €</td>
                                 </tr>
                                 ');
                              }
@@ -106,12 +101,6 @@ class Faturapdf
                 <div class="col-xs-3">
                     <div class="table-responsive">
                         <table class="table">
-                            <tr>
-                                <th>Subtotal:</th>
-                                <td>');
-                              echo $fatura->valortotal-$fatura->ivatotal ;
-                              $mpdf->WriteHTML('€</td>
-                            </tr>
                             <tr>
                                 <th>Valor IVA:</th>
                                 <td> '. $fatura->ivatotal .' €</td>

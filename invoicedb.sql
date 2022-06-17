@@ -1,13 +1,15 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `invoicedb` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `invoicedb`;
+-- MySQL dump 10.13  Distrib 5.7.36, for Win64 (x86_64)
 --
 -- Host: localhost    Database: invoicedb
 -- ------------------------------------------------------
--- Server version	8.0.21
+-- Server version	5.5.5-10.6.5-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,13 +23,13 @@
 
 DROP TABLE IF EXISTS `empresas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `empresas` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `designacaosocial` varchar(120) NOT NULL,
   `email` varchar(120) NOT NULL,
   `telefone` varchar(12) NOT NULL,
-  `nif` int NOT NULL,
+  `nif` int(11) NOT NULL,
   `morada` varchar(150) NOT NULL,
   `codpostal` varchar(8) NOT NULL,
   `localidade` varchar(50) NOT NULL,
@@ -53,15 +55,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `faturas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `faturas` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `data` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `data` datetime NOT NULL DEFAULT current_timestamp(),
   `valortotal` float NOT NULL,
   `ivatotal` float NOT NULL,
   `estado` varchar(15) NOT NULL,
-  `cliente_id` int NOT NULL,
-  `user_id` int NOT NULL,
+  `cliente_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_faturas_users1_idx` (`cliente_id`),
   KEY `fk_faturas_users2_idx` (`user_id`),
@@ -86,12 +88,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ivas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ivas` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `percentagem` decimal(10,0) unsigned NOT NULL,
   `descricao` varchar(150) NOT NULL,
-  `emvigor` tinyint(1) NOT NULL DEFAULT '1',
+  `emvigor` tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -112,14 +114,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `linhafaturas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `linhafaturas` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `quantidade` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `quantidade` int(11) NOT NULL,
   `valorunitario` float NOT NULL,
   `valoriva` float NOT NULL,
-  `fatura_id` int NOT NULL,
-  `produto_id` int NOT NULL,
+  `fatura_id` int(11) NOT NULL,
+  `produto_id` int(11) NOT NULL,
   `taxaiva` decimal(10,0) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fatura_id` (`fatura_id`),
@@ -145,15 +147,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `produtos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `produtos` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `referencia` varchar(15) NOT NULL,
   `descricao` varchar(80) NOT NULL,
   `preco` decimal(10,0) NOT NULL,
-  `stock` int NOT NULL,
-  `iva_id` int NOT NULL,
-  `estado` tinyint NOT NULL DEFAULT '1',
+  `stock` int(11) NOT NULL,
+  `iva_id` int(11) NOT NULL,
+  `estado` tinyint(4) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE KEY `referencia_UNIQUE` (`referencia`),
   KEY `fk_produtos_ivas1_idx` (`iva_id`),
@@ -167,7 +169,7 @@ CREATE TABLE `produtos` (
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` VALUES (8,'2123312122','portatil lenovo',801,0,3,1),(9,'564652344','Coluna Bluetooth JBL Xtreme GM (40W - Autonomia 15 horas)',50,42,4,1),(10,'12334121111','Televisão LG Série QNED82 SmartTV 65\" QNED 4K UHD',1,1,1,1),(11,'1231231234442','Computador Desktop PCDIGA Gaming GML-NR55ME2',1139,-10,3,1),(12,'12342112444','Cadeira Gaming Alpha Gamer Phenix PU Leather Preta/Cinza',380,12,4,1),(13,'2117656555','Frigorífico Combinado AEG RCB632E4MX 330 Litros E Cinzento',630,6,3,1),(14,'32131233321','Balança Xiaomi Mi Body Composition Scale 2 Branca Bluetooth 5.0',18,14,4,1),(15,'345522323333','Headphones Sony WH-1000XM5 Bluetooth ANC NFC Prateados',450,20,1,1),(16,'2343532653636','Corta-relvas Elétrico Bosch ARM 32 32cm 1200W',100,7,4,1),(17,'234141241244','Coluna Bluetooth Portátil NewOne BS 20 5W Branca',9,6,1,1);
+INSERT INTO `produtos` VALUES (8,'2123312122','portatil lenovo',801,0,3,1),(9,'564652344','Coluna Bluetooth JBL Xtreme GM (40W - Autonomia 15 horas)',50,42,4,1),(10,'12334121111','Televisao LG Serie QNED82 SmartTV 65',1,1,1,1),(11,'1231231234442','Computador Desktop PCDIGA Gaming GML-NR55ME2',1139,300,3,1),(12,'12342112444','Cadeira Gaming Alpha Gamer Phenix PU Leather Preta/Cinza',380,12,4,1),(13,'2117656555','Frigorifico Combinado AEG RCB632E4MX 330 Litros E Cinzento',630,6,3,1),(14,'32131233321','Balanca Xiaomi Mi Body Composition Scale 2 Branca Bluetooth 5.0',18,14,4,1),(15,'345522323333','Headphones Sony WH-1000XM5 Bluetooth ANC NFC Prateados',450,20,1,1),(16,'2343532653636','Corta-relvas Eletrico Bosch ARM 32 32cm 1200W',100,7,4,1),(17,'234141241244','Coluna Bluetooth Portatil NewOne BS 20 5W Branca',9,6,1,1);
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,19 +179,19 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(150) NOT NULL,
   `telefone` varchar(12) NOT NULL,
-  `nif` int NOT NULL,
+  `nif` int(11) NOT NULL,
   `morada` varchar(200) NOT NULL,
   `codpostal` varchar(8) NOT NULL,
   `localidade` varchar(80) NOT NULL,
   `role` varchar(20) NOT NULL,
-  `estado` tinyint NOT NULL DEFAULT '1',
+  `estado` tinyint(4) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`),
@@ -204,7 +206,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','12345678','admin@sapo.br','919191919',222333444,'rua abc123','2121-212','Lisboaa','administrador',1),(25,'Tiago','tiago1234','2211862@my.ipleiria.pt','912343210',244321234,'rua cidade de franÃ§a, lisboa','1150-210','Lisboa','funcionario',1),(27,'Bernardo','12345678','bernardocustodiocosta@gmail.com','914692060',252322282,'rua cidade de Ourém nº48 -Lourinha','2490-427','Ourém','funcionario',1),(28,'Fábio','12345678','fabio@gmail.com','912345213',213543765,'rua da ruge água','3456-234','Freixianda','cliente',1),(29,'Hugo','12345678','hugo@gmail.com','912673132',321421432,'rua cidade de Ourém','2490-427','Ourém','cliente',1),(30,'Cristian','12345678','cristian@gmail.com','912783928',231513428,'rua do porto alto','2341-245','Porto Alto','cliente',1);
+INSERT INTO `users` VALUES (1,'admin','12345678','admin@sapo.br','919191919',222333444,'rua abc123','2121-212','Lisboaa','administrador',1),(25,'Tiago','tiago1234','2211862@my.ipleiria.pt','912343210',244321234,'rua cidade de franÃ§a, lisboa','1150-210','Lisboa','funcionario',1),(27,'Bernardo','12345678','bernardocustodiocosta@gmail.com','914692060',252322282,'rua cidade de Ourem n48 -Lourinha','2490-427','Ourem','funcionario',1),(28,'Fabio','12345678','fabio@gmail.com','912345213',213543765,'rua da ruge agua','3456-234','Freixianda','cliente',1),(29,'Hugo','12345678','hugo@gmail.com','912673132',321421432,'rua cidade de Ourem','2490-427','Ourem','cliente',1),(30,'Cristian','12345678','cristian@gmail.com','912783928',231513428,'rua do porto alto','2341-245','Porto Alto','cliente',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -217,4 +219,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-17  3:23:32
+-- Dump completed on 2022-06-17  6:48:54

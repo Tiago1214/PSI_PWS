@@ -59,7 +59,7 @@
 
                                             <td>
                                                 <a href="router.php?c=fatura&a=store&id=<?=$user->id ?>"
-                                                   class="btn btn-info" role="button">Select</a>
+                                                   class="btn btn-info" role="button">Selecionar</a>
                                             </td>
                                         </tr>
 

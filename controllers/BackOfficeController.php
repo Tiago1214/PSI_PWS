@@ -7,6 +7,8 @@ class BackOfficeController extends BaseController
     public function index(){
         $auth=new Auth();
         $role=$auth->getRole();
-        $this->makeView('backoffice','index',['role'=>$role]);
+        $client=$auth->getUserId();
+        $faturas=Fatura::all();
+        $this->makeView('backoffice','index',['role'=>$role,'client'=>$client],['faturas'=>$faturas]);
     }
 }

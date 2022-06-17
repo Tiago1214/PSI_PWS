@@ -33,12 +33,27 @@ class UserController extends BaseAuthController
     //A função store serve para validar o utilizador criado
     public function store(){
         $user = new User($_POST);
+        $listausers=User::all();
+        $auth=new Auth();
+        $role=$auth->getRole();
+        $a=0;
+        foreach($listausers as $listauser){
+            if($listauser->username==$_POST['username']||$listauser->email==$_POST['email']||$listauser->telefone==$_POST['telefone']||$listauser->nif==$_POST['nif']){
+                $a=1;
+            }
+        }
         //Validar se os dados são validos para inserir o registo na base de dados
-        if($user->is_valid()){
-            $user->save();
-            $this->redirectToRoute('user','index');
-        } else {
-            $this->makeView('user','create',['user'=>$user]);
+        if($a==1){
+            $valid=$auth->getUserId();
+            $this->makeView('user','create',['role'=>$role],['valid'=>$valid]);
+        }
+        else{
+            if($user->is_valid()){
+                $user->save();
+                $this->redirectToRoute('user','index');
+            } else {
+                $this->makeView('user','create',['user'=>$user]);
+            }
         }
     }
 
@@ -79,6 +94,7 @@ class UserController extends BaseAuthController
         //your form name fields must match the ones of the table fields
         $user = User::find([$id]);
         $user->update_attributes($_POST);
+
         if($user->is_valid()){
             $user->save();
             $this->redirectToRoute('user','index');

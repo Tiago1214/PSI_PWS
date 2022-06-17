@@ -112,7 +112,9 @@
             <div class="row no-print">
                 <div class="col-12">
                     <a href="router.php?c=fatura&a=pdf&idf=<?=$fatura->id?>" target="_blank" rel="noopener"
-                       class="btn btn-default"><i class="fas fa-print"></i> Gerar PDF</a>
+                       class="btn btn-primary"><i class="fas fa-print"></i> Gerar PDF</a>
+                    <a href="router.php?c=fatura&a=index"
+                       class="btn btn-success">Voltar</a>
                 </div>
             </div>
         </section>

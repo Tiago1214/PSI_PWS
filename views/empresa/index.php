@@ -36,9 +36,9 @@
                                     <td><?= $empresa->capitalsocial ?>€</td>
                                     <td>
                                         <a href="router.php?c=empresa&a=show&id=<?=$empresa->id ?>"
-                                           class="btn btn-info" role="button">Show</a>
+                                           class="btn btn-info" role="button">Detalhes</a>
                                         <a href="router.php?c=empresa&a=edit&id=<?=$empresa->id ?>"
-                                           class="btn btn-warning" role="button">Edit</a>
+                                           class="btn btn-warning" role="button">Editar</a>
 
                                     </td>
                                 </tr>

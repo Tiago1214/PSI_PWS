@@ -10,6 +10,7 @@ class EmpresaController extends BaseAuthController
     {
         $this->loginFilterbyRole(['funcionario','administrador']);
     }
+
     // chama vista para mostrar empresas
     public function index()
     {
@@ -17,7 +18,8 @@ class EmpresaController extends BaseAuthController
 
         $this->makeView('empresa','index',['empresas'=>$empresas]);
     }
-    //mostra dados empresa ao pormenor
+
+    //mostra dados da empresa selecionada
     public function show($id)
     {
             $empresa = empresa::find([$id]);
@@ -30,7 +32,8 @@ class EmpresaController extends BaseAuthController
 
 
     }
-    // mostra vista para editar
+
+    // mostra vista de edit em que o parametro $id corresponde ao id da empresa
     public function edit($id)
     {
         $empresa = empresa::find([$id]);
@@ -44,7 +47,8 @@ class EmpresaController extends BaseAuthController
 
         }
     }
-    //atualiza os dados
+
+    //atualiza os dados da empresa usando o id que trouxe da vista de edit
     public function update($id)
     {
         //find resource (activerecord/model) instance where PK = $id

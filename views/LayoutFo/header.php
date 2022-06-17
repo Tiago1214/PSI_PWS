@@ -38,10 +38,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-lg-auto">
                 <li class="nav-item">
-                    <a href="router.php?c=site&a=index" class="nav-link smoothScroll">Home</a>
+                    <a href="router.php?c=site&a=index" class="nav-link smoothScroll">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a href="router.php?c=auth&a=index" class="nav-link smoothScroll">Login</a>
+                    <a href="router.php?c=auth&a=index" class="nav-link smoothScroll">Iniciar Sessão</a>
                 </li>
              <?php   if(isset($username))
                 { ?>

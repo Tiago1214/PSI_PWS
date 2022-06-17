@@ -32,9 +32,6 @@
                                 <table class="table tablestriped">
                                     <thead>
                                     <th>
-                                        <h3>Id</h3>
-                                    </th>
-                                    <th>
                                         <h3>Data</h3>
                                     </th>
                                     <th>
@@ -61,26 +58,25 @@
                                         <?php if($fatura->estado!='cancelada'){
                                             ?>
                                             <tr>
-                                                <td><?=$fatura->id ?></td>
                                                 <td><?=$fatura->data ?></td>
-                                                <td><?=$fatura->valortotal ?></td>
-                                                <td><?= $fatura->ivatotal ?></td>
+                                                <td><?=$fatura->valortotal ?>€</td>
+                                                <td><?= $fatura->ivatotal ?>€</td>
                                                 <td><?= $fatura->estado ?></td>
                                                 <td><?= $fatura->cliente->username ?></td>
                                                 <td><?= $fatura->user->username ?></td>
 
                                                 <td>
                                                     <a href="router.php?c=fatura&a=show&id=<?=$fatura->id ?>"
-                                                       class="btn btn-info" role="button">Show</a>
+                                                       class="btn btn-info" role="button">Mostrar</a>
 
                                                     <?php if($fatura->estado =='em lancamento')
                                                     { ?>
 
                                                         <a href="router.php?c=fatura&a=edit&idf=<?=$fatura->id ?>"
-                                                           class="btn btn-warning" role="button">Edit</a>
+                                                           class="btn btn-warning" role="button">Editar</a>
 
                                                         <a href="router.php?c=fatura&a=cancel&idf=<?=$fatura->id ?>"
-                                                           class="btn btn-danger" role="button">Cancel</a>
+                                                           class="btn btn-danger" role="button">Cancelar</a>
                                                     <?php } ?>
                                                 </td>
                                             </tr>

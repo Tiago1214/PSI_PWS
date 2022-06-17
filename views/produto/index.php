@@ -55,14 +55,14 @@
                             <tr>
                                 <td><?=$produto->referencia ?></td>
                                 <td><?=$produto->descricao ?></td>
-                                <td><?= $produto->preco ?></td>
+                                <td><?= $produto->preco ?>€</td>
                                 <td><?= $produto->stock ?></td>
                                 <td><?= $produto->iva->percentagem ?></td>
                                 <td>
                                     <a href="router.php?c=produto&a=show&id=<?=$produto->id ?>"
-                                       class="btn btn-info" role="button">Show</a>
+                                       class="btn btn-info" role="button">Detalhes</a>
                                     <a href="router.php?c=produto&a=edit&id=<?=$produto->id ?>"
-                                       class="btn btn-warning" role="button">Edit</a>
+                                       class="btn btn-warning" role="button">Editar</a>
                                     <?php if($produto->estado==1){?>
                                         <a href="router.php?c=produto&a=posicao&id=<?=$produto->id ?>"
                                            class="btn btn-danger" role="button">Desativar</a>

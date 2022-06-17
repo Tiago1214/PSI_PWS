@@ -81,7 +81,73 @@
         <?php
         }else if($role=='cliente'){
             ?>
+        <div class="row">
+            <div class="col-lg-12 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-blue-gradient">
+                    <div class="inner">
+                        <h3>Ver Faturas</h3>
+                        <p>Minhas Faturas</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-ios-paper"></i>
+                    </div>
+                    <a href="router.php?c=fatura&a=showclientinvoice" class="small-box-footer">Ver as minhas faturas<i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <br>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-blue-gradient">
+                    <div class="inner">
+                        <h3>Faturas</h3>
+                        <p>Minhas Últimas cinco Faturas</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-ios-paper"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-xs-6">
+                <table class="table tablestriped">
+                    <thead>
+                    <th>
+                        <h3>Data</h3>
+                    </th>
+                    <th>
+                        <h3>Valor Total</h3>
+                    </th>
+                    <th>
+                        <h3>Iva Total</h3>
+                    </th>
+                    <th>
+                        <h3>Nome Cliente</h3>
+                    </th>
+                    <th>
+                        <h3>Nome Funcionário</h3>
+                    </th>
+                    </thead>
+                    <tbody>
+                    <?php $contador=0 ?>
+                    <?php foreach ($faturas as $fatura) { ?>
+                        <?php $contador++;
+                        if($fatura->cliente_id==$client&&$contador<5){
+                            ?>
+                            <tr>
+                                <td><?=$fatura->data ?></td>
+                                <td><?=$fatura->valortotal ?>€</td>
+                                <td><?= $fatura->ivatotal ?>€</td>
+                                <td><?= $fatura->cliente->username ?></td>
+                                <td><?= $fatura->user->username ?></td>
+                            </tr>
+                        <?php } ?>
+                    <?php }?>
 
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <?php
         } ?>
     </section>

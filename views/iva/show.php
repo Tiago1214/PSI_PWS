@@ -14,7 +14,7 @@
                 <div class="box">
                     <div class="box-header">
                         <a href="router.php?c=iva&a=edit&id=<?=$iva->id ?>"
-                           class="btn btn-warning" role="button">Edit</a>
+                           class="btn btn-warning" role="button">Editar</a>
                             <h3>Percentagem</h3><td><?=$iva->percentagem ?>%</td>
                             <h3>Descrição</h3><td><?=$iva->descricao ?></td>
                             <h3>Em vigor</h3><td><?php if($iva->emvigor == '1') echo 'Ativo'; else echo 'Desativo';?></td>

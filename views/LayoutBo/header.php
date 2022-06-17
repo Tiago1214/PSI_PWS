@@ -44,7 +44,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="./router?c=backoffice&a=index" class="logo">
+        <a href="./router.php?c=backoffice&a=index" class="logo">
             <span class="logo-mini"><b>F</b>+</span>
             <span class="logo-lg"><b>Fatura</b>+</span>
         </a>

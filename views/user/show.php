@@ -17,7 +17,7 @@
                         <?php
                         } else{?>
                             <a href="router.php?c=user&a=edit&id=<?=$user->id ?>"
-                           class="btn btn-warning" role="button">Edit</a>
+                           class="btn btn-warning" role="button">Editar</a>
                         <?php }?>
                         <h3>Utilizador</h3><td><?=$user->username ?></td>
                         <h3>Password</h3><td><?=$user->password ?></td>

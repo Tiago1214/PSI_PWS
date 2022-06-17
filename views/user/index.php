@@ -78,14 +78,14 @@
                                             </td>
                                             <td>
                                                 <a href="router.php?c=user&a=show&id=<?=$user->id ?>"
-                                                   class="btn btn-info" role="button">Show</a>
+                                                   class="btn btn-info" role="button">Detalhes</a>
                                                 <?php if($user->role=='administrador'){
                                                     ?>
 
                                                 <?php
                                                 }else{?>
                                                     <a href="router.php?c=user&a=edit&id=<?=$user->id ?>"
-                                                   class="btn btn-warning" role="button">Edit</a>
+                                                   class="btn btn-warning" role="button">Editar</a>
                                                 <?php
                                                 }?>
 
@@ -116,9 +116,9 @@
                                                 } ?></td></td>
                                             <td>
                                                 <a href="router.php?c=user&a=show&id=<?=$user->id ?>"
-                                                   class="btn btn-info" role="button">Show</a>
+                                                   class="btn btn-info" role="button">Detalhes</a>
                                                 <a href="router.php?c=user&a=edit&id=<?=$user->id ?>"
-                                                   class="btn btn-warning" role="button">Edit</a>
+                                                   class="btn btn-warning" role="button">Editar</a>
                                             </td>
                                         <?php }?>
                                     </tr>
