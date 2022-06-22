@@ -3,7 +3,8 @@
 class User extends ActiveRecord\Model
 {
     static $has_many = array(
-        array('faturas')
+        array('faturas'),
+        array('tasks')
     );
 
     static $validates_presence_of = array(

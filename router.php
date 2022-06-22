@@ -7,6 +7,7 @@ require_once ('./controllers/BackOfficeController.php');
 require_once ('./controllers/FaturaController.php');
 require_once ('./controllers/ProdutoController.php');
 require_once ('./controllers/LinhaFaturaController.php');
+require_once ('./controllers/TaskController.php');
 
 require_once ('./controllers/UserController.php');
 
@@ -88,6 +89,38 @@ else{
 
                 }
                 break;
+
+           case 'tarefa':
+               $tarefacontroller = new TaskController();
+               switch ($action) {
+                   case 'index':
+                       $tarefacontroller->index();
+                       break;
+                   case 'show':
+                       $tarefacontroller->show($_GET['id']);
+                       break;
+                   case 'create':
+                       $tarefacontroller->create();
+                       break;
+                   case'store':
+                       $tarefacontroller->store();
+                       break;
+                   case 'edit':
+                       $tarefacontroller->edit($_GET['id']);
+                       break;
+                   case 'done':
+                       $tarefacontroller->done($_GET['id']);
+                       break;
+                   case 'update':
+                       $tarefacontroller->update($_GET['id']);
+                       break;
+                   /* case 'delete':
+                   $empresacontroller->delete($_GET['id']);
+                   break;*/
+
+
+               }
+               break;
 
 
             case 'backoffice':
