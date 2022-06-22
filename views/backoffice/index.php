@@ -131,18 +131,24 @@
                     <tbody>
                     <?php $contador=0 ?>
                     <?php foreach ($faturas as $fatura) { ?>
-                        <?php $contador++;
-                        if($fatura->cliente_id==$client&&$contador<5){
-                            ?>
-                            <tr>
+                            <?php
+                        if($fatura->cliente->username==$_SESSION['username'])
+                        {
+                            $contador++;?>
+                            <?php if($contador<5){ ?>
+                               <tr>
                                 <td><?=$fatura->data ?></td>
                                 <td><?=$fatura->valortotal ?>€</td>
                                 <td><?= $fatura->ivatotal ?>€</td>
                                 <td><?= $fatura->cliente->username ?></td>
                                 <td><?= $fatura->user->username ?></td>
                             </tr>
+                        <?php }?>
+
+                            <?php
+                        }?>
+
                         <?php } ?>
-                    <?php }?>
 
                     </tbody>
                 </table>
