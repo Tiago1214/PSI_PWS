@@ -1,6 +1,6 @@
 # **PSI_PWS**
 ## **Projeto de Programação web servidor**
-## PL1-C
+## PL1-D
 
 ### **Conteudo do projeto**
 * No repositório do github encontra-se os ficheiros do projeto e o ficheiro da base de dados com o nome invoicedb.sql
