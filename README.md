@@ -9,5 +9,5 @@
 * [link repositório] (https://github.com/Tiago1214/PSI_PWS)
 
 
-![logo] (https://www.ipleiria.pt/wp-content/themes/ipleiria/img/logo_ipl_header.png)
+![logo](https://www.ipleiria.pt/wp-content/themes/ipleiria/img/logo_ipl_header.png)
 
